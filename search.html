@@ -1,0 +1,143 @@
+<label>Je cherche :</label>
+<input id="searchValue" type="text">
+<button type="button" id="search">Search</button>
+
+<div id="resultat" > </div>
+
+
+
+
+
+
+<script>
+
+var data = {
+	"q":[{
+			"keys": ["math", "nombres", "imaginaires", "réel"],
+			"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:nombres-complexes-point-de-vue-algebrique"],
+			"2": ["https://www.youtube.com/watch?v=T647CGsuOVU&list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF"]
+		},
+		{
+			"keys": ["math", "matrice"],
+			"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:matrices"],
+			"2": ["zer"]
+		},
+		{
+			"keys": ["math", "lignes", "convertisseur" ],
+			"1": ["zer"],
+			"2": ["zer"]
+		},
+		{
+			"keys": ["math", "suite"],
+			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
+			"2": ["zer"]
+		},
+		{
+			"keys": ["linux", "bash", "shell"],
+			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
+			"2": ["zer"]
+		},
+		{
+			"keys": ["internet", "html", "css"],
+			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
+			"2": ["zer"]
+		},
+		{
+			"keys": ["math", "suite"],
+			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
+			"2": ["zer"]
+		},
+		{
+			"keys": ["math", "suite"],
+			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
+			"2": ["zer"]
+		}]
+};
+
+document.getElementById('search').onclick = function(){
+	document.getElementById('resultat').innerHTML = "";
+	let query = document.getElementById('searchValue').value;
+	let wordOfQuery = query.toLowerCase().split(' ');
+	let result = [];
+
+	for(let word of wordOfQuery){
+		for(let element of data.q){
+			for(let key of element.keys){
+				if( prequePareil(word,key) ){
+					let index = data.q.indexOf(element);
+					if(!result.includes(index)){
+						result.push(index);
+					}
+				}
+			}
+		}
+	}
+	console.log(result);
+	printResult(result);
+}
+
+function printResult(tableauResulat){
+	for(let element of tableauResulat){
+		let links;
+		if(true){
+			links = data.q[element][1];
+		}else{
+			links = data.q[element][2];
+		}
+		for(let link of links){
+			let resultatHTML = document.createElement('div');
+			let lien = document.createElement('a');
+			lien.href = link;
+			lien.innerHTML = link;
+			lien.target= "_blank";
+			resultatHTML.append(lien);
+			document.getElementById('resultat').append(resultatHTML);
+		}
+	}
+}
+
+
+function prequePareil(wordInQuery, wordInData){
+	if(wordInQuery == wordInData){
+		return true;
+	}else{
+		if(wordInQuery.slice(-1) == 's'){
+			if(wordInQuery.substring(0, wordInQuery.length - 1) == wordInData){
+				return true;
+			}else{
+				return false;
+			}
+		}else if(wordInData.slice(-1) == 's'){
+			if(wordInQuery == wordInData.substring(0, wordInData.length - 1)){
+				return true;
+			}else{
+				return false;
+			}
+		}	
+	}
+}
+
+function getFavicon(){
+    var favicon = undefined;
+    var nodeList = document.getElementsByTagName("link");
+    for (var i = 0; i < nodeList.length; i++)
+    {
+        if((nodeList[i].getAttribute("rel") == "icon")||(nodeList[i].getAttribute("rel") == "shortcut icon"))
+        {
+            favicon = nodeList[i].getAttribute("href");
+        }
+    }
+    return favicon;
+}
+
+
+
+function getTitle(){
+    var title = undefined;
+    var nodeList = document.getElementsByTagName("title");
+    title = nodeList[0].innerHTML;
+
+    return title;
+}
+getTitle()
+</script>
