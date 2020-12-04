@@ -1,42 +1,54 @@
 {
-	"q":[{
-			"keys": ["math", "nombres", "imaginaires", "réel"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:nombres-complexes-point-de-vue-algebrique"],
-			"2": ["https://www.youtube.com/watch?v=T647CGsuOVU&list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF"]
-		},
-		{
-			"keys": ["math", "matrice"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:matrices"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["math", "lignes", "convertisseur" ],
-			"1": ["zer"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["math", "suite"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["linux", "bash", "shell"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["internet", "html", "css"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["math", "suite"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["math", "suite"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		}]
-}
+	"q":[
+			{
+				"keys": ["math", "nombres", "imaginaires", "réel"],
+				"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:nombres-complexes-point-de-vue-algebrique"],
+				"2": ["https://www.youtube.com/watch?v=T647CGsuOVU&list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF"]
+			},
+			{
+				"keys": ["math", "matrice"],
+				"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:matrices"],
+				"2": ["zer"]
+			},
+			{
+				"keys": ["math", "lignes", "convertisseur" ],
+				"1": ["zer"],
+				"2": ["zer"]
+			},
+			{
+				"keys": ["math", "suite"],
+				"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
+				"2": ["zer"]
+			},
+			{
+				"keys": ["linux", "bash", "shell"],
+				"1": ["https://www.taniarascia.com/how-to-create-and-use-bash-scripts/", "https://remisharrock.fr/sysbuild/#/VM", "https://tdinfo.phelma.grenoble-inp.fr/2Aproj/fiches/MementoCommandesShell.pdf"],
+				"2": ["zer"]
+			},
+			{
+				"keys": ["internet", "html", "css"],
+				"1": ["https://hitokun-s.github.io/old/demo/"],
+				"2": ["zer"]
+			},
+			{
+				"keys": ["math", "suite"],
+				"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
+				"2": ["zer"]
+			},
+			{
+				"keys": ["typing", "clavier"],
+				"1": ["https://www.typingclub.com/"],
+				"2": ["zer"]
+			},
+			{
+				"keys": ["android", "app", "application"],
+				"1": [],
+				"2": ["http://appinventor.mit.edu/"]
+			},
+			{
+				"keys": ["guides", "cours", "savoir"],
+				"1": ["https://www.taniarascia.com/guides"],
+				"2": ["https://www.taniarascia.com/guides"]
+			}
+		]
+	}
