@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <meta charset="utf-8"/>
-  <style>
+	<meta charset="UTF-8">
+ </head>
+ <body>
+	<style>
 	#canvas{
 		border: 2px solid black;
-	
 	}
-  </style>
-   <meta charset="UTF-8">
- </head>
- <body onload="init();">
- <center>
+	</style>
+ <div style="text-align: center;">
    <canvas id="canvas" width="801" height="201"></canvas>
 
    <br>
@@ -26,8 +24,8 @@
 	 <input type="range" id="ech" min="10" max="50" value="27" step="1">
 	 <p id="textEch">Echelle : 27</p>
 	 <p id="formule"></p>
- </center>
- </body>
+ </div>
+ 
    <script type="application/javascript">
    //Copyright n4n5
     function init() {
@@ -165,8 +163,10 @@
 	document.getElementById("moy").addEventListener("input",  function() {moyChange();});
 	document.getElementById("ret").addEventListener("input",  function() {retChange();});
 	document.getElementById("ech").addEventListener("input",  function() {echChange();});
+	init();
 	//Copyright n4n5
   </script>
+  </body>
 </html>
 
 
