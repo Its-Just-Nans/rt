@@ -27,7 +27,7 @@ if(window.location.search == ""){
     basePage = window.location.href + 'search.html';
 }
 }else{
-    basePage = window.location.origni + '/rt/' + window.location.search.replace('?', '') + '.html';
+    basePage = window.location.origin + '/rt/' + window.location.search.replace('?', '') + '.html';
 }
 loadNewPage(basePage);
 
