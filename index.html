@@ -19,7 +19,7 @@ function loadNewPage(url){
     let client = new HttpClient();
     client.get(url, function(response) {
         document.getElementById('contenuMain').innerHTML = response;
-        let allScripts = document.getElementById('contenuMain').getElementsByClassName('script');
+        let allScripts = document.getElementById('contenuMain').getElementsByTagName('script');
         for(let scripts of allScripts){
             eval(scripts.innerHTML);
         }
