@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>R&T</title>
+</head>
+<body>
+    <nav>
+
+    </nav>
+    <section id="contenuMain">
+        <a id="link" href="test">fsdfsdf</a>
+    </section>
+<script src="js/useful.js"></script>
+<script>
+
+let basePage = window.location.href.replace('index.html', 'search.html');
+loadNewPage(basePage);
+
+function loadNewPage(url){
+    let client = new HttpClient();
+    client.get(url, function(response) {
+        document.getElementById('contenuMain').innerHTML = response;
+    }, function (error){
+        console.log('log: ', error);
+    });
+}
+</script>
+</body>
