@@ -27,7 +27,7 @@ if(window.location.search == ""){
         basePage = window.location.origin + '/rt/' + 'search.html';
     }
 }else{
-    basePage = window.location.origin + '/rt/files' + window.location.search.replace('?', '') + '.html';
+    basePage = window.location.origin + '/rt/files/' + window.location.search.replace('?', '') + '.html';
 }
 loadNewPage(basePage);
 
