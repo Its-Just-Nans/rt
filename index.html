@@ -24,7 +24,7 @@ if(window.location.search == ""){
     if(window.location.href.match('index.html')){
     basePage = window.location.href.replace('index.html', 'search.html');
     }else{
-        basePage = window.location.href + 'search.html';
+        basePage = window.location.origin + '/rt/' + 'search.html';
     }
 }else{
     basePage = window.location.origin + '/rt/' + window.location.search.replace('?', '') + '.html';
