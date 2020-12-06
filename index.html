@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <head>
     <title>R&T</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
     <nav>
-
+        <h1 style="text-align: center;">Navigation</h1>
+        <ul>
+            <li><a id="link" href="codage-canal">Codage Canal</a></li>
+            <li><a id="link" href="test">fsdfsdf</a></li>
+        </ul>
+        
     </nav>
     <section id="contenuMain">
-        <a id="link" href="test">fsdfsdf</a>
+        
     </section>
 <script src="js/useful.js"></script>
 <script>
+    
 
-let basePage = window.location.href + 'search.html';
+let basePage;
+if(window.location.search == ""){
+    if(window.location.href.match('index.html')){
+    basePage = window.location.href.replace('index.html', 'search.html');
+}else{
+    basePage = window.location.href + 'search.html';
+}
+}else{
+    basePage = window.location.origni + '/rt/' + window.location.search.replace('?', '');
+}
 loadNewPage(basePage);
 
 function loadNewPage(url){
@@ -26,6 +42,15 @@ function loadNewPage(url){
     }, function (error){
         console.log('log: ', error);
     });
+}
+const nav =  document.getElementsByTagName('nav');
+const allLinks = nav[0].getElementsByTagName('a');
+for(let element of allLinks){
+    element.addEventListener('click', function () {
+            const link = this.getAttribute('href');
+            const newPath = window.location.origin + window.location.pathname + '?' + link;
+            this.setAttribute('href', newPath);
+        });
 }
 </script>
 </body>
