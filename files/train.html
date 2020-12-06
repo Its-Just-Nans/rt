@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-	canvas{
-		border: 1px solid black;
-		margin-top: 5px;
-	}
-	.buttonBinary{
-		height:40px;
-		width: 40px;
-		font-size: large;
-		margin-left: 2px;
-		margin-right: 2px;
-		display: inline-block;
-	}
-	.binary{
-		color: black;
-		text-align: center;
-		align-items: flex-start;
-		background-color: #EFEFEF;
-		box-sizing: border-box;
-		margin: 0em;
-		font: 400 13.3333px Arial;
-		padding: 9px 6px 1px 6px;
-		border: 0.5px solid #767676;
-		height: 40px;
-		width: 40px;
-		font-size: large;
-		margin-left: 2px;
-		margin-right: 2px;
-		display: inline-block;
-		border-radius: 1px;
-	}
-	#binaire{
-		font-size: 0;
-	}
-	#instruc{
-		
-		
-	}
-  </style>
-   <meta charset="UTF-8">
-</head>
- <body onload="init();">
-
-
-<div id='binaire' style="text-align:center;">
-</div>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+ 	<body>
+		<style>
+		canvas{
+			border: 1px solid black;
+			margin-top: 5px;
+		}
+		.buttonBinary{
+			height:40px;
+			width: 40px;
+			font-size: large;
+			margin-left: 2px;
+			margin-right: 2px;
+			display: inline-block;
+		}
+		.binary{
+			color: black;
+			text-align: center;
+			align-items: flex-start;
+			background-color: #EFEFEF;
+			box-sizing: border-box;
+			margin: 0em;
+			font: 400 13.3333px Arial;
+			padding: 9px 6px 1px 6px;
+			border: 0.5px solid #767676;
+			height: 40px;
+			width: 40px;
+			font-size: large;
+			margin-left: 2px;
+			margin-right: 2px;
+			display: inline-block;
+			border-radius: 1px;
+		}
+		#binaire{
+			font-size: 0;
+		}
+		#instruc{
+			
+			
+		}
+		</style>
+	<div id='binaire' style="text-align:center;">
+	</div>
 
 <canvas id="canvas" width="800px" height="100px"></canvas>
 <br>
@@ -82,357 +80,335 @@
 </div>
 
 
-<script type="application/javascript" >
-
-function init(){
-	canvas = document.getElementById("canvas");
-	verifCanvas = document.getElementById("verifCanvas");
-	binaire =  document.getElementById("binaire");
-	instruc = document.getElementById('instruc');
-	canvas.style.display = "none";
-	binaire.style.display = "none";
-	instruc.style.display = "none";
-	document.getElementById("solution").style.display = "none";
-	document.getElementById('buttonVerif').style.display = "none";
-	if(canvas.getContext) {
-		inCanvas = canvas.getContext('2d');
-		YcanvasBase = canvas.height;
-		
-	}
-}
-
-function generate(){
-		document.getElementById('solution').style.display = "none";
-	if(document.getElementById('valeur').selectedOptions[0].value != "none"){
-			binaire.innerHTML = "";
-			instruc.innerHTML = "Tracez un signal";
-			nombreButton = parseInt(document.getElementById('valeur').selectedOptions[0].value, 10);
-			for(var t = 0; t < nombreButton;t++){
-				value = Math.floor(Math.random() * Math.floor(2) );
-				document.getElementById('binaire').insertAdjacentHTML('beforeend', '<p class="binary" id="button'+ t +'">'+ value +'</p>');
-			}
-			canvas.style.width = nombreButton * 44 + 'px';
-			canvas.width = nombreButton * 44;
-			canvas.style.height = YcanvasBase + 'px';
-			canvas.height = YcanvasBase;
-			verifCanvas.style.width = nombreButton * 44 + 'px';
-			verifCanvas.width = nombreButton * 44;
-			verifCanvas.style.height = YcanvasBase + 'px';
-			verifCanvas.height = YcanvasBase;
-			Yzero = canvas.height/2;
-			Xzero = canvas.width/2;
-			inCanvas.clearRect(0, 0, canvas.width, canvas.height);
-
-			valeurMotif = Math.floor(Math.random() * Math.floor(3) );
-			valeurFormat = Math.floor(Math.random() * Math.floor(3) );
-			switch(valeurMotif){
-				case 0: instruc.innerHTML += ' Non Return to Zero (NRZ)';motif = 'nrz';break;
-				case 1: instruc.innerHTML += ' Return to Zero (RZ)';motif = 'rz';break;
-				case 2: instruc.innerHTML += ' Biphase';motif = 'bip';break;
-				default: alert('erreur');
-			}
-			switch(valeurFormat){
-				case 0: instruc.innerHTML += ' Unipolaire';format = 'unip';break;
-				case 1: instruc.innerHTML += ' Bipolaire';format = 'bipo';break;
-				case 2: instruc.innerHTML += ' Alterné';format = 'alte';break;
-				default: alert('erreur');
-			}
-			canvas.style.display = "block";
-			binaire.style.display = "inline";
-			instruc.style.display = "block";
-			document.getElementById('buttonGen').style.display = "none";
-			document.getElementById('buttonVerif').style.display = "block";
-			grille();
-			inCanvas.beginPath();
-			inCanvas.moveTo(0, Yzero);
-			coord = [];
-			oldX = 0;
-			canvas.addEventListener("mousemove", traceUser);
-
-
-	}else{
-		alert('Veuillez selectionner une valeur');
-	}
-
-
-
-}
-
-function traceUser() {
-	if(event.buttons == 1){
-		if(event.offsetX > oldX){
-			inCanvas.lineTo(event.offsetX, event.offsetY);
-			//document.getElementById('instruc').innerHTML = event.offsetX+','+ event.offsetY;
-			oldX = event.offsetX;
-			coord.push([event.offsetX, event.offsetY]);
-			inCanvas.stroke();
-		}else{
-			inCanvas.stroke();
-			inCanvas.clearRect(0, 0, verifCanvas.width, verifCanvas.height);
-			grille();
-			while(coord[(coord.length-1)][0] > event.offsetX){
-				coord.pop();
-			}
-			oldX = coord[(coord.length-1)][0];
-			inCanvas.beginPath();
-			inCanvas.moveTo(0, Yzero);
-			if(event.offsetX > coord[0][0]){
-
+	<script type="application/javascript" >
+	/* this js is ugly*/
+	function init(){
+		canvas = document.getElementById("canvas");
+		verifCanvas = document.getElementById("verifCanvas");
+		binaire =  document.getElementById("binaire");
+		instruc = document.getElementById('instruc');
+		canvas.style.display = "none";
+		binaire.style.display = "none";
+		instruc.style.display = "none";
+		document.getElementById("solution").style.display = "none";
+		document.getElementById('buttonVerif').style.display = "none";
+		if(canvas.getContext) {
+			inCanvas = canvas.getContext('2d');
+			YcanvasBase = canvas.height;
 			
-			coord.forEach(function(item, index, array) {
-								
-								inCanvas.lineTo(item[0], item[1]);
-								inCanvas.stroke();
-						});
-			}else{
-				alert('ici');
+		}
+	}
+
+	function generate(){
+			document.getElementById('solution').style.display = "none";
+		if(document.getElementById('valeur').selectedOptions[0].value != "none"){
+				binaire.innerHTML = "";
+				instruc.innerHTML = "Tracez un signal";
+				nombreButton = parseInt(document.getElementById('valeur').selectedOptions[0].value, 10);
+				for(var t = 0; t < nombreButton;t++){
+					value = Math.floor(Math.random() * Math.floor(2) );
+					document.getElementById('binaire').insertAdjacentHTML('beforeend', '<p class="binary" id="button'+ t +'">'+ value +'</p>');
+				}
+				canvas.style.width = nombreButton * 44 + 'px';
+				canvas.width = nombreButton * 44;
+				canvas.style.height = YcanvasBase + 'px';
+				canvas.height = YcanvasBase;
+				verifCanvas.style.width = nombreButton * 44 + 'px';
+				verifCanvas.width = nombreButton * 44;
+				verifCanvas.style.height = YcanvasBase + 'px';
+				verifCanvas.height = YcanvasBase;
+				Yzero = canvas.height/2;
+				Xzero = canvas.width/2;
+				inCanvas.clearRect(0, 0, canvas.width, canvas.height);
+
+				valeurMotif = Math.floor(Math.random() * Math.floor(3) );
+				valeurFormat = Math.floor(Math.random() * Math.floor(3) );
+				switch(valeurMotif){
+					case 0: instruc.innerHTML += ' Non Return to Zero (NRZ)';motif = 'nrz';break;
+					case 1: instruc.innerHTML += ' Return to Zero (RZ)';motif = 'rz';break;
+					case 2: instruc.innerHTML += ' Biphase';motif = 'bip';break;
+					default: alert('erreur');
+				}
+				switch(valeurFormat){
+					case 0: instruc.innerHTML += ' Unipolaire';format = 'unip';break;
+					case 1: instruc.innerHTML += ' Bipolaire';format = 'bipo';break;
+					case 2: instruc.innerHTML += ' Alterné';format = 'alte';break;
+					default: alert('erreur');
+				}
+				canvas.style.display = "block";
+				binaire.style.display = "inline";
+				instruc.style.display = "block";
+				document.getElementById('buttonGen').style.display = "none";
+				document.getElementById('buttonVerif').style.display = "block";
+				grille();
+				inCanvas.beginPath();
+				inCanvas.moveTo(0, Yzero);
+				coord = [];
 				oldX = 0;
-				coord.forEach(function(item, index, array){coord.pop();});
-				alert(coord);
-			}
-			
+				canvas.addEventListener("mousemove", traceUser);
 
+
+		}else{
+			alert('Veuillez selectionner une valeur');
 		}
+
+
+
 	}
-}
 
-function verif(){
-	canvas.removeEventListener("mousemove", traceUser);
-	document.getElementById('buttonVerif').style.display = "none";
-	document.getElementById('solution').style.display = "block";
-	inCanvas = verifCanvas.getContext('2d');
-	inCanvas.clearRect(0, 0, verifCanvas.width, verifCanvas.height);
-	mettreTableau();
-	grille();
-	trace();
-	inCanvas = canvas.getContext('2d');
-	document.getElementById('buttonGen').style.display = "block";
-	document.getElementById('textSolution').innerHTML = verifier+"";
-}
+	function traceUser() {
+		if(event.buttons == 1){
+			if(event.offsetX > oldX){
+				inCanvas.lineTo(event.offsetX, event.offsetY);
+				//document.getElementById('instruc').innerHTML = event.offsetX+','+ event.offsetY;
+				oldX = event.offsetX;
+				coord.push([event.offsetX, event.offsetY]);
+				inCanvas.stroke();
+			}else{
+				inCanvas.stroke();
+				inCanvas.clearRect(0, 0, verifCanvas.width, verifCanvas.height);
+				grille();
+				while(coord[(coord.length-1)][0] > event.offsetX){
+					coord.pop();
+				}
+				oldX = coord[(coord.length-1)][0];
+				inCanvas.beginPath();
+				inCanvas.moveTo(0, Yzero);
+				if(event.offsetX > coord[0][0]){
 
-function mettreTableau(){
-	lastTab = [];
-	var count = 0;
-	var oldCount = 0;
-	var oldCount2 = 0;
-	var total = 0;
-	for(var o=1;o<(nombreButton*2+1);o++){
-		total = 0;
-		var moyenne = 0;
-
-		while(coord[count][0] <= ((Xcase/2)*o)){
-				//console.log('coord['+count+'][0]= '+ coord[count][0]);
 				
-				//console.log(count);
-				if(count < (coord.length-1) && count >= oldCount){
-				//console.log('coord['+count+'][1]= '+ coord[count][1]);
-				total += coord[count][1];
+				coord.forEach(function(item, index, array) {
+									
+									inCanvas.lineTo(item[0], item[1]);
+									inCanvas.stroke();
+							});
 				}else{
-					break;
+					alert('ici');
+					oldX = 0;
+					coord.forEach(function(item, index, array){coord.pop();});
+					alert(coord);
 				}
-				count++;
+				
+
+			}
 		}
-		oldCount2 = count;
-		console.log(count, oldCount);
-		count = count - oldCount;
-		console.log(count);
-		moyenne = total/count;
-		oldCount = oldCount2;
-		count = oldCount2;
-		lastTab.push(moyenne);
 	}
-}
 
-function environ(valeur1, valeur2){
-	if(valeur1 == valeur2 || ( valeur1 < (valeur2+valeur2/4) && valeur1 > (valeur2-valeur2/4) ) ){
-		return true;
-	}else{
-		return false;
+	function verif(){
+		canvas.removeEventListener("mousemove", traceUser);
+		document.getElementById('buttonVerif').style.display = "none";
+		document.getElementById('solution').style.display = "block";
+		inCanvas = verifCanvas.getContext('2d');
+		inCanvas.clearRect(0, 0, verifCanvas.width, verifCanvas.height);
+		mettreTableau();
+		grille();
+		trace();
+		inCanvas = canvas.getContext('2d');
+		document.getElementById('buttonGen').style.display = "block";
+		document.getElementById('textSolution').innerHTML = verifier+"";
 	}
-}
 
+	function mettreTableau(){
+		lastTab = [];
+		var count = 0;
+		var oldCount = 0;
+		var oldCount2 = 0;
+		var total = 0;
+		for(var o=1;o<(nombreButton*2+1);o++){
+			total = 0;
+			var moyenne = 0;
 
-function trace(){
-	verifier = true;
-	Yzero = canvas.height/2;
-	Xzero = canvas.width/2;
-	inCanvas.strokeStyle = 'red';
-	if(nombreButton <= 10)
-		inCanvas.lineWidth = 3;
-	else
-		inCanvas.lineWidth = 2;
-	inCanvas.beginPath();
-	inCanvas.moveTo(-1, Yzero);
-	var compteur = 0;
-	var compteurUn = 0;
-		if(motif === "nrz"){
-			if(format === "unip"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
-						if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero)){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero);
-
+			while(coord[count][0] <= ((Xcase/2)*o)){
+					//console.log('coord['+count+'][0]= '+ coord[count][0]);
+					
+					//console.log(count);
+					if(count < (coord.length-1) && count >= oldCount){
+					//console.log('coord['+count+'][1]= '+ coord[count][1]);
+					total += coord[count][1];
 					}else{
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
-						if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero-(2*Ycase))){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero-(2*Ycase));
+						break;
 					}
-				}
+					count++;
+			}
+			oldCount2 = count;
+			console.log(count, oldCount);
+			count = count - oldCount;
+			console.log(count);
+			moyenne = total/count;
+			oldCount = oldCount2;
+			count = oldCount2;
+			lastTab.push(moyenne);
+		}
+	}
 
-			}else if(format === "bipo"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
-						if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero+(2*Ycase))){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero+(2*Ycase));
+	function environ(valeur1, valeur2){
+		if(valeur1 == valeur2 || ( valeur1 < (valeur2+valeur2/4) && valeur1 > (valeur2-valeur2/4) ) ){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
-					}else{
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));7
-						if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero-(2*Ycase))){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero-(2*Ycase));
-					}
-				}
-			
-			}else if(format === "alte"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
-						if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero-(2*Ycase))){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero);
 
-					}else{
-						compteurUn++;
-						if(compteurUn%2 == 0){
-							inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
-							if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero+(2*Ycase))){verifier = false;}}
-							inCanvas.lineTo((Xcase*compteur), Yzero+(2*Ycase));
+	function trace(){
+		verifier = true;
+		Yzero = canvas.height/2;
+		Xzero = canvas.width/2;
+		inCanvas.strokeStyle = 'red';
+		if(nombreButton <= 10)
+			inCanvas.lineWidth = 3;
+		else
+			inCanvas.lineWidth = 2;
+		inCanvas.beginPath();
+		inCanvas.moveTo(-1, Yzero);
+		var compteur = 0;
+		var compteurUn = 0;
+			if(motif === "nrz"){
+				if(format === "unip"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
+							if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero)){verifier = false;}}
+							inCanvas.lineTo((Xcase*compteur), Yzero);
+
 						}else{
 							inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
 							if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero-(2*Ycase))){verifier = false;}}
 							inCanvas.lineTo((Xcase*compteur), Yzero-(2*Ycase));
 						}
 					}
-				}
-			
-			}
-			
-		}else if(motif === "rz" ){
-			if(format === "unip"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
-						if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero)){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero);
 
-					}else{
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
-						if(verifier == true){if( !environ((lastTab[compteur]),Yzero-(2*Ycase))){verifier = false;}}
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
-						if(verifier == true){if( !environ((lastTab[compteur+1]),Yzero)){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero);
-					}
-				}
-
-			}else if(format === "bipo"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
-						if(verifier == true){if( !environ((lastTab[compteur]),Yzero+(2*Ycase))){verifier = false;}}
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
-						if(verifier == true){if( !environ((lastTab[compteur+1]),Yzero)){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero);
-
-					}else{
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
-						if(verifier == true){if( !environ((lastTab[compteur]),Yzero-(2*Ycase))){verifier = false;}}
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
-						if(verifier == true){if( !environ((lastTab[compteur+1]),Yzero)){verifier = false;}}
-						inCanvas.lineTo((Xcase*compteur), Yzero);
-					}
-				}
-			
-			}else if(format === "alte"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
-						inCanvas.lineTo((Xcase*compteur), Yzero);
-
-					}else{
-						compteurUn++;
-						if(compteurUn%2 == 0){
+				}else if(format === "bipo"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
 							inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
-						inCanvas.lineTo((Xcase*compteur), Yzero);
+							if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero+(2*Ycase))){verifier = false;}}
+							inCanvas.lineTo((Xcase*compteur), Yzero+(2*Ycase));
+
+						}else{
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));7
+							if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero-(2*Ycase))){verifier = false;}}
+							inCanvas.lineTo((Xcase*compteur), Yzero-(2*Ycase));
+						}
+					}
+				
+				}else if(format === "alte"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
+							if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero-(2*Ycase))){verifier = false;}}
+							inCanvas.lineTo((Xcase*compteur), Yzero);
+
+						}else{
+							compteurUn++;
+							if(compteurUn%2 == 0){
+								inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
+								if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero+(2*Ycase))){verifier = false;}}
+								inCanvas.lineTo((Xcase*compteur), Yzero+(2*Ycase));
+							}else{
+								inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
+								if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero-(2*Ycase))){verifier = false;}}
+								inCanvas.lineTo((Xcase*compteur), Yzero-(2*Ycase));
+							}
+						}
+					}
+				
+				}
+				
+			}else if(motif === "rz" ){
+				if(format === "unip"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
+							if(verifier == true){if( !environ(((lastTab[compteur]+lastTab[compteur+1])/2),Yzero)){verifier = false;}}
+							inCanvas.lineTo((Xcase*compteur), Yzero);
+
 						}else{
 							inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
 							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
+							if(verifier == true){if( !environ((lastTab[compteur]),Yzero-(2*Ycase))){verifier = false;}}
 							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
+							if(verifier == true){if( !environ((lastTab[compteur+1]),Yzero)){verifier = false;}}
 							inCanvas.lineTo((Xcase*compteur), Yzero);
 						}
 					}
-				}
-			
-			}
-			
-		}else if(motif === "bip" ){
-			if(format === "unip"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
-						inCanvas.lineTo((Xcase*compteur), Yzero);
 
-					}else{
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur)), Yzero+(2*Ycase));
-						inCanvas.lineTo((Xcase*compteur), Yzero);
+				}else if(format === "bipo"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
+							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
+							if(verifier == true){if( !environ((lastTab[compteur]),Yzero+(2*Ycase))){verifier = false;}}
+							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
+							if(verifier == true){if( !environ((lastTab[compteur+1]),Yzero)){verifier = false;}}
+							inCanvas.lineTo((Xcase*compteur), Yzero);
+
+						}else{
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
+							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
+							if(verifier == true){if( !environ((lastTab[compteur]),Yzero-(2*Ycase))){verifier = false;}}
+							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
+							if(verifier == true){if( !environ((lastTab[compteur+1]),Yzero)){verifier = false;}}
+							inCanvas.lineTo((Xcase*compteur), Yzero);
+						}
 					}
-				}
+				
+				}else if(format === "alte"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
+							inCanvas.lineTo((Xcase*compteur), Yzero);
 
-			}else if(format === "bipo"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur)), Yzero-(2*Ycase));
-
-					}else{
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
-						inCanvas.lineTo((Xcase*(compteur)), Yzero+(2*Ycase));
+						}else{
+							compteurUn++;
+							if(compteurUn%2 == 0){
+								inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
+							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
+							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
+							inCanvas.lineTo((Xcase*compteur), Yzero);
+							}else{
+								inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
+								inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
+								inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero);
+								inCanvas.lineTo((Xcase*compteur), Yzero);
+							}
+						}
 					}
+				
 				}
-			
-			}else if(format === "alte"){
-				for (let item of document.getElementsByClassName('binary')) {
-						compteur ++;
-					if(item.innerHTML === "0"){
-						inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
-						inCanvas.lineTo((Xcase*compteur), Yzero);
+				
+			}else if(motif === "bip" ){
+				if(format === "unip"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
+							inCanvas.lineTo((Xcase*compteur), Yzero);
 
-					}else{
-						compteurUn++;
-						if(compteurUn%2 == 0){
+						}else{
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
+							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
+							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
+							inCanvas.lineTo((Xcase*(compteur)), Yzero+(2*Ycase));
+							inCanvas.lineTo((Xcase*compteur), Yzero);
+						}
+					}
+
+				}else if(format === "bipo"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
 							inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
 							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
 							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
 							inCanvas.lineTo((Xcase*(compteur)), Yzero-(2*Ycase));
+
 						}else{
 							inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
 							inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
@@ -440,32 +416,52 @@ function trace(){
 							inCanvas.lineTo((Xcase*(compteur)), Yzero+(2*Ycase));
 						}
 					}
+				
+				}else if(format === "alte"){
+					for (let item of document.getElementsByClassName('binary')) {
+							compteur ++;
+						if(item.innerHTML === "0"){
+							inCanvas.lineTo((Xcase*(compteur-1)), Yzero);
+							inCanvas.lineTo((Xcase*compteur), Yzero);
+
+						}else{
+							compteurUn++;
+							if(compteurUn%2 == 0){
+								inCanvas.lineTo((Xcase*(compteur-1)), Yzero+(2*Ycase));
+								inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
+								inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
+								inCanvas.lineTo((Xcase*(compteur)), Yzero-(2*Ycase));
+							}else{
+								inCanvas.lineTo((Xcase*(compteur-1)), Yzero-(2*Ycase));
+								inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero-(2*Ycase));
+								inCanvas.lineTo((Xcase*(compteur-1)+(Xcase/2)), Yzero+(2*Ycase));
+								inCanvas.lineTo((Xcase*(compteur)), Yzero+(2*Ycase));
+							}
+						}
+					}
+				
 				}
-			
 			}
-		}
-		inCanvas.stroke();
-}
-function grille(){
-		inCanvas.fillStyle = 'grey';
-		Ycase = canvas.height/6;
-		Xcase = canvas.width/nombreButton;
-		var compteur = 0;
-		for(var i = 0; i < (canvas.height); i += Ycase){
-			compteur++;
-			if(i== Ycase || i== 3*Ycase || i== 5*Ycase){
-				inCanvas.fillRect(0, Math.floor(i), canvas.width, 2);
+			inCanvas.stroke();
+	}
+	function grille(){
+			inCanvas.fillStyle = 'grey';
+			Ycase = canvas.height/6;
+			Xcase = canvas.width/nombreButton;
+			var compteur = 0;
+			for(var i = 0; i < (canvas.height); i += Ycase){
+				compteur++;
+				if(i== Ycase || i== 3*Ycase || i== 5*Ycase){
+					inCanvas.fillRect(0, Math.floor(i), canvas.width, 2);
+				}
 			}
-		}
-		for(var f = 0; f < (canvas.width-(Xcase/2)); f += Xcase){
-			if(f != 0){
-				inCanvas.fillRect(Math.floor(f), 0, 2, canvas.height);
+			for(var f = 0; f < (canvas.width-(Xcase/2)); f += Xcase){
+				if(f != 0){
+					inCanvas.fillRect(Math.floor(f), 0, 2, canvas.height);
+				}
 			}
-		}
-}
-
-
-
-</script>
-</body>
+	}
+	init();
+	</script>
+	</body>
 </html>

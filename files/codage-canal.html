@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+ <body onload="init();">
+	<style>
 	#canvas{
 		border: 1px solid black;
 		margin-top: 5px;
@@ -17,46 +20,39 @@
 	#binaire{
 		font-size: 0;
 	}
-  </style>
-	<meta charset="UTF-8">
-</head>
- <body onload="init();">
-<center>
+	</style>
+<div style="text-align: center;">
+	<div id='binaire'>
+	<button class="buttonBinary" id="button0" onclick="changeValue(0)">0</button>
+	<button class="buttonBinary"  id="button1" onclick="changeValue(1)">0</button>
+	<button class="buttonBinary" id="button2" onclick="changeValue(2)">0</button>
+	<button class="buttonBinary" id="button3" onclick="changeValue(3)">0</button>
+	<button class="buttonBinary" id="button4" onclick="changeValue(4)">0</button>
+	<button class="buttonBinary" id="button5" onclick="changeValue(5)">0</button>
+	<button class="buttonBinary" id="button6" onclick="changeValue(6)">0</button>
+	<button class="buttonBinary" id="button7" onclick="changeValue(7)">0</button>
+	<button class="buttonBinary" id="button8" onclick="changeValue(8)">0</button>
+	<button class="buttonBinary"  id="button9" onclick="changeValue(9)">0</button><button class="buttonBinary" id="button10" onclick="changeValue(10)">0</button></div>
 
+	<canvas id="canvas" width="800px" height="100px"></canvas>
+	<br>
+	<select id="motif">
+		<option value="nrz">Non Return to Zero (NRZ)</option>
+		<option value="rz">Return to Zero (RZ)</option>
+		<option value="bip">Biphase</option>
+	</select>
+	<select id="format">
+		<option value="unip">Unipolaire</option>
+		<option value="bipo">Bipolaire</option>
+		<option value="alte">Alterné</option>
+	</select>
+	<br>
+	<br>
+	<button id="addButton" onclick="addButton()">Ajouter un bouton</button>
+	<button id="suprrButton" onclick="suprrButton()">Supprimer un bouton</button>
+</div>
 
-<div id='binaire'>
-
-<button class="buttonBinary" id="button0" onclick="changeValue(0)">0</button>
-<button class="buttonBinary"  id="button1" onclick="changeValue(1)">0</button>
-<button class="buttonBinary" id="button2" onclick="changeValue(2)">0</button>
-<button class="buttonBinary" id="button3" onclick="changeValue(3)">0</button>
-<button class="buttonBinary" id="button4" onclick="changeValue(4)">0</button>
-<button class="buttonBinary" id="button5" onclick="changeValue(5)">0</button>
-<button class="buttonBinary" id="button6" onclick="changeValue(6)">0</button>
-<button class="buttonBinary" id="button7" onclick="changeValue(7)">0</button>
-<button class="buttonBinary" id="button8" onclick="changeValue(8)">0</button>
-<button class="buttonBinary"  id="button9" onclick="changeValue(9)">0</button><button class="buttonBinary" id="button10" onclick="changeValue(10)">0</button></div>
-
-<canvas id="canvas" width="800px" height="100px"></canvas>
-<br>
-<select id="motif">
-    <option value="nrz">Non Return to Zero (NRZ)</option>
-    <option value="rz">Return to Zero (RZ)</option>
-    <option value="bip">Biphase</option>
-</select>
-<select id="format">
-    <option value="unip">Unipolaire</option>
-    <option value="bipo">Bipolaire</option>
-    <option value="alte">Alterné</option>
-</select>
-<br>
-<br>
-<button id="addButton" onclick="addButton()">Ajouter un bouton</button>
-<button id="suprrButton" onclick="suprrButton()">Supprimer un bouton</button>
-</center>
-</body>
-<script type="application/javascript" >
-
+<script type="application/javascript">
 function init(){
     nbButton = Array();
     nombreButton = 10;
@@ -304,5 +300,7 @@ function changeValue(valeur){
 }
 document.getElementById('motif').addEventListener("input",  traceCanvas );
 document.getElementById('format').addEventListener("input",  traceCanvas );
+init();
 </script>
+</body>
 <html>
