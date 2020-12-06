@@ -5,7 +5,7 @@
 </head>
 <body>
     <nav>
-        <h1 style="text-align: center;"><a id="link" href="index">Navigation</a></h1>
+        <h1 style="text-align: center;"><a id="link" href="">Navigation</a></h1>
         <ul>
             <li><a id="link" href="codage-canal">Codage Canal</a></li>
             <li><a id="link" href="test">fsdfsdf</a></li>
@@ -23,9 +23,9 @@ let basePage;
 if(window.location.search == ""){
     if(window.location.href.match('index.html')){
     basePage = window.location.href.replace('index.html', 'search.html');
-}else{
-    basePage = window.location.href + 'search.html';
-}
+    }else{
+        basePage = window.location.href + 'search.html';
+    }
 }else{
     basePage = window.location.origin + '/rt/' + window.location.search.replace('?', '') + '.html';
 }
