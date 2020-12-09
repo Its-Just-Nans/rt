@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 	</head>
- <body onload="init();">
+ <body>
 	<style>
 	#canvas{
 		border: 1px solid black;
@@ -22,17 +22,7 @@
 	}
 	</style>
 <div style="text-align: center;">
-	<div id='binaire'>
-	<button class="buttonBinary" id="button0" onclick="changeValue(0)">0</button>
-	<button class="buttonBinary"  id="button1" onclick="changeValue(1)">0</button>
-	<button class="buttonBinary" id="button2" onclick="changeValue(2)">0</button>
-	<button class="buttonBinary" id="button3" onclick="changeValue(3)">0</button>
-	<button class="buttonBinary" id="button4" onclick="changeValue(4)">0</button>
-	<button class="buttonBinary" id="button5" onclick="changeValue(5)">0</button>
-	<button class="buttonBinary" id="button6" onclick="changeValue(6)">0</button>
-	<button class="buttonBinary" id="button7" onclick="changeValue(7)">0</button>
-	<button class="buttonBinary" id="button8" onclick="changeValue(8)">0</button>
-	<button class="buttonBinary"  id="button9" onclick="changeValue(9)">0</button><button class="buttonBinary" id="button10" onclick="changeValue(10)">0</button></div>
+	<div id='binaire'></div>
 
 	<canvas id="canvas" width="800px" height="100px"></canvas>
 	<br>
@@ -48,40 +38,41 @@
 	</select>
 	<br>
 	<br>
-	<button id="addButton" onclick="addButton()">Ajouter un bouton</button>
-	<button id="suprrButton" onclick="suprrButton()">Supprimer un bouton</button>
+	<button id="addButton">Ajouter un bouton</button>
+	<button id="suprrButton">Supprimer un bouton</button>
 </div>
 
 <script type="application/javascript">
 function init(){
-    nbButton = Array();
-    nombreButton = 10;
-    for(var i=0; i<10;i++)
-        nbButton.push(document.getElementById("button"+i));
-		canvas = document.getElementById("canvas");
-   if (canvas.getContext) {
-
-		inCanvas = canvas.getContext('2d');
-		YcanvasBase = canvas.height;
-		traceCanvas();
-   }
-   	for (let item of document.getElementsByClassName('buttonBinary')) {
-		item.addEventListener("click",  traceCanvas );
+	document.getElementById('addButton').addEventListener('click', function(){
+		addButton();
+	}, false);
+	document.getElementById('suprrButton').addEventListener('click', function(){
+		suprrButton();
+	}, false);
+	nbButton = document.getElementsByClassName('buttonBinary')
+	canvas = document.getElementById("canvas");
+	if(canvas.getContext){
+			inCanvas = canvas.getContext('2d');
+			traceCanvas();
+	}
+	for(let i=0;i < 10 ;i++){
+		addButton();
 	}
 }
 
 function traceCanvas(){
-		document.getElementById("canvas").style.width = (nombreButton+1) * 44 + 'px';
-		document.getElementById("canvas").style.height = YcanvasBase + 'px';
-		Yzero = canvas.height/2;
-		Xzero = canvas.width/2;
-		inCanvas.clearRect(0, 0, canvas.width, canvas.height);
-		motif = document.getElementById('motif').selectedOptions[0].value;
-		format = document.getElementById('format').selectedOptions[0].value;
-		grille();
-		trace();
+	document.getElementById("canvas").style.width = nbButton.length * 44 + 'px';
+	document.getElementById("canvas").style.height = canvas.height + 'px';
+	Yzero = canvas.height/2;
+	Xzero = canvas.width/2;
+	inCanvas.clearRect(0, 0, canvas.width, canvas.height);
+	grille();
+	trace();
 }
 function trace(){
+let motif = document.getElementById('motif').selectedOptions[0].value;
+let format = document.getElementById('format').selectedOptions[0].value;
 inCanvas.strokeStyle = 'red';
 inCanvas.lineWidth = 2;
 inCanvas.beginPath();
@@ -258,7 +249,7 @@ var compteurUn = 0;
 function grille(){
 		inCanvas.fillStyle = 'grey';
 		Ycase = canvas.height/6;
-		Xcase = canvas.width/(nombreButton+1);
+		Xcase = canvas.width/nbButton.length;
 		var compteur = 0;
 		for(var i = 0; i < (canvas.height); i += Ycase){
 			compteur++;
@@ -275,31 +266,37 @@ function grille(){
 
 
 function addButton(){
-	if(nombreButton < 20 ){
-		nombreButton++;
-		document.getElementById('binaire').insertAdjacentHTML('beforeend', '<button  class="buttonBinary" id="button'+nombreButton+'" onclick="changeValue('+nombreButton+')">0</button>');
-	}
-	for (let item of document.getElementsByClassName('buttonBinary')) {
-		item.addEventListener("click",  traceCanvas );
-	}
+	let button = document.createElement('button');
+	button.className = 'buttonBinary';
+	button.id = 'button-' + (nbButton.length+1);
+	button.innerHTML = '0';
+	document.getElementById('binaire').append(button);
+	button.addEventListener('click', function(){
+		let numero = parseInt(this.id.split('-')[1], 10);
+		changeValue(numero);
+		traceCanvas();
+	}, false);
 	traceCanvas();
 }
+
 function suprrButton(){
-	if(nombreButton >= 11 ){
-		document.getElementById('button'+nombreButton).remove();
-		nombreButton--;
+	if(nbButton.length >= 11 ){
+		document.getElementById('button-'+nbButton.length).remove();
 	}
 	traceCanvas();
 }
 
 function changeValue(valeur){
-    if(parseInt(document.getElementById('button'+ valeur).innerHTML,10) == 0)
-        document.getElementById('button'+ valeur).innerHTML = 1;
-    else
-        document.getElementById('button'+ valeur).innerHTML = 0;
+	let buttonActual = document.getElementById('button-'+ valeur)
+    if(buttonActual.innerHTML == "0"){
+        buttonActual.innerHTML = "1";
+	}else{
+    	buttonActual.innerHTML = "0";
+	}
 }
-document.getElementById('motif').addEventListener("input",  traceCanvas );
-document.getElementById('format').addEventListener("input",  traceCanvas );
+
+document.getElementById('motif').addEventListener("input",  traceCanvas, false );
+document.getElementById('format').addEventListener("input",  traceCanvas, false );
 init();
 </script>
 </body>
