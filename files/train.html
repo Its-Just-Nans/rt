@@ -72,7 +72,7 @@
 		<option value="19">19</option>
 		<option value="20">20</option>
 	</select>
-	<button id="addButton">Générer un exercice</button>
+	<button id="generateButton">Générer un exercice</button>
 </div>
 <div id="buttonVerif">
 	<button id="verifButton">Vérifier</button>
@@ -95,12 +95,12 @@
 			inCanvas = canvas.getContext('2d');
 			YcanvasBase = canvas.height;
 		}
-		document.getElementById('addButton').addEventListener('click', function(){
+		document.getElementById('generateButton').addEventListener('click', function(){
 			generate();
-		});
+		}, false);
 		document.getElementById('verifButton').addEventListener('click', function(){
 			verif();
-		});
+		}, false);
 	}
 
 	function generate(){
@@ -149,7 +149,7 @@
 				inCanvas.moveTo(0, Yzero);
 				coord = [];
 				oldX = 0;
-				canvas.addEventListener("mousemove", traceUser);
+				canvas.addEventListener("mousemove", traceUser, false);
 
 
 		}else{
