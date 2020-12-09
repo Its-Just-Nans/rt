@@ -16,6 +16,8 @@ nav{
     right: 0px;
     width: 80vw;
     height: 100vh;
+    padding: 50px;
+    box-sizing: border-box;
 }
 
 a{
