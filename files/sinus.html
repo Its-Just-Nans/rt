@@ -158,11 +158,11 @@
 		document.getElementById("formule").innerHTML = "x(t) = "+ moy +"+"+ ampli + "*sin(2π*"+freq+"*t + "+ret+"π)";
 	
 	}
-	document.getElementById("ampli").addEventListener("input",  function() {ampliChange();});
-	document.getElementById("freq").addEventListener("input",  function() {freqChange();});
-	document.getElementById("moy").addEventListener("input",  function() {moyChange();});
-	document.getElementById("ret").addEventListener("input",  function() {retChange();});
-	document.getElementById("ech").addEventListener("input",  function() {echChange();});
+	document.getElementById("ampli").addEventListener("input",  function() {ampliChange();}, false);
+	document.getElementById("freq").addEventListener("input",  function() {freqChange();}, false);
+	document.getElementById("moy").addEventListener("input",  function() {moyChange();}, false);
+	document.getElementById("ret").addEventListener("input",  function() {retChange();}, false);
+	document.getElementById("ech").addEventListener("input",  function() {echChange();}, false);
 	init();
 	//Copyright n4n5
   </script>
