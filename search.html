@@ -1,8 +1,15 @@
+<style>
+	.result{
+		background-color: GhostWhite;
+		padding : 20px;
+		margin: 20px;
+	}
+</style>
 <label>Je cherche :</label>
 <input id="searchValue" type="text">
 <button type="button" id="search">Search</button>
 
-<div id="resultat" > </div>
+<div id="resultat"></div>
 
 
 
@@ -10,49 +17,13 @@
 
 
 <script>
-
-var data = {
-	"q":[{
-			"keys": ["math", "nombres", "imaginaires", "réel"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:nombres-complexes-point-de-vue-algebrique"],
-			"2": ["https://www.youtube.com/watch?v=T647CGsuOVU&list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF"]
-		},
-		{
-			"keys": ["math", "matrice"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:matrices"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["math", "lignes", "convertisseur" ],
-			"1": ["zer"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["math", "suite"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["linux", "bash", "shell"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["internet", "html", "css"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["math", "suite"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		},
-		{
-			"keys": ["math", "suite"],
-			"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
-			"2": ["zer"]
-		}]
-};
+const datas;
+makeRequest('GET', './ressources/data.json').then(function(resposnse){
+	datas = JSON.parse(response);
+}).catch(function (error){
+	//no data :(
+});
+var data;
 
 document.getElementById('search').onclick = function(){
 	document.getElementById('resultat').innerHTML = "";
@@ -89,6 +60,7 @@ function printResult(tableauResulat){
 			let lien = document.createElement('a');
 			lien.href = link;
 			lien.innerHTML = link;
+			resultatHTML.className = 'result';
 			lien.target= "_blank";
 			resultatHTML.append(lien);
 			document.getElementById('resultat').append(resultatHTML);
