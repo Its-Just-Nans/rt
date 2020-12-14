@@ -33,14 +33,13 @@ if(window.location.search == ""){
 loadNewPage(basePage);
 
 function loadNewPage(url){
-    let client = new HttpClient();
-    client.get(url, function(response) {
+    makeRequest('GET', url).then( function(response){
         document.getElementById('contenuMain').innerHTML = response;
         let allScripts = document.getElementById('contenuMain').getElementsByTagName('script');
         for(let scripts of allScripts){
             eval(scripts.innerHTML);
         }
-    }, function (error){
+    }).catch(function (error){
         console.log('log: ', error);
     });
 }
