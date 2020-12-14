@@ -17,13 +17,12 @@
 
 
 <script>
-const datas;
+var datas;
 makeRequest('GET', './ressources/data.json').then(function(resposnse){
 	datas = JSON.parse(response);
 }).catch(function (error){
 	//no data :(
 });
-var data;
 
 document.getElementById('search').onclick = function(){
 	document.getElementById('resultat').innerHTML = "";
@@ -32,7 +31,7 @@ document.getElementById('search').onclick = function(){
 	let result = [];
 
 	for(let word of wordOfQuery){
-		for(let element of data.q){
+		for(let element of datas.q){
 			for(let key of element.keys){
 				if( prequePareil(word,key) ){
 					let index = data.q.indexOf(element);
@@ -51,9 +50,9 @@ function printResult(tableauResulat){
 	for(let element of tableauResulat){
 		let links;
 		if(true){
-			links = data.q[element][1];
+			links = datas.q[element][1];
 		}else{
-			links = data.q[element][2];
+			links = datas.q[element][2];
 		}
 		for(let link of links){
 			let resultatHTML = document.createElement('div');
