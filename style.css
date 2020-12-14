@@ -18,6 +18,7 @@ nav{
     height: 100vh;
     padding: 50px;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 a{

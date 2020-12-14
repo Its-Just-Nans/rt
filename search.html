@@ -1,11 +1,22 @@
 <style>
 	.result{
 		background-color: GhostWhite;
-		padding : 20px;
 		margin: 20px;
+		border: 1px dashed grey;
+	}
+	.result > a{
+		display: block;
+		padding: 20px;
+		overflow: hidden;
 	}
 </style>
-<label>Je cherche :</label>
+<label>Je cherche </label>
+<select id="typeOfSearch">
+	<option value="1">à mieux comprendre </option>
+	<option value="2">à en savoir plus sur </option>
+	<option value="3">à tout savoir sur</option>
+</select>
+<label> le sujet suivant :</label>
 <input id="searchValue" type="text">
 <button type="button" id="search">Search</button>
 
@@ -18,10 +29,15 @@
 
 <script>
 var datas;
-makeRequest('GET', './ressources/data.json').then(function(resposnse){
+makeRequest('GET', './ressources/data.json').then(function(response){
 	datas = JSON.parse(response);
 }).catch(function (error){
 	//no data :(
+});
+document.getElementById('searchValue').addEventListener('keyup', function(event) {
+  if (event.keyCode === 13) {
+    document.getElementById('search').click()
+  }
 });
 
 document.getElementById('search').onclick = function(){
@@ -33,8 +49,8 @@ document.getElementById('search').onclick = function(){
 	for(let word of wordOfQuery){
 		for(let element of datas.q){
 			for(let key of element.keys){
-				if( prequePareil(word,key) ){
-					let index = data.q.indexOf(element);
+				if( presquePareil(word, key) ){
+					let index = datas.q.indexOf(element);
 					if(!result.includes(index)){
 						result.push(index);
 					}
@@ -49,16 +65,25 @@ document.getElementById('search').onclick = function(){
 function printResult(tableauResulat){
 	for(let element of tableauResulat){
 		let links;
-		if(true){
+		if(document.getElementById('typeOfSearch').value == 3){
+			links = datas.q[element][1].concat(datas.q[element][2])
+		}else if(document.getElementById('typeOfSearch').value == 1){
 			links = datas.q[element][1];
-		}else{
+		}else if(document.getElementById('typeOfSearch').value == 2){
 			links = datas.q[element][2];
 		}
 		for(let link of links){
-			let resultatHTML = document.createElement('div');
 			let lien = document.createElement('a');
+			let resultatHTML = document.createElement('div');
+			try{
+				const url = new URL(link);
+				lien.innerHTML = '<h3>' + url.hostname + '</h3>';
+				lien.innerHTML += '<p>' + link + '</p>';
+			}catch{
+				lien.innerHTML = link;
+			}
 			lien.href = link;
-			lien.innerHTML = link;
+			
 			resultatHTML.className = 'result';
 			lien.target= "_blank";
 			resultatHTML.append(lien);
@@ -68,10 +93,13 @@ function printResult(tableauResulat){
 }
 
 
-function prequePareil(wordInQuery, wordInData){
+function presquePareil(wordInQuery, wordInData){
+	wordInQuery = removeAccent(wordInQuery);
+	wordInData = removeAccent(wordInData);
 	if(wordInQuery == wordInData){
 		return true;
 	}else{
+		debugger;
 		if(wordInQuery.slice(-1) == 's'){
 			if(wordInQuery.substring(0, wordInQuery.length - 1) == wordInData){
 				return true;
@@ -84,13 +112,13 @@ function prequePareil(wordInQuery, wordInData){
 			}else{
 				return false;
 			}
-		}	
+		}
 	}
 }
 
-function getFavicon(){
+function getFavicon(string){
     var favicon = undefined;
-    var nodeList = document.getElementsByTagName("link");
+    var nodeList = string.getElementsByTagName("link");
     for (var i = 0; i < nodeList.length; i++)
     {
         if((nodeList[i].getAttribute("rel") == "icon")||(nodeList[i].getAttribute("rel") == "shortcut icon"))
@@ -103,12 +131,11 @@ function getFavicon(){
 
 
 
-function getTitle(){
+function getTitle(string){
     var title = undefined;
-    var nodeList = document.getElementsByTagName("title");
+    var nodeList = string.getElementsByTagName("title");
     title = nodeList[0].innerHTML;
 
     return title;
 }
-getTitle()
 </script>
