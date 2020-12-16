@@ -1,8 +1,36 @@
-<blockquote>JQuery is bad</blockquote>
-<blockquote>dqsd</blockquote>
-<blockquote>dqsd</blockquote>
-<blockquote>dqsd</blockquote>
-<blockquote>dqsd</blockquote>
-<blockquote></blockquote>
-<blockquote></blockquote>
-<blockquote></blockquote>
+<script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+<style src="../styleREADME.css"></style>
+<div id="globalReadMe">
+
+</div>
+<pre id="globalReadMeText">
+# test
+
+### Node.js
+Commande pour créer un serveur web rapidement
+```sh
+npm install --global http-server //or npm install -g http-server
+
+cd YOUR-DIRECTORY
+http-server
+```
+
+</pre>
+<script type="application/javascript">
+    setTimeout(function(){
+        render();
+    }, 1000);
+    function render(){
+        if(showdown){
+            let converter = new showdown.Converter();
+            converter.setFlavor('github');
+            let html = converter.makeHtml(document.getElementById('globalReadMeText').innerHTML);
+            document.getElementById('globalReadMeText').remove();
+            document.getElementById('globalReadMe').innerHTML = html;
+        }else{
+            setTimeout(function(){
+                render();
+            }, 1000);
+        }
+    }
+</script>
