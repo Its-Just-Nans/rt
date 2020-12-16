@@ -49,11 +49,22 @@ function loadNewPage(url){
         for(let script of allScripts){
             if(script.innerHTML == ''){
                 let number = document.getElementsByTagName('script').length;
-                let newscript = document.createElement('script');
-                document.getElementsByTagName('script')[number-1].after(newscript);
-                newscript.src = script.src;
+                let newScript = document.createElement('script');
+                document.getElementsByTagName('script')[number-1].after(newScript);
+                newScript.src = script.src;
             }else{
                 eval(script.innerHTML);
+            }
+        }
+        let allStyle = document.getElementById('contenuMain').getElementsByTagName('script');
+        for(let oneStyle of allScripts){
+            if(oneStyle.innerHTML == ''){
+                let number = document.getElementsByTagName('style').length;
+                let newStyle = document.createElement('style');
+                document.getElementsByTagName('script')[number-1].after(newStyle);
+                newStyle.src = oneStyle.src;
+            }else{
+                //good ?
             }
         }
     }).catch(function (error){
@@ -70,4 +81,5 @@ for(let element of allLinks){
         });
 }
 </script>
+<style></style>
 </body>
