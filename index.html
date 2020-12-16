@@ -46,8 +46,15 @@ function loadNewPage(url){
     makeRequest('GET', url).then( function(response){
         document.getElementById('contenuMain').innerHTML = response;
         let allScripts = document.getElementById('contenuMain').getElementsByTagName('script');
-        for(let scripts of allScripts){
-            eval(scripts.innerHTML);
+        for(let script of allScripts){
+            if(script.innerHTML == ''){
+                let number = document.getElementsByTagName('script').length;
+                let newscript = document.createElement('script');
+                document.getElementsByTagName('script')[number-1].after(newscript);
+                newscript.src = script.src;
+            }else{
+                eval(script.innerHTML);
+            }
         }
     }).catch(function (error){
         console.log('log: ', error);
