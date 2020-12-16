@@ -56,12 +56,12 @@ function loadNewPage(url){
                 eval(script.innerHTML);
             }
         }
-        let allStyle = document.getElementById('contenuMain').getElementsByTagName('script');
+        let allStyle = document.getElementById('contenuMain').getElementsByTagName('style');
         for(let oneStyle of allScripts){
             if(oneStyle.innerHTML == ''){
                 let number = document.getElementsByTagName('style').length;
                 let newStyle = document.createElement('style');
-                document.getElementsByTagName('script')[number-1].after(newStyle);
+                document.getElementsByTagName('style')[number-1].after(newStyle);
                 newStyle.src = oneStyle.src;
             }else{
                 //good ?
