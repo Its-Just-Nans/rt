@@ -63,7 +63,11 @@ function loadNewPage(url){
                 let newStyle = document.createElement('link');
                 document.getElementsByTagName('style')[number-1].after(newStyle);
                 newStyle.rel= "stylesheet";
-                newStyle.href = oneStyle.href;
+                let re = /src=".*"/;
+                let lien = oneStyle.outerHTML.match(re)[0];
+                lien = lien.substring(5, lien.length-1)
+                newStyle.href = lien;
+                
             }else{
                 //good ?
             }
