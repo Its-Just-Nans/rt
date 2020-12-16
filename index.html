@@ -26,14 +26,14 @@ if(window.location.search == ""){
     if(window.location.href.match('index.html')){
         basePage = window.location.href.replace('index.html', 'search.html');
     }else{
-        if(window.location.origin === 'its-just-nans.github.io'){
+        if(window.location.origin === 'https://its-just-nans.github.io'){
             basePage = window.location.origin + '/rt/' + 'search.html';
         }else{
             basePage = window.location.origin + '/' + 'search.html';
         }
     }
 }else{
-    if(window.location.origin === 'its-just-nans.github.io'){
+    if(window.location.origin === 'https://its-just-nans.github.io'){
         basePage = window.location.origin + '/rt/files/' + window.location.search.replace('?', '') + '.html';
     }else{
         basePage = window.location.origin + '/files/' + window.location.search.replace('?', '') + '.html';
