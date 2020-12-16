@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>R&T</title>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -60,9 +60,10 @@ function loadNewPage(url){
         for(let oneStyle of allScripts){
             if(oneStyle.innerHTML == ''){
                 let number = document.getElementsByTagName('style').length;
-                let newStyle = document.createElement('style');
+                let newStyle = document.createElement('link');
                 document.getElementsByTagName('style')[number-1].after(newStyle);
-                newStyle.src = oneStyle.src;
+                newStyle.rel= "stylesheet";
+                newStyle.href = oneStyle.href;
             }else{
                 //good ?
             }
@@ -81,5 +82,4 @@ for(let element of allLinks){
         });
 }
 </script>
-<style></style>
 </body>
