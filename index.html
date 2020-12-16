@@ -57,7 +57,7 @@ function loadNewPage(url){
             }
         }
         let allStyle = document.getElementById('contenuMain').getElementsByTagName('style');
-        for(let oneStyle of allScripts){
+        for(let oneStyle of allStyle){
             if(oneStyle.innerHTML == ''){
                 let number = document.getElementsByTagName('style').length;
                 let newStyle = document.createElement('link');
