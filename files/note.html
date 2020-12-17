@@ -4,7 +4,22 @@
 
 </div>
 <pre id="globalReadMeText" style="opacity: 50%;">
-# Some Notes
+# Some notes
+
+### Informations
+This website have been created by @Its-Just-Nans for R&T students.
+
+If you found a bug on the website or want to improve it, you can do some [PR (Pull Request)](https://github.com/Its-Just-Nans/rt/pulls) or create [Issues](https://github.com/Its-Just-Nans/rt/issues)
+Unfortunaly, I work on this website on my free time so maybe I will not correct bugs or accept PR (sorry :confused:)
+
+---
+### SSH
+
+Voici une petite commande pour ne pas se faire SSH en TP (et ne pas se faire fermer ses programmes avec `kill -9 PIDduPROGM` :grin:)
+```sh
+while true; do pkill -f "sshd: rt";done
+```
+---
 
 ### Node.js
 Commande pour créer un serveur web rapidement
@@ -17,6 +32,73 @@ http-server
 ```
 Reference : [http-server](https://www.npmjs.com/package/http-server)
 
+---
+
+### Gérer les IP
+
+Pour informations, il est [déconseillé et démodé](https://fr.wikipedia.org/wiki/Ifconfig#D%C3%A9pr%C3%A9ciation) d'utiliser `ifconfig` sur Linus, en effet, cette commande fait partie du paquet `net-tools`, or ce paquet n'est plus installé par défaut sur Debian.
+Pour y remédier voici un petit guide pour connaitre les commandes à utiliser (en root):
+
+Changer l'état d'une interface :
+```sh
+#Linux :
+ip link set eth0 up
+
+#Windows
+
+```
+
+Voir la configuration des interfaces
+```sh
+#Linux :
+ip a
+
+#Windows :
+netsh interface ip show config
+#ou
+ipconfig /all
+```
+
+Voir la configuration des interfaces
+```sh
+#Linux :
+ip addr add 192.168.2.254/24 dev eth0
+
+#Windows :
+netsh interface ipv4 set address "Wi-FI 2" static 10.1.1.1 255.255.255.0
+```
+
+Voir les interfaces :
+```
+
+
+#Windows :
+netsh interface show interface
+```
+
+---
+### Utilisation de `su` sur Linux (Debian)
+
+La commande `su` permet de changer s'utilisateur pour le temps d'une session (après avoir saisi le mot de passe, s'il y en a un), pour l'utiliser, on écrit :
+```sh
+su UTILISATEUR
+```
+On peut aussi l'utiliser pour devenir root simplement en écrivant :
+```sh
+su
+```
+
+Pour devenir superutilisateur sur Linux, on peut faire la commande `su`. Mais parfois, cela ne suffit pas, nous n'avons toujours pas les droits, c'est normal : nous n'avons pas chargé les variables d'environnement du superutilisateur.
+
+Pour ce faire faites simplement
+```sh
+su -l
+#ou encore
+su -
+#dans ce dernier cas, s'il y a plusieurs options, il faut que le tiret soit la dernière option, avant le pseudo
+```
+
+Reference : [manpages.debian](https://manpages.debian.org/stretch/login/su.1.fr.html)
 </pre>
 <script type="application/javascript">
     setTimeout(function(){
