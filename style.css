@@ -29,3 +29,25 @@ nav a{
 nav li{
     margin-bottom: 10px;
 }
+
+@media screen and (min-width: 0px) and (max-width: 1050px){
+    nav{
+        position: fixed;
+        width: 100vw;
+        height: 70px;
+        background-color: snow;
+        border-bottom: 2px solid black;
+        border-right: 0px;
+        z-index: 10;
+    }
+    nav li{
+        display: none;
+    }
+    #contenuMain {
+        width: 100vw;
+        height: 100vh;
+        padding: 50px;
+        box-sizing: border-box;
+        overflow: auto;
+    }
+}
