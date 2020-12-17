@@ -23,6 +23,31 @@
     
 globalScope = {};
 let basePage;
+setResponsive();
+window.onresize = setResponsive;
+
+function checkStyleOfNav(){
+    let navBlock = document.getElementsByTagName('nav')[0];
+    if(navBlock.getElementsByTagName('ul')[0].style.display == 'none'){
+        navBlock.getElementsByTagName('ul')[0].style.display = 'block';
+    }else{
+        navBlock.getElementsByTagName('ul')[0].style.display = 'none';
+    }
+}
+function setResponsive(){
+    if(window.innerWidth <= 1050){
+        let navBlock = document.getElementsByTagName('nav')[0];
+        navBlock.getElementsByTagName('ul')[0].style.display = 'none';
+        navBlock.addEventListener('click', checkStyleOfNav, false);
+    }else{
+        if(document.getElementsByTagName('nav')[0].getElementsByTagName('ul')[0].style.display == 'none'){
+            document.getElementsByTagName('nav')[0].getElementsByTagName('ul')[0].style.display = 'block';
+        }
+        document.getElementsByTagName('nav')[0].removeEventListener('click', checkStyleOfNav, false);
+    }
+}
+
+
 if(window.location.search == ""){
     if(window.location.href.match('index.html')){
         basePage = window.location.href.replace('index.html', 'search.html');
