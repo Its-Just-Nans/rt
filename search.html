@@ -29,7 +29,7 @@
 
 <script>
 var datas;
-makeRequest('GET', './ressources/data.json').then(function(response){
+makeRequest('GET', './data/data.json').then(function(response){
 	datas = JSON.parse(response);
 }).catch(function (error){
 	//no data :(
