@@ -38,6 +38,7 @@ nav li{
     nav{
         position: fixed;
         width: 100vw;
+        min-height: 7vh;
         height: auto;
         background-color: snow;
         border-bottom: 2px solid black;
@@ -48,9 +49,9 @@ nav li{
         display: none;
     }
     #contenuMain {
+        top: 7vh;
         width: 100vw;
-        height: 100vh;
+        height: 93vh;
         padding: 10px;
-        padding-top: 80px;
     }
 }
