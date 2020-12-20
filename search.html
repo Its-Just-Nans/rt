@@ -74,16 +74,18 @@ function printResult(tableauResulat){
 		}
 		for(let link of links){
 			let lien = document.createElement('a');
+			lien.style.textDecoration = 'none';
+			lien.style.color = 'black';
 			let resultatHTML = document.createElement('div');
 			try{
 				const url = new URL(link);
-				lien.innerHTML = '<h3>' + url.hostname + '</h3>';
+				lien.innerHTML = '<img width="16px" height="16px" style="margin-right: 10px;vertical-align: text-top;" src="' + url.origin + '/favicon.ico">';
+				lien.innerHTML += '<h3 style="display: inline;">' + url.hostname + '</h3>';
 				lien.innerHTML += '<p>' + link + '</p>';
-			}catch{
-				lien.innerHTML = link;
+			}catch(e){
+				lien.innerHTML =  '<p>' + link + '</p>';
 			}
 			lien.href = link;
-			
 			resultatHTML.className = 'result';
 			lien.target= "_blank";
 			resultatHTML.append(lien);
@@ -113,28 +115,5 @@ function presquePareil(wordInQuery, wordInData){
 			}
 		}
 	}
-}
-
-function getFavicon(string){
-    var favicon = undefined;
-    var nodeList = string.getElementsByTagName("link");
-    for (var i = 0; i < nodeList.length; i++)
-    {
-        if((nodeList[i].getAttribute("rel") == "icon")||(nodeList[i].getAttribute("rel") == "shortcut icon"))
-        {
-            favicon = nodeList[i].getAttribute("href");
-        }
-    }
-    return favicon;
-}
-
-
-
-function getTitle(string){
-    var title = undefined;
-    var nodeList = string.getElementsByTagName("title");
-    title = nodeList[0].innerHTML;
-
-    return title;
 }
 </script>
