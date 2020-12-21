@@ -58,9 +58,10 @@ nav li{
         width: 100vw;
         height: 93vh;
         padding: 10px;
+        padding-bottom: 20px;
     }
     #titleNav{
-        margin-top: 18px;
+        margin-top: 15px;
         margin-bottom: 0px;
     }
 }
