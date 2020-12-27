@@ -1,64 +1,129 @@
 {
 	"q":[
 			{
-				"keys": ["math", "nombres", "imaginaires", "réel"],
+				"keywords": ["math", "nombres", "imaginaires", "réel"],
 				"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:nombres-complexes-point-de-vue-algebrique"],
 				"2": ["https://www.youtube.com/watch?v=T647CGsuOVU&list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF"]
 			},
 			{
-				"keys": ["math", "matrice"],
+				"keywords": ["math", "matrice"],
 				"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:matrices"],
 				"2": []
 			},
 			{
-				"keys": ["math", "suite"],
+				"keywords": ["math", "suite"],
 				"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
 				"2": []
 			},
 			{
-				"keys": ["linux", "bash", "shell"],
+				"keywords": ["linux", "bash", "shell"],
 				"1": ["https://www.taniarascia.com/how-to-create-and-use-bash-scripts/", "https://remisharrock.fr/sysbuild/#/VM", "https://tdinfo.phelma.grenoble-inp.fr/2Aproj/fiches/MementoCommandesShell.pdf"],
 				"2": []
 			},
 			{
-				"keys": ["internet", "html", "css"],
-				"1": ["https://hitokun-s.github.io/old/demo/"],
+				"keywords": ["internet", "html"],
+				"1": ["https://hitokun-s.github.io/old/demo/", "http://broussaille.free.fr/cours/index.htm", "https://fr.khanacademy.org/computing/computer-programming/html-css"],
 				"2": []
 			},
 			{
-				"keys": ["math", "suite"],
+				"keywords": ["internet", "css"],
+				"1": [],
+				"2": ["https://codepen.io/fulcrumHouse/pen/BZJvOd", "https://codepen.io/khaled3afan/pen/XooKNN", "https://codepen.io/akm2/full/rHIsa/", "https://codepen.io/jlnljn/pen/vVWaKq", "https://codepen.io/himalayasingh/pen/EdQzJN"]
+			},
+			{
+				"keywords": ["math", "suite"],
 				"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
 				"2": []
 			},
 			{
-				"keys": ["typing", "clavier"],
+				"keywords": ["typing", "clavier"],
 				"1": ["https://www.typingclub.com/"],
 				"2": []
 			},
 			{
-				"keys": ["android", "app", "application"],
+				"keywords": ["android", "app", "application"],
 				"1": [],
 				"2": ["http://appinventor.mit.edu/"]
 			},
 			{
-				"keys": ["guides", "cours", "savoir"],
+				"keywords": ["guides", "cours", "savoir"],
 				"1": ["https://www.taniarascia.com/guides"],
 				"2": ["https://www.taniarascia.com/guides"]
 			},
 			{
-				"keys": ["mpls", "reseaux"],
+				"keywords": ["mpls", "reseaux"],
 				"1": ["https://wallu.pagesperso-orange.fr/pag-vpn.htm", "https://wallu.pagesperso-orange.fr/"],
 				"2": []
 			},
 			{
-				"keys": ["format"],
+				"keywords": ["format"],
 				"1": ["http://formats.kaitai.io/", "https://www.youtube.com/watch?v=SWsHwdSrPr4"],
 				"2": []
 				
 			},
 			{
-				"keys": [],
-				"1": [],
+				"keywords": ["modulation", "numeriques"],
+				"1": ["http://escrig.perso.enseeiht.fr/Cours_TS113_2012_2013.pdf", "https://damienvivet.pagesperso-orange.fr/teaching_more.html#modulation", "http://deptinfo.cnam.fr/Enseignement/Memoires/LUSTEAU.Franck/Pages/Les_modulations_de_base.htm", "https://damienvivet.pagesperso-orange.fr/cours/ibats_mod/A5Ibats_MAN_5.pdf", "http://radioamateurs89.free.fr/Techniques/Modulation/modulation.htm", "http://efreidoc.fr/L3/Communications%20numeriques/Cours/"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["transformation", "fourier", "huffman"],
+				"1": ["http://efreidoc.fr/L3/Coding%20%26%20Transformation/Cours/"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["language c", "c"],
+				"1": ["https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/f7c87d5a82ac4f2d85b2c3b75435b015/", "http://www.linux-france.org/prj/embedded/sdcc/sdcc_course.formatted_io.html", "https://www.ltam.lu/cours-c/prg-c_c.htm", "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/", "http://public.iutenligne.net/informatique/algorithme-et-programmation/priou/LangageC/1731_ecriture_et_lecture_en_accs_binaire__fwrite_fread.html", "http://arsene.perez-mas.pagesperso-orange.fr/langc/sommaire_langc.htm", "http://arsene.perez-mas.pagesperso-orange.fr/langc/memalloc/memalloc_malloc.htm", "http://arsene.perez-mas.pagesperso-orange.fr/langc/structures/annuaire3.htm#rappels", "https://c.developpez.com/cours/poly-c/", "https://sites.uclouvain.be/SystInfo/notes/Theorie/html/C/intro-C.html", "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/chapitre1.html", "https://pixees.fr/informatiquelycee/n_site/nsi_prem_langageC.html"],
+				"2": ["https://codecast.france-ioi.org/v2/"]
+				
+			},
+			{
+				"keywords": ["pointeur"],
+				"1": ["http://arsene.perez-mas.pagesperso-orange.fr/langc/pointeurs/pointeurs.htm"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["réseaux"],
+				"1": ["http://jelnet.free.fr/jlnt_indx.htm", "http://arsene.perez-mas.pagesperso-orange.fr/index.html"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["curieux"],
+				"1": ["https://couleur-science.eu/"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["outils"],
+				"1": ["https://lehollandaisvolant.net/tout/tools/"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["math"],
+				"1": ["http://www.gipsa-lab.grenoble-inp.fr/~yo.fujiso/maths/slides-M123-2012b.pdf", "http://www.gipsa-lab.grenoble-inp.fr/~yo.fujiso/maths/poly-M123-2012b.pdf", "https://www.axesindustries.com/pdf/mathematiques.pdf"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["tcp"],
+				"1": ["http://arsene.perez-mas.pagesperso-orange.fr/reseaux/tcpip/menu.htm", "https://web.maths.unsw.edu.au/~lafaye/CCM/internet/tcp.htm"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["cours"],
+				"1": ["http://rt.bethune.free.fr/iut-gtr2/Cours/"],
+				"2": []
+				
+			},
+			{
+				"keywords": ["python"],
+				"1": ["https://trinket.io/python3"],
 				"2": []
 				
 			}
