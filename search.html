@@ -51,7 +51,7 @@ document.getElementById('search').onclick = function(){
 
 	for(let word of wordOfQuery){
 		for(let element of datas.q){
-			for(let key of element.keys){
+			for(let key of element.keywords){
 				if( presquePareil(word, key) ){
 					let index = datas.q.indexOf(element);
 					if(!result.includes(index)){
