@@ -1,21 +1,25 @@
 {
 	"q":[
 			{
-				"keywords": ["math", "nombres", "imaginaires", "réel"],
+				"largeKeywords": ["math"],
+				"keywords": ["nombres", "imaginaires", "réel"],
 				"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:nombres-complexes-point-de-vue-algebrique"],
 				"2": ["https://www.youtube.com/watch?v=T647CGsuOVU&list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF"]
 			},
 			{
-				"keywords": ["math", "matrice"],
+				"largeKeywords": ["math"],
+				"keywords": ["matrice"],
 				"1": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:matrices"],
 				"2": []
 			},
 			{
-				"keywords": ["math", "suite"],
+				"largeKeywords": ["math"],
+				"keywords": ["suite"],
 				"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
 				"2": []
 			},
 			{
+				"largeKeywords": ["linux"],
 				"keywords": ["linux", "bash", "shell"],
 				"1": ["https://www.taniarascia.com/how-to-create-and-use-bash-scripts/", "https://remisharrock.fr/sysbuild/#/VM", "https://tdinfo.phelma.grenoble-inp.fr/2Aproj/fiches/MementoCommandesShell.pdf"],
 				"2": []
@@ -31,31 +35,43 @@
 				"2": ["https://codepen.io/fulcrumHouse/pen/BZJvOd", "https://codepen.io/khaled3afan/pen/XooKNN", "https://codepen.io/akm2/full/rHIsa/", "https://codepen.io/jlnljn/pen/vVWaKq", "https://codepen.io/himalayasingh/pen/EdQzJN"]
 			},
 			{
-				"keywords": ["math", "suite"],
+				"largeKeywords": ["html"],
+				"keywords": ["css"],
+				"1": ["https://hitokun-s.github.io/old/demo/"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["math"],
+				"keywords": ["suite"],
 				"1": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"],
 				"2": []
 			},
 			{
+				"largeKeywords": [],
 				"keywords": ["typing", "clavier"],
 				"1": ["https://www.typingclub.com/"],
 				"2": []
 			},
 			{
-				"keywords": ["android", "app", "application"],
+				"largeKeywords": ["android"],
+				"keywords": ["app", "application"],
 				"1": [],
 				"2": ["http://appinventor.mit.edu/"]
 			},
 			{
+				"largeKeywords": ["reseaux"],
 				"keywords": ["guides", "cours", "savoir"],
 				"1": ["https://www.taniarascia.com/guides"],
-				"2": ["https://www.taniarascia.com/guides"]
+				"2": []
 			},
 			{
-				"keywords": ["mpls", "reseaux"],
+				"largeKeywords": ["reseaux"],
+				"keywords": ["mpls"],
 				"1": ["https://wallu.pagesperso-orange.fr/pag-vpn.htm", "https://wallu.pagesperso-orange.fr/"],
 				"2": []
 			},
 			{
+				"largeKeywords": [],
 				"keywords": ["format"],
 				"1": ["http://formats.kaitai.io/", "https://www.youtube.com/watch?v=SWsHwdSrPr4"],
 				"2": []
@@ -64,6 +80,12 @@
 			{
 				"keywords": ["modulation", "numeriques"],
 				"1": ["http://escrig.perso.enseeiht.fr/Cours_TS113_2012_2013.pdf", "https://damienvivet.pagesperso-orange.fr/teaching_more.html#modulation", "http://deptinfo.cnam.fr/Enseignement/Memoires/LUSTEAU.Franck/Pages/Les_modulations_de_base.htm", "https://damienvivet.pagesperso-orange.fr/cours/ibats_mod/A5Ibats_MAN_5.pdf", "http://radioamateurs89.free.fr/Techniques/Modulation/modulation.htm", "http://efreidoc.fr/L3/Communications%20numeriques/Cours/"],
+				"2": []
+			},
+			{
+				"largeKeywords": [],
+				"keywords": ["version", "versioning"],
+				"1": ["https://semver.org/lang/fr/"],
 				"2": []
 				
 			},
@@ -125,7 +147,12 @@
 				"keywords": ["python"],
 				"1": ["https://trinket.io/python3"],
 				"2": []
-				
+			},
+			{
+				"largeKeywords": [],
+				"keywords": [],
+				"1": [],
+				"2": []
 			}
 		]
 }

@@ -43,22 +43,83 @@ document.getElementById('searchValue').addEventListener('keyup', function(event)
   }
 });
 
+function isInArray(array, word){
+	res = []
+	for(let item of array){
+		if(presquePareil(word, item)){
+			return true;
+		}
+	}
+	return false;
+}
+
 document.getElementById('search').onclick = function(){
 	document.getElementById('resultat').innerHTML = "";
 	let query = document.getElementById('searchValue').value;
 	let wordOfQuery = query.toLowerCase().split(' ');
 	let result = [];
-
-	for(let word of wordOfQuery){
+	let resultLast = [];
+	
+	for(let oneWord of wordOfQuery){
 		for(let element of datas.q){
-			for(let key of element.keywords){
-				if( presquePareil(word, key) ){
-					let index = datas.q.indexOf(element);
-					if(!result.includes(index)){
-						result.push(index);
+			if(element.largeKeywords){
+				if(isInArray(element.largeKeywords, oneWord)){
+					let query = wordOfQuery.filter(item => item !== oneWord);
+					for(let smallKey of element.keywords){
+						for(let word of query){
+							let index = datas.q.indexOf(element);
+							if(presquePareil(word, smallKey)){
+								
+								if(!result.includes(index)){
+									result.push(index);
+								}
+							}else{
+								if(!resultLast.includes(index)){
+									resultLast.push(index);
+								}
+							}
+						}
+					}
+				}else{
+					for(let smallKey of element.keywords){
+						for(let word of query){
+							let index = datas.q.indexOf(element);
+							if(presquePareil(word, smallKey)){
+								
+								if(!result.includes(index)){
+									result.push(index);
+								}
+							}else{
+								if(!resultLast.includes(index)){
+									resultLast.push(index);
+								}
+							}
+						}
+					}
+				}
+			}else{
+				for(let smallKey of element.keywords){
+					for(let word of query){
+						let index = datas.q.indexOf(element);
+						if(presquePareil(word, smallKey)){
+							
+							if(!result.includes(index)){
+								result.push(index);
+							}
+						}else{
+							if(!resultLast.includes(index)){
+								resultLast.push(index);
+							}
+						}
 					}
 				}
 			}
+		}
+	}
+	debugger;
+	for(res of resultLast){
+		if(!result.includes(res)){
+			result.push(res);
 		}
 	}
 	console.log(result);
@@ -76,6 +137,25 @@ function printResult(tableauResulat){
 			links = datas.q[element][2];
 		}
 		for(let link of links){
+			var cors;
+			if(cors === undefined){
+				cors = 'https://cors-anywhere.herokuapp.com/';
+			}
+			makeRequest('GET', cors + link).then( function (response){
+				let titre = response.match("<title>(.*?)</title>")
+				if(titre){
+					titre = titre[0]
+					titre = titre.replace('<title>', '').replace('</title>', '')
+					let lienRes = lien.getElementsByTagName('h3')[0];
+					lienRes.innerHTML += ' - <h5 style="display: inline;text-decoration:underline;">' + titre + '</h5>';
+				}
+			}).catch(function (error){
+				if(error['statusText'] == 'Too Many Requests'){
+					smollPopUp({title : 'Error C.O.R.S.', content : 'Too Many Request'}, 'ko');
+					console.log('erreur CORS ' + cors);
+					cors = 'https://cors-proxy.htmldriven.com/?url='
+				}
+			});
 			let lien = document.createElement('a');
 			lien.style.textDecoration = 'none';
 			lien.style.color = 'black';
