@@ -71,4 +71,10 @@ nav li{
     #globalReadMe{
         font-size: 0.75em;
     }
+    #globalReadMe > ul {
+        padding-inline-start: 20px;
+    }
+    #globalReadMe > blockquote > ul {
+        padding-inline-start: 20px;
+    }
 }
