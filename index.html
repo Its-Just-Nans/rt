@@ -90,7 +90,7 @@ function loadNewPage(url){
     makeRequest('GET', url).then( function(response){
         if(window.location.search.startsWith('?readme-')){
             //if it's a readme we need to render it
-            document.getElementById('contenuMain').innerHTML = '<div id="globalReadMe" style="font-size: 1.15em;"></div>';
+            document.getElementById('contenuMain').innerHTML = '<div id="globalReadMe"></div>';
             let render = function(){
                 if(typeof showdown !== 'undefined'){
                     let converter = new showdown.Converter();

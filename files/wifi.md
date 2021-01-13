@@ -35,7 +35,7 @@ It's simple:
 
 ### Configuration of the WiFi
 
-To create a WiFI :
+To create a WiFi :
 ```sh
 dot11 ssid WRITE_SSID_HERE
     authentication open

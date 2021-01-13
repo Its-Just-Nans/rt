@@ -39,6 +39,10 @@ nav li{
     margin-bottom: 10px;
 }
 
+#globalReadMe{
+    font-size: 1.15em;
+}
+
 @media screen and (min-width: 0px) and (max-width: 1050px){
     nav{
         position: fixed;
@@ -63,5 +67,8 @@ nav li{
     #titleNav{
         margin-top: 15px;
         margin-bottom: 0px;
+    }
+    #globalReadMe{
+        font-size: 1em;
     }
 }
