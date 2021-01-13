@@ -11,7 +11,8 @@
             <li><a href="codage-canal">Codage Canal</a></li>
             <li><a href="train">Codage Canal Train</a></li>
             <li><a href="sinus">Sinus</a></li>
-            <li><a href="note">Some Notes</a></li>
+            <li><a href="readme-note">Some Notes</a></li>
+            <li><a href="readme-wifi">Wifi</a></li>
         </ul>
         
     </nav>
@@ -60,43 +61,82 @@ if(window.location.search == ""){
         }
     }
 }else{
+    //check if it's in local
     if(window.location.origin === 'https://its-just-nans.github.io'){
-        basePage = window.location.origin + '/rt/files/' + window.location.search.replace('?', '') + '.html';
+        basePage = window.location.origin + '/rt/files/';
     }else{
-        basePage = window.location.origin + '/files/' + window.location.search.replace('?', '') + '.html';
+        basePage = window.location.origin + '/files/';
     }
-    
+    if(window.location.search.startsWith('?readme-')){
+        basePage += window.location.search.replace('?readme-', '') + '.md';
+        for(scriptLink of ['https://unpkg.com/showdown/dist/showdown.min.js', '//unpkg.com/@highlightjs/cdn-assets@10.4.1/highlight.min.js']){
+            let script = document.createElement('script');
+            script.src = scriptLink;
+            document.head.appendChild(script);
+        }
+        for(styleLink of ['../styleREADME.css', '//unpkg.com/@highlightjs/cdn-assets@10.4.1/styles/default.min.css']){
+            let style = document.createElement('link');
+            style.href = styleLink;
+            style.rel = 'stylesheet';
+            document.head.appendChild(style);
+        }
+    }else{
+        basePage += window.location.search.replace('?', '') + '.html';
+    }
 }
 loadNewPage(basePage);
 
 function loadNewPage(url){
     makeRequest('GET', url).then( function(response){
-        document.getElementById('contenuMain').innerHTML = response;
-        let allScripts = document.getElementById('contenuMain').getElementsByTagName('script');
-        for(let script of allScripts){
-            if(script.innerHTML == ''){
-                let number = document.getElementsByTagName('script').length;
-                let newScript = document.createElement('script');
-                document.getElementsByTagName('script')[number-1].after(newScript);
-                newScript.src = script.src;
-            }else{
-                eval(script.innerHTML);
+        if(window.location.search.startsWith('?readme-')){
+            //if it's a readme we need to render it
+            document.getElementById('contenuMain').innerHTML = '<div id="globalReadMe" style="font-size: 1.15em;"></div>';
+            let render = function(){
+                if(typeof showdown !== 'undefined'){
+                    let converter = new showdown.Converter();
+                    converter.setFlavor('github');
+                    let html = converter.makeHtml(response);
+                    document.getElementById('globalReadMe').innerHTML = html;
+                    document.querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightBlock(block);
+                    });
+                }else{
+                    setTimeout(function(){
+                        render();
+                    }, 100);
+                }
             }
-        }
-        let allStyle = document.getElementById('contenuMain').getElementsByTagName('style');
-        for(let oneStyle of allStyle){
-            if(oneStyle.innerHTML == ''){
-                let number = document.getElementsByTagName('style').length;
-                let newStyle = document.createElement('link');
-                document.getElementsByTagName('style')[number-1].after(newStyle);
-                newStyle.rel= "stylesheet";
-                let re = /src=".*"/;
-                let lien = oneStyle.outerHTML.match(re)[0];
-                lien = lien.substring(5, lien.length-1)
-                newStyle.href = lien;
-                
-            }else{
-                //good ?
+            setTimeout(function(){
+                render();
+            }, 100);
+        }else{
+            document.getElementById('contenuMain').innerHTML = response;
+            let allScripts = document.getElementById('contenuMain').getElementsByTagName('script');
+            for(let script of allScripts){
+                if(script.innerHTML == ''){
+                    let number = document.getElementsByTagName('script').length;
+                    let newScript = document.createElement('script');
+                    document.getElementsByTagName('script')[number-1].after(newScript);
+                    newScript.src = script.src;
+                }else{
+                    eval(script.innerHTML);
+                }
+            }
+            let allStyle = document.getElementById('contenuMain').getElementsByTagName('style');
+            for(let oneStyle of allStyle){
+                if(oneStyle.innerHTML == ''){
+                    let number = document.getElementsByTagName('style').length;
+                    let newStyle = document.createElement('link');
+                    document.getElementsByTagName('style')[number-1].after(newStyle);
+                    newStyle.rel= "stylesheet";
+                    let re = /src=".*"/;
+                    let lien = oneStyle.outerHTML.match(re)[0];
+                    lien = lien.substring(5, lien.length-1)
+                    newStyle.href = lien;
+                    
+                }else{
+                    //good ?
+                }
             }
         }
     }).catch(function (error){
