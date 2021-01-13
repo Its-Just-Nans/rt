@@ -62,6 +62,70 @@ exit
 > - `channel 36` is used to declare the channel used by the radio
 > - `no shutdown` to activate the WiFi
 
+## Security
+
+Three security are available :
+- no security
+- WEP (deprecated)
+- WPA-PSK
+  
+### no security
+
+The configuration above is without security
+
+###  WEP
+
+Normal declaration for the SSID :
+```nginx
+dot11 ssid WRITE_SSID_HERE
+    authentication open
+    guest-mode
+exit
+```
+
+You need to add two line in the interface configuration :
+```nginx
+int dot11Radio 1
+    station-role root
+    ssid WRITE_SSID_HERE
+    encryption key 1 size 40bit 7 KEY_IS_HERE transmit-key
+    encryption mode wep mandatory
+    no shutdown
+exit
+```
+> Legend:
+> - With a VLAN, it will be :
+> `encryption vlan 4 key 1 size 40bit 7 KEY_IS_HERE transmit-key`
+> `encryption vlan 4 mode wep mandatory`
+
+### WPA-PSK
+
+Declaration for the SSID change :
+```nginx
+dot11 ssid WRITE_SSID_HERE
+    authentication open
+    authentication key-management wpa version 2
+    wpa-psk ascii abcdef123456
+    guest-mode
+exit
+```
+
+
+You need to add one line in the interface configuration :
+```nginx
+int dot11Radio 1
+    station-role root
+    ssid WRITE_SSID_HERE
+    encryption mode ciphers aes-ccm tkip
+    no shutdown
+exit
+```
+> Legend:
+> - With a VLAN, it will be :
+> `encryption vlan 3 mode ciphers aes-ccm tkip`
+
+
+
 ## Configuration of the AAP
 
 To use the Virtual interface of the AAP
