@@ -15,12 +15,12 @@ Copyright Its-Just-Nans
 ### Reminder Commande Cisco :
 
 To change the name of the AAP :
-```
+```nginx
 hostname NEW_NAME_OF_AAP
 ```
 
 To save configuration in the memory :
-```
+```sh
 copy running-config startup-config
 [ENTER]
 ```
@@ -36,7 +36,7 @@ It's simple:
 ### Configuration of the WiFi
 
 To create a WiFi :
-```sh
+```nginx
 dot11 ssid WRITE_SSID_HERE
     authentication open
     guest-mode
@@ -47,12 +47,13 @@ exit
 > - `guest-mode` is used to show the SSID to client
 
 To use the SSID and create WiFi :
-```sh
+```nginx
 int dot11Radio 1
     station-role root
     ssid WRITE_SSID_HERE
     channel 36
     no shutdown
+exit
 ```
 > Legend :
 > - `int dot11Radio 1` to use the `dot11Radio 1` or aslo `5Ghz Radio`
@@ -64,10 +65,11 @@ int dot11Radio 1
 ## Configuration of the AAP
 
 To use the Virtual interface of the AAP
-```
+```nginx
 interface BVI1
     ip address 10.4.19.13 255.255.255.0
     no shutdown
+exit
 ```
 > Legend :
 > - `BVI1` is the name of the virtual interface
