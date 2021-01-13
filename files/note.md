@@ -127,13 +127,16 @@ Le résultat :
 %p number = 0x7                          //valeur de number sous forme Hexa car %p
 %d &number = -1104070188                 //valeur de l'adresse de number sous forme décimale
 %p &number = 0x7ffdbe3139d4              //valeur de l'adresse sous forme hexa car %p
-%d pointerTOnumber = -1104070188         //valeur de l'adresse de p sous forme décimale
-%p pointerTOnumber = 0x7ffdbe3139d4      //valeur de l'adresse de  sous forme hexa car %p
+%d pointerTOnumber = -1104070188         //valeur de l'adresse de number sous forme décimale
+%p pointerTOnumber = 0x7ffdbe3139d4      //valeur de l'adresse de number sous forme hexa car %p
 %d &pointerTOnumber = -1104070184        //valeur de l'adresse du pointeur sous forme décimale
 %p &pointerTOnumber = 0x7ffdbe3139d8     //valeur de l'adresse du pointeur sous forme hexa car %p
-%d *pointerTOnumber = 7                  //valeur pointée par le pointer donc celle de number sous forme décimale
-%p *pointerTOnumber = 0x7                //valeur pointée par le pointer donc celle de number sous forme hexa car %p
+%d *pointerTOnumber = 7                  //valeur pointée par le pointeur (donc celle de number) sous forme décimale
+%p *pointerTOnumber = 0x7                //valeur pointée par le pointeur (donc celle de number) sous forme hexa car %p
 ```
+> On peut donc dire **`l'adresse de `** pour `&`
+> 
+> On peut donc dire **`la valeur pointée par`** pour `*`
 ---
 
 ### Paramètre de main en C
