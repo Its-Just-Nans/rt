@@ -30,7 +30,8 @@ Reference : [http-server](https://www.npmjs.com/package/http-server)
 
 ### Gérer les IP
 
-Pour informations, il est [déconseillé et démodé](https://fr.wikipedia.org/wiki/Ifconfig#D%C3%A9pr%C3%A9ciation) d'utiliser `ifconfig` sur Linus, en effet, cette commande fait partie du paquet `net-tools`, or ce paquet n'est plus installé par défaut sur Debian.
+Pour informations, il est [déconseillé et démodé](https://fr.wikipedia.org/wiki/Ifconfig#D%C3%A9pr%C3%A9ciation) d'utiliser `ifconfig` sur Linux, en effet, cette commande fait partie du paquet `net-tools`, or ce paquet n'est plus installé par défaut sur Debian.
+
 Pour y remédier voici un petit guide pour connaitre les commandes à utiliser (en root):
 
 Changer l'état d'une interface :

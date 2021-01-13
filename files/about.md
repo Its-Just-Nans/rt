@@ -18,7 +18,7 @@ Unfortunaly, I work on this website on my free time so maybe I will not have the
 Share the website :
 
 ```html
-www.its-just-nans.github.io/rt
+https://its-just-nans.github.io/rt
 ```
 
 Share with QR Code :
