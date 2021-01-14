@@ -7,7 +7,7 @@ Copyright Its-Just-Nans
 
 ### Informations
 
-This website have been created by @Its-Just-Nans for R&T students.
+This website have been created by @Its-Just-Nans for `R&T` students.
 
 If you found a bug on the website or want to improve it, you can do some [PR (Pull Request)](https://github.com/Its-Just-Nans/rt/pulls) or create [Issues](https://github.com/Its-Just-Nans/rt/issues).
 

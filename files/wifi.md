@@ -26,6 +26,11 @@ copy running-config startup-config
 [ENTER]
 ```
 
+Comments are with a `!` at the begin:
+```sh
+!this is a comment
+```
+
 ---
 
 ### 2.4GHz or 5GHz ?
