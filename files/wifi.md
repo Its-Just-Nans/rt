@@ -31,7 +31,7 @@ copy running-config startup-config
 ### 2.4GHz or 5GHz ?
 
 It's simple:
-- when you need `2.4Ghz WiFi` or `802.11b/g` ,you will use `dot11Radio 0`
+- when you need `2.4Ghz WiFi` or `802.11b/g`, you will use `dot11Radio 0`
 - when you need `5Ghz WiFi` or `802.11a`, you will use `dot11Radio 1`
 
 
@@ -151,14 +151,17 @@ exit
 
 You can change the power of the AAP in the interface config
 ```nginx
+int dot11Radio 1
     power local 50
     power client maximun
-    no power client/local
+    no power [ client | local ]
 ```
 > Legend:
 > - `power local` is used to change the power of the AAP
 > - `power client` is used to change the power of the client
 > - values `50` is in `mW (milliWatts)`
+
+
 ---
 
 ## Useful command :
