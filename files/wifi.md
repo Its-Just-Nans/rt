@@ -97,15 +97,16 @@ You need to add two line in the interface configuration :
 int dot11Radio 1
     station-role root
     ssid WRITE_SSID_HERE
-    encryption key 1 size 40bit 7 KEY_IS_HERE transmit-key
+    encryption key 1 size 40bit 7 12_CHAR_HEXA transmit-key
     encryption mode wep mandatory
     no shutdown
 exit
 ```
 > Legend:
 > - With a VLAN, it will be :
-> `encryption vlan 4 key 1 size 40bit 7 KEY_IS_HERE transmit-key`
+> `encryption vlan 4 key 1 size 40bit 7 12_CHAR_HEXA transmit-key`
 > `encryption vlan 4 mode wep mandatory`
+> - The number `7` means it is encrypted
 
 ### WPA-PSK
 
