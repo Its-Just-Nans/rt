@@ -145,6 +145,8 @@ To use the Virtual interface of the AAP
 ```nginx
 interface BVI1
     ip address 10.4.19.13 255.255.255.0
+    !or you can use DHCP with :
+    !ip address dhcp 
     no shutdown
 exit
 ```
@@ -168,15 +170,57 @@ int dot11Radio 1
 
 ### Use VLAN
 
+To declare dot11 VLAN :
 ```nginx
+dot11 vlan-name WRITE_SSID_1_HERE vlan NUM_VLAN_1
+dot11 vlan-name WRITE_SSID_2_HERE vlan NUM_VLAN_2
+```
+
+Configuration for `dot11 ssid`:
+```nginx
+dot11 ssid WRITE_SSID_1_HERE
+   vlan NUM_VLAN_1
+   mbssid guest-mode
+exit
+```
+
+Configuration for interface :
+```nginx
+!example for VLAN 3
 interface FastEthernet0.3
     encapsulation dot1Q 3
+    bridge-group 3
 exit
 ```
 > Legend :
 > - `FastEthernet0.3` we use the sub-interface
 > - `encapsulation dot1Q` to use VLAN
-> - `dot1Q 3` to speciify the VLAN 3
+> - `dot1Q 3` to specify the VLAN 3
+
+Configuration for interface radio:
+```
+interface Dot11Radio0
+    ssid WRITE_SSID_1_HERE 
+    ssid WRITE_SSID_2_HERE
+    mbssid
+    station-role root access-point
+    !write the encryption
+    !example : for WEP on VLAN 2
+    encryption vlan 2 key 1 size 40bit 7 426FE03F299D transmit-key
+    encryption vlan 2 mode wep mandatory
+
+    !example : for WPA on VLAN 3
+    encryption vlan 3 mode ciphers aes-ccm tkip
+exit
+```
+> Legend:
+> - Here we use the `Dot11Radio 0` interface
+> - `mbssid` is used to declare mutiple SSID
+
+
+
+
+
 
 ---
 
