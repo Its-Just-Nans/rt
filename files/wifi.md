@@ -164,7 +164,7 @@ int dot11Radio 1
 
 ---
 
-## Useful command :
+## Useful command
 
 To display active WiFi on the AAP
 ```nginx

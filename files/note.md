@@ -138,6 +138,8 @@ Le résultat :
 > On peut donc dire **`l'adresse de `** pour `&`
 > 
 > On peut donc dire **`la valeur pointée par`** pour `*`
+
+
 ---
 
 ### Paramètre de main en C
