@@ -9,6 +9,7 @@ Copyright Its-Just-Nans
 
 - `AAP` : Autonomous Access Point
 
+---
 
 ## Command to configure WiFi
 
@@ -25,6 +26,7 @@ copy running-config startup-config
 [ENTER]
 ```
 
+---
 
 ### 2.4GHz or 5GHz ?
 
@@ -62,6 +64,8 @@ exit
 > - `channel 36` is used to declare the channel used by the radio
 > - `no shutdown` to activate the WiFi
 
+---
+
 ## Security
 
 Three security are available :
@@ -69,7 +73,7 @@ Three security are available :
 - WEP (deprecated)
 - WPA-PSK
   
-### no security
+### No security
 
 The configuration above is without security
 
@@ -125,8 +129,12 @@ exit
 > `encryption vlan 3 mode ciphers aes-ccm tkip`
 
 
+---
 
 ## Configuration of the AAP
+
+
+### Virtual Interface
 
 To use the Virtual interface of the AAP
 ```nginx
@@ -138,21 +146,62 @@ exit
 > Legend :
 > - `BVI1` is the name of the virtual interface
 
+
+### Power 
+
+You can change the power of the AAP in the interface config
+```nginx
+    power local 50
+    power client maximun
+    no power client/local
+```
+> Legend:
+> - `power local` is used to change the power of the AAP
+> - `power client` is used to change the power of the client
+> - values `50` is in `mW (milliWatts)`
+---
+
 ## Useful command :
 
 To display active WiFi on the AAP
-```sh
+```nginx
 show dot11 BSSID
 ```
 
 To show informations about an interface :
-```sh
+```nginx
 show interfaces dot11Radio 1
 ```
 > Legend :
 > - `dot11Radio 1` will show informations for **5Ghz** radio
 
 To show who are connected to the AAP :
-```sh
+```nginx
 show dot11 associations
+```
+
+To delete authentication of a client :
+```nginx
+clear dot11 client [ @MAC ]
+```
+
+
+To clear statistics of an interface or of a client :
+```nginx
+clear dot11 statistics [ interface | @MAC ]
+```
+
+Activate request to create a network-map
+```nginx
+dot11 network-map « collect-interval » permet d’activer les requêtes
+```
+
+To display the network map
+```nginx
+show dot11 network-map
+```
+
+To show other access point
+```nginx
+show dot11 adjacent-ap
 ```
