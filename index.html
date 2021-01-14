@@ -6,13 +6,14 @@
 </head>
 <body>
     <nav>
-        <h1 id="titleNav"><a id="link" href="">Navigation</a></h1>
+        <h1 id="titleNav">Navigation</h1>
         <ul>
+            <li><a href="search">Recherche</a></li>
             <li><a href="codage-canal">Codage Canal</a></li>
             <li><a href="train">Codage Canal Train</a></li>
             <li><a href="sinus">Sinus</a></li>
             <li><a href="readme-note">Some Notes</a></li>
-            <li><a href="readme-wifi">Wifi</a></li>
+            <li><a href="readme-wifi">WiFi</a></li>
             <li><a href="readme-about">About</a></li>
         </ul>
         
@@ -52,14 +53,10 @@ function setResponsive(){
 
 
 if(window.location.search == ""){
-    if(window.location.href.match('index.html')){
-        basePage = window.location.href.replace('index.html', 'search.html');
+    if(window.location.origin === 'https://its-just-nans.github.io'){
+        basePage = window.location.origin + '/rt/' + 'search.html';
     }else{
-        if(window.location.origin === 'https://its-just-nans.github.io'){
-            basePage = window.location.origin + '/rt/' + 'search.html';
-        }else{
-            basePage = window.location.origin + '/' + 'search.html';
-        }
+        basePage = window.location.origin + '/files/' + 'search.html';
     }
 }else{
     //check if it's in local

@@ -188,7 +188,6 @@ To delete authentication of a client :
 clear dot11 client [ @MAC ]
 ```
 
-
 To clear statistics of an interface or of a client :
 ```nginx
 clear dot11 statistics [ interface | @MAC ]
@@ -196,10 +195,13 @@ clear dot11 statistics [ interface | @MAC ]
 
 Activate request to create a network-map
 ```nginx
-dot11 network-map « collect-interval » permet d’activer les requêtes
+dot11 network-map [ collect-interval ]
 ```
+> Legend :
+> The `[ collect-interval ]` is a number between 1 to 60,  it specifies the time interval between requests
 
-To display the network map
+
+To display the radio network-map
 ```nginx
 show dot11 network-map
 ```
