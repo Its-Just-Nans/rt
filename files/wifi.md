@@ -166,10 +166,30 @@ int dot11Radio 1
 > - `power client` is used to change the power of the client
 > - values `50` is in `mW (milliWatts)`
 
+### Use VLAN
+
+```nginx
+interface FastEthernet0.3
+    encapsulation dot1Q 3
+exit
+```
+> Legend :
+> - `FastEthernet0.3` we use the sub-interface
+> - `encapsulation dot1Q` to use VLAN
+> - `dot1Q 3` to speciify the VLAN 3
 
 ---
 
-## Useful command
+## WIFi with a controller
+
+To display a summary of all lightweight access points attached to the controller :
+```nginx
+show ap summary
+```
+
+---
+
+## Useful commands
 
 To display active WiFi on the AAP
 ```nginx
