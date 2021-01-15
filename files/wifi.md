@@ -5,6 +5,12 @@ Copyright Its-Just-Nans
 
 # WiFi
 
+## Source
+
+- **M.FRATI**'s lessons
+- Practical work (TP) with **M.FRATI**
+- Practical work (TP) with **M.KWIATKOWSKI**
+
 ## Vocabulary :
 
 - `AAP` : Autonomous Access Point
