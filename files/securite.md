@@ -35,11 +35,11 @@ openssl ALGO_NAME -in NAME_OF_FILE_IN -out NAME_OF_FILE_OUT -k PASSPHRASE
 ```
 > Legend :
 > - `ALGO_NAME`, pour voir les algorithmes disponible :
->> Tapez `openssl` puis `[TAB]`
+>>- `openssl` puis `[TAB]`
 >>
->> ou alors `openssl list -cipher-algorithms` (mais tous ne sont pas disponibles)
+>>- `openssl list -cipher-algorithms` (mais tous ne sont pas disponibles)
 >>
->>ou alors  `openssl help` partie `Ciphers commands`
+>>- `openssl help` partie `Ciphers commands`
 
 Encoder en base64 :
 ```sh
