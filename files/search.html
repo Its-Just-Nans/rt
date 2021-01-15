@@ -32,7 +32,13 @@
 
 <script>
 var datas;
-makeRequest('GET', './data/data.json').then(function(response){
+let linkToData;
+if(window.location.origin === 'https://its-just-nans.github.io'){
+	linkToData = './data/data.json';
+}else{
+	linkToData = 'https://its-just-nans.github.io/rt/data/data.json';
+}
+makeRequest('GET', linkToData).then(function(response){
 	datas = JSON.parse(response);
 }).catch(function (error){
 	//no data :(
@@ -64,12 +70,15 @@ document.getElementById('search').onclick = function(){
 		for(let element of datas.q){
 			if(element.largeKeywords){
 				if(isInArray(element.largeKeywords, oneWord)){
+					let newQuery = [];
 					if(wordOfQuery.length > 1){
 						//we delete the word of the search (because normally it can't be in largeKewords AND in keywords)
-						let query = wordOfQuery.filter(item => item !== oneWord);
+						newQuery = wordOfQuery.filter(item => item !== oneWord);
+					}else{
+						newQuery = wordOfQuery;
 					}
 					for(let smallKey of element.keywords){
-						for(let word of query){
+						for(let word of newQuery){
 							let index = datas.q.indexOf(element);
 							if(presquePareil(word, smallKey)){
 								
@@ -85,7 +94,7 @@ document.getElementById('search').onclick = function(){
 					}
 				}else{
 					for(let smallKey of element.keywords){
-						for(let word of query){
+						for(let word of wordOfQuery){
 							let index = datas.q.indexOf(element);
 							if(presquePareil(word, smallKey)){
 								
@@ -100,7 +109,7 @@ document.getElementById('search').onclick = function(){
 				}
 			}else{
 				for(let smallKey of element.keywords){
-					for(let word of query){
+					for(let word of wordOfQuery){
 						let index = datas.q.indexOf(element);
 						if(presquePareil(word, smallKey)){
 							
@@ -115,7 +124,6 @@ document.getElementById('search').onclick = function(){
 			}
 		}
 	}
-	debugger;
 	for(res of resultLast){
 		if(!result.includes(res)){
 			result.push(res);
