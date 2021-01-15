@@ -274,7 +274,7 @@ Activate request to create a network-map
 dot11 network-map [ collect-interval ]
 ```
 > Legend :
-> The `[ collect-interval ]` is a number between 1 to 60,  it specifies the time interval between requests
+> - The `[ collect-interval ]` is a number between 1 to 60,  it specifies the time interval between requests
 
 
 To display the radio network-map
