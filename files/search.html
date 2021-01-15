@@ -64,7 +64,10 @@ document.getElementById('search').onclick = function(){
 		for(let element of datas.q){
 			if(element.largeKeywords){
 				if(isInArray(element.largeKeywords, oneWord)){
-					let query = wordOfQuery.filter(item => item !== oneWord);
+					if(wordOfQuery.split(' ').length > 1){
+						//we delete the word of the search (because normally it can't be in largeKewords AND in keywords)
+						let query = wordOfQuery.filter(item => item !== oneWord);
+					}
 					for(let smallKey of element.keywords){
 						for(let word of query){
 							let index = datas.q.indexOf(element);
