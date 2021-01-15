@@ -53,6 +53,7 @@ nav li{
         border-bottom: 2px solid black;
         border-right: 0px;
         z-index: 10;
+        cursor: pointer;
     }
     nav ul{
         display: none;
