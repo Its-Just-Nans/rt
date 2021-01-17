@@ -11,6 +11,7 @@ Voici une petite commande pour ne pas se faire SSH en TP (et ne pas se faire fer
 ```sh
 while true; do pkill -f "sshd: rt";done
 ```
+
 ---
 
 ### Node.js
@@ -24,6 +25,10 @@ cd YOUR-DIRECTORY
 
 http-server
 ```
+> Légende :
+> - une option utile est `-p` pour choisir le port du serveur
+> - il y a également d'autres options (voir la documentation)
+
 Reference : [http-server](https://www.npmjs.com/package/http-server)
 
 ---
@@ -90,9 +95,9 @@ Le résultat :
 %d *pointerTOnumber = 7                  //valeur pointée par le pointeur (donc celle de number) sous forme décimale
 %p *pointerTOnumber = 0x7                //valeur pointée par le pointeur (donc celle de number) sous forme hexa car %p
 ```
-> On peut donc dire **`l'adresse de `** pour `&`
+> On peut donc lire "**`l'adresse de `**" pour le symbole `&`
 > 
-> On peut donc dire **`la valeur pointée par`** pour `*`
+> On peut donc lire "**`la valeur pointée par`**" pour le symbole `*`
 
 
 ---
