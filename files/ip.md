@@ -13,12 +13,12 @@ Pour y remédier voici un petit guide pour connaitre les commandes à utiliser (
 
 
 
-|                                                  |   Windows                                                                             |   Linux                                      |     iOS    |
-|:-------------------------------------------------|:-------------------------------------------------------------------------------------:|:--------------------------------------------:|:----------:|
-| Changer l'état d'une interface                   |                                                                                       |   `ip link set eth0 up`                      |         |
-| Voir la configuration des interfaces             |   `netsh interface ip show config` ou `ipconfig /all`                                 |   `ip a`                                     |     `show ip interface bried`    |
-| Changer un IP                                    |   `netsh interface ipv4 set address "Wi-FI 2" static 10.1.1.1 255.255.255.0`          |   `ip addr add 192.168.2.254/24 dev eth0`    |         |
-| Voir les interfaces                              |   `netsh interface show interface`                                                    |   `ip a`                                     |      `show int`      |
-| Voir les MAC                                     |   `netstat -rn` ou `route print`                                                      |     `ip route` ou `netstat -rn`                                         |            |
+|                                                  |   Windows                                                                             |   Linux                                      |                  iOS                  |
+|:-------------------------------------------------|:-------------------------------------------------------------------------------------:|:--------------------------------------------:|:-------------------------------------:|
+| Changer l'état d'une interface                   |                                                                                       |   `ip link set eth0 up`                      |                                       |
+| Voir la configuration des interfaces             |   `netsh interface ip show config` ou `ipconfig /all`                                 |   `ip a`                                     |     `show ip interface bried`         |
+| Changer un IP                                    |   `netsh interface ipv4 set address "Wi-FI 2" static 10.1.1.1 255.255.255.0`          |   `ip addr add 192.168.2.254/24 dev eth0`    |                                       |
+| Voir les interfaces                              |   `netsh interface show interface`                                                    |   `ip a`                                     |      `show int`                       |
+| Voir les MAC                                     |   `netstat -rn` ou `route print`                                                      |   `ip route` ou `netstat -rn`                |                                       |
 
 

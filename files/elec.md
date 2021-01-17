@@ -21,15 +21,15 @@ L'électricité est l'effet du déplacement de particules chargées à l'intéri
 
 #### Le courant ou intensité `I` en Ampère (A)
 
-#### La tension `V` ou `V` en Volt (V)
+#### La tension `U` ou `V` en Volt (V)
 
 #### La résistance `R` en Ohm (Ω)
 
 #### La conductivité `G` en Siemens (S)
 
 #### La Puissance `P` en Watt (W)
-![Equation](https://latex.codecogs.com/svg.latex?C=\frac{I}{U})
 
+![Equation](https://latex.codecogs.com/svg.latex?C=\frac{I}{U})
 ## Les composants élcectriques
 
 
