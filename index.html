@@ -76,8 +76,7 @@ function displayNewPage(link){
         //if there is nothing, we redirect to the search page
         basePage += 'search.html';
     }else{
-        //we can uncomment to yell at the user he is dumb AND to prevent useless request (when the user click on the link to the actual page)
-        //if(link != window.location.hash){
+        if(link != window.location.hash){
             let linkToFile;
             if(!link){
                 linkToFile = window.location.hash;
@@ -90,10 +89,14 @@ function displayNewPage(link){
                 basePage += linkToFile.replace('#', '') + '.html';
             }
             loadNewPage(basePage);
-        /*}else{
-            smollPopUp({title : 'Hi', content : 'You are dumb'}, 'ko');
+        }else{
+            //to prevent useless request (when the user click on the link to the actual page)
+            //smollPopUp({title : 'Hi, you are dumb', content : 'Why are you clicking the same page'}, 'ko');
             basePage = '';
-        }*/
+        }
+    }
+    if(basePage != ''){
+        loadNewPage(basePage);
     }
 }
 
