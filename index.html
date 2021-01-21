@@ -58,13 +58,11 @@ function setResponsive(){
     }
 }
 
-window.onhashchange = function() {
-    displayNewPage();
-}
 
 displayNewPage();
 
 function displayNewPage(link){
+    window.onhashchange = function() {};
     let basePage;
     //check if it's in local
     if(window.location.origin === 'https://its-just-nans.github.io'){
@@ -88,7 +86,6 @@ function displayNewPage(link){
             }else{
                 basePage += linkToFile.replace('#', '') + '.html';
             }
-            loadNewPage(basePage);
         }else{
             //to prevent useless request (when the user click on the link to the actual page)
             //smollPopUp({title : "You're dumb", content : 'Why are you clicking the same page ?!'}, 'ko');
@@ -153,6 +150,10 @@ function loadNewPage(url){
                     //good ?
                 }
             }
+        }
+        //we re-bind hash change (this allow us to loadpage when the user clicks on "back")
+        window.onhashchange = function() {
+            displayNewPage();
         }
     }).catch(function (error){
         console.log('log: ', error);
