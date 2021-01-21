@@ -28,7 +28,7 @@ GitHub est un **service web d'hébergement** et de gestion de développement de 
 
 `git checkout BRANCH_NAME` : permet de changer de branche
 
-`git checkout BRANCH_NAME` : permet de changer de branche
+`git branch BRANCH_NAME` : permet de créer une branche
 
 ### Faire une commit :
 
