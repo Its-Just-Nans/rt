@@ -18,6 +18,8 @@ Git est un logiciel de gestion de versions décentralisé.([Wikipedia](https://f
 
 GitHub est un **service web d'hébergement** et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions `Git`. ([Wikipedia](https://fr.wikipedia.org/wiki/GitHub))
 
+---
+
 ## Command GIT sur Visual Studio
 
 ### Commandes GIT
@@ -50,7 +52,7 @@ GitHub est un **service web d'hébergement** et de gestion de développement de 
 
 > - Il est conseillé de mettre un nom précis et/mais simple.
 >
-> - Il est aussi conseillé d'utiliser des mot clés par exemple :
+> - Il est aussi conseillé d'utiliser des mot clés, par exemple :
 >
 >```txt
 >[fix] correct somthing
@@ -72,6 +74,6 @@ GitHub est un **service web d'hébergement** et de gestion de développement de 
 
 ![Source Control](./data/github-commit.png)
 
-- Enfin on `push` (pousse) la commit vers l'origine (GitHub)
+- Enfin on `push` (pousse) la commit vers l'origine (GitHub) en cliquant sur l'icone de synchronisation
 
 ![Source Control](./data/github-push.png)

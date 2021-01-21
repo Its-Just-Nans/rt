@@ -16,12 +16,13 @@ Copyright Its-Just-Nans
 
 ### Rappel fonction hachage :
 
-|                             | MD5 | SHA-1 | SHA-256 |
+| Taille du condensé          | MD5 | SHA-1 | SHA-256 |
 |:----------------------------|:---:|:-----:|:-------:| 
 | Taille en bits :            | 128 |  160  |   256   |
 | Taille en hexa (bits/4) :   |  32 |   40  |    64   |
 | Taille en octets (bits/8) : |  16 |   20  |    32   |
 
+[Tableau récapitulatif](https://en.wikipedia.org/wiki/SHA-1#Comparison_of_SHA_functions)
 
 ---
 
