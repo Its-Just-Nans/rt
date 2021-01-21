@@ -48,9 +48,9 @@ GitHub est un **service web d'hébergement** et de gestion de développement de 
 
 - Saisissez maintenant la description de la commit
 
->Il est conseillé de mettre un nom précis et/mais simple.
+> - Il est conseillé de mettre un nom précis et/mais simple.
 >
->Il est aussi conseillé d'utiliser des mot clés par exemple :
+> - Il est aussi conseillé d'utiliser des mot clés par exemple :
 >
 >```txt
 >[fix] correct somthing
@@ -64,7 +64,7 @@ GitHub est un **service web d'hébergement** et de gestion de développement de 
 >> Légende:
 >> Pour une nouveauté
 >
->Il est fortement conseillé d'écrire le message en anglais (si jamais le projet devient plus grand !)
+> - Il est fortement conseillé d'écrire le message en anglais (si jamais le projet devient plus grand !)
 
 ![Source Control](./data/github-message.png)
 
