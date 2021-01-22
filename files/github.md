@@ -55,13 +55,13 @@ GitHub est un **service web d'hébergement** et de gestion de développement de 
 > - Il est aussi conseillé d'utiliser des mot clés, par exemple :
 >
 >```txt
->[fix] correct somthing
+>[fix] correct something
 >```
 >> Légende:
 >> Pour une correction de bug par exemple
 >
 >```txt
->[feature] add somthing
+>[feature] add something
 >```
 >> Légende:
 >> Pour une nouveauté
