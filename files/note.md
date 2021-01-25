@@ -108,7 +108,7 @@ Le résultat :
 
 ```
 int main(int argc, char *argv[]){
-    for(int o=0; o< argc; o++){
+    for(int o=0; o < argc; o++){
         printf("Argument %d : %s\n", o, argv[o]);
     }
     return 0;
