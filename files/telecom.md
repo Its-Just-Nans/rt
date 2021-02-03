@@ -9,15 +9,27 @@ Copyright Its-Just-Nans
 
 - Cours, TPs et TDs de **Mme.THEYS**
 - Cours, TPs et TDs de **M.PAYAN**
+- [Site Web de M.Mazet](http://miv.u-strasbg.fr/mazet/mazet-fr.html)
+- [Animations sur le site de M.Mazet](http://miv.u-strasbg.fr/mazet/animations/)
+
+---
 
 ## Codage Source
 
 
+---
+
 ## Bits et symbole
+
+---
 
 ## Codage Canal
 
+---
+
 ## Diagramme de constellation
+
+---
 
 ## Diagramme de l'oeil
 
@@ -27,13 +39,17 @@ Pour le tracer, on prend une période (soit T ou 2*T) et on trace le signal sur 
 
 On peut donc mesurer la distance horizontale, aussi appelée "l'ouverture de l'oeil".
 
+[Animation du diagramme de l'oeil](http://miv.u-strasbg.fr/mazet/animations/eyediag.html)
+
+---
 
 ## SER et BER
 
+---
 
+## Débit
 
-# Débit
-
+---
 
 ## Modulation
 
