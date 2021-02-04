@@ -42,6 +42,8 @@ Le site possède aussi des pages webs contenant du JavaScript. Les scripts sont 
 
 Le site utilise aussi l' [API GitHub](https://docs.github.com/en/rest) pour, par exemple, l'onglet `Raw Files` ou encore l'onglet `Search`. J'aurais techniquement du utiliser cette `API` pour l'affichage du menu, mais comme l'API possède des Limits Rate, je préfère que le menu soit en dur.
 
+Certain fichier MarkDown utilisent des formules créer automatiquement par ce site [https://latex.codecogs.com](https://latex.codecogs.com)
+
 ---
 
 ### Pourquoi le site est parfois en Français et parfois en Anglais ?

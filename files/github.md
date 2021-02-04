@@ -34,19 +34,19 @@ GitHub est un **service web d'hébergement** et de gestion de développement de 
 
 - Aller dans l'onglet `Source Control`
 
-![Source Control](./data/github-source_control.png)
+![Source Control](./data/github/github-source_control.png)
 
 - Dans le bon repository, mettre votre souris sur le fichier à commit
 
-![Source Control](./data/github-mouse-over.png)
+![Mouse over](./data/github/github-mouse-over.png)
 
 - Cliquez sur le `+`, ou `Stage Changes`
 
-![Source Control](./data/github-stage-changes.png)
+![Stage changes](./data/github/github-stage-changes.png)
 
 - On peut voir que le fichier est maintenant dans `Staged Changes`
 
-![Source Control](./data/github-staged-changes.png)
+![Staged changes](./data/github/github-staged-changes.png)
 
 - Saisissez maintenant la description de la commit
 
@@ -68,12 +68,12 @@ GitHub est un **service web d'hébergement** et de gestion de développement de 
 >
 > - Il est fortement conseillé d'écrire le message en anglais (si jamais le projet devient plus grand !)
 
-![Source Control](./data/github-message.png)
+![Commit message](./data/github/github-message.png)
 
 - Ensuite, vous pouvez commit, en appuyant que la coche (check mark)
 
-![Source Control](./data/github-commit.png)
+![Commit](./data/github/github-commit.png)
 
 - Enfin on `push` (pousse) la commit vers l'origine (GitHub) en cliquant sur l'icone de synchronisation
 
-![Source Control](./data/github-push.png)
+![Push](./data/github/github-push.png)
