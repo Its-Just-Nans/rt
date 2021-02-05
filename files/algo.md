@@ -9,7 +9,7 @@
 ### Initialisation d’une liste 
 
 > Fonction Init (D/R uneListe: Liste)
-```
+```yaml
 Fonction Init(R uneListe: Liste)
 Var
     ptr : pointeur sur cellule;
@@ -22,7 +22,7 @@ Fin
 
 Ou alors
 
-```
+```yaml
 Fonction Init(R uneListe: Liste)
 Var
     ptr : pointeur sur cellule;
@@ -37,7 +37,7 @@ Fin
 
 Ou alors
 
-```
+```yaml
 Fonction Init(R uneListe: Liste)
 Debut
     uneListe.tete <- null;
@@ -52,7 +52,7 @@ Fin
 
 > Fonction ListeVide (D uneListe: Liste, R ?vide: Booleen)
 
-```
+```yaml
 Fonction ListeVide(D uneListe: Liste, R unResultat: Boolean)
 Debut
     Si (uneListe.tete=null)
@@ -71,7 +71,7 @@ Fin
 
 > Fonction Longueur (D uneListe: Liste, R uneLongueur: Entier)
 
-```
+```yaml
 Fonction Longueur(D uneListe: Liste, R uneLongueur: Entier)
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete;
@@ -90,7 +90,7 @@ Fin
 
 Ou alors
 
-```
+```yaml
 Fonction Longueur(D uneListe: Liste, R uneLongueur: Entier)
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete;
@@ -115,31 +115,66 @@ Fin
 
 ---
 
-<!--
-
 ### Recherche le ième élément
 
 > Fonction Ieme(D uneListe: Liste, D unePosition: Entier, R unElement: Entier )
 
-```
+```yaml
 Fonction Ieme(D uneListe: Liste, D unePosition: Entier, R unElement: Entier)
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
-    compteur: Entier c'est 0
+    compteur: Entier c'est 1
 Debut
-    Tant que (compteur != (unePosition-1) et ptr != null)
+    Tant que (compteur < unePosition et ptr->suivant != null)
     Faire
     Debut
         compteur <- compteur + 1;
         ptr <- ptr->suivant;
     FinTantque
-    unElement <- ptr->info;
-    retourner unElement;
+    Si (ptr->suivant = null)
+    Alors
+        Si (compteur = unePosition)
+        Alors
+            unElement <- ptr->info;
+            retourner unElement;
+        Sinon
+            unElement <- -1;
+            retourner unElement;
+        FinSi
+    Sinon
+        unElement <- ptr->info;
+        retourner unElement;
+    FinSi
+Fin
+```
+
+Ou alors
+
+```yaml
+Fonction Ieme(D uneListe: Liste, D unePosition: Entier, R unElement: Entier)
+Var
+    ptr: Pointeur sur Cellule c'est uneListe.tete
+    compteur: Entier c'est 1
+Debut
+    Tant que (compteur < unePosition et ptr != null)
+    Faire
+    Debut
+        compteur <- compteur + 1;
+        ptr <- ptr->suivant;
+    FinTantque
+    Si (compteur = unePosition et ptr != null)
+    Alors
+        unElement <- ptr->info;
+    Sinon
+        unElement <- -1;
+    FinSi
+        retourner unElement;
 Fin
 ```
 
 --- 
 
+<!--
 
 ### Supprimer: supprimer un élément se trouvant à une position spécifique
 
@@ -166,6 +201,7 @@ Debut
     retourner uneListe
 Fin
 ```
+<!--
 
 ---
 
