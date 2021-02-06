@@ -1,3 +1,8 @@
+<!--
+Created by Its-Just-Nans - https://github.com/Its-Just-Nans
+Copyright Its-Just-Nans
+--->
+
 # Algorithmie
 
 ## Sources
@@ -174,6 +179,55 @@ Fin
 
 --- 
 
+
+### Appartient: rechercher un élément spécifique dans une liste et s'il existe, retourner Vrai
+
+> Fonction Appartient (D uneListe: Liste, D unElement: Entier, R unResultat: Booleen)
+
+```yaml
+Fonction Appartient (D uneListe: Liste, D unElement: Entier, R unResultat: Booleen)
+Var
+    ptr: Pointeur sur Cellule c'est uneListe.tete
+Debut
+    unResultat = Faux;
+    Tant que (ptr->suivant != null)
+    Faire
+    Debut
+        Si (ptr->info = unElement)
+        Alors
+            unResultat <- Vrai;
+            retourner unResultat
+        Sinon
+            ptr <- ptr->suivant;
+        FinSi
+    FinTantque
+    retourner unResultat
+Fin
+```
+
+Ou alors 
+
+```yaml
+Fonction Appartient (D uneListe: Liste, D unElement: Entier, R unResultat: Booleen)
+Var
+    ptr: Pointeur sur Cellule c'est uneListe.tete
+Debut
+    Tant que (ptr->info != UnElement et ptr->suivant != null)
+    Faire
+    Debut
+        ptr <- ptr->suivant;
+    FinTantque
+    Si (ptr->info = unElement)
+    Alors
+        unResultat <- Vrai;
+    Sinon
+        unResultat <- Faux;
+    FinSi
+    retourner unResultat
+Fin
+```
+
+
 <!--
 
 ### Supprimer: supprimer un élément se trouvant à une position spécifique
@@ -201,7 +255,7 @@ Debut
     retourner uneListe
 Fin
 ```
-<!--
+
 
 ---
 
