@@ -85,7 +85,7 @@
 			},
 			{
 				"keywords": ["transformation", "fourier", "huffman"],
-				"1": ["http://efreidoc.fr/L3/Coding%20%26%20Transformation/Cours/"],
+				"1": ["http://efreidoc.fr/L3/Coding%20%26%20Transformation/Cours/", "https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Elec/Fourier/fourier1.php"],
 				"2": []
 				
 			},
@@ -186,10 +186,22 @@
 				"2": []
 			},
 			{
+				"largeKeywords": ["animations, physiques"],
+				"keywords": ["physiques", "eclectricite"],
+				"1": ["https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/menu/menu_gene.php"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["animations"],
+				"keywords": ["ondes"],
+				"1": ["https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Ondes/ondes_stationnaires/melde.php"],
+				"2": []
+			},
+			{
 				"largeKeywords": [],
 				"keywords": [],
 				"1": [],
 				"2": []
 			}
 		]
-	}
+}

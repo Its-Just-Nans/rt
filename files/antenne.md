@@ -10,6 +10,7 @@ Copyright Its-Just-Nans
 - Cours de **M. Luxey**
 - Cours de **M. Fortino**
 - [Animation Onde Stationnaire](https://sbizet.alwaysdata.net/sn/ros/swr_anim.html)
+- [Animation Onde Stationnaire](https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Ondes/ondes_stationnaires/stationnaires.php)
 
 ## Antennes
 
@@ -30,7 +31,7 @@ Copyright Its-Just-Nans
 | Ondes progressives et ondes stationnaires | 
 |:-----------------------------------------:|
 |    ![Ondes](./data/antenne/ondes_coeff_0.5.gif)     |
-| Quand le coéfficent de réflexion est entre 0 et 1, l'onde incidente et l'onde réflechie sont présente. On parle égalament d'onde progressive (vulgairement : l'onde totale "avance") |
+| Quand le coéfficent de réflexion est entre 0 et 1, l'onde incidente et l'onde réflechie sont présente. On parle également d'onde progressive (vulgairement : l'onde totale "avance") |
 
 ### Quand le coéfficent de réflexion est à 1
 
