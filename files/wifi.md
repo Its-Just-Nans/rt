@@ -11,15 +11,19 @@ Copyright Its-Just-Nans
 - Practical work (TP) with **M.FRATI**
 - Practical work (TP) with **M.KWIATKOWSKI**
 
-## Vocabulary :
+
+---
+
+## Vocabulary
 
 - `AAP` : Autonomous Access Point
+- `LAP` : Lightweight Access Point, it needs a controller to get his configuration and work.
 
 ---
 
 ## Command to configure WiFi
 
-### Reminder Commande Cisco :
+### Reminder Cisco commands
 
 To change the name of the AAP :
 ```nginx
@@ -84,11 +88,11 @@ Three security are available :
 - WEP (deprecated)
 - WPA-PSK
   
-### No security
+### - No security
 
 The configuration above is without security
 
-###  WEP
+###  - WEP
 
 Normal declaration for the SSID :
 ```nginx
@@ -114,7 +118,7 @@ exit
 > `encryption vlan 4 mode wep mandatory`
 > - The number `7` means it is encrypted
 
-### WPA-PSK
+### - WPA-PSK
 
 Declaration for the SSID change :
 ```nginx
