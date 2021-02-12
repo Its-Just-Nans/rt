@@ -228,7 +228,7 @@ Fin
 ```
 
 
-<!--
+
 
 ### Supprimer: supprimer un élément se trouvant à une position spécifique
 
@@ -239,19 +239,59 @@ Fonction Supprimer (D/R uneListe: Liste, D unePosition: Entier)
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
     ptr2: Pointeur sur Cellule
-    ptr3: Pointeur sur Cellule
-    compteur: Entier c'est 0
+    compteur: Entier c'est 1
 Debut
-    Tant que (compteur != (unePosition-2) )
-    Faire
-    Debut
-        compteur <- compteur + 1
-        ptr <- ptr->suivant
-    FinTantque
-    ptr2 <- ptr
-    ptr3 <- ptr->suivant
-    free(ptr)
-    ptr2.suivant <- *ptr3
+    Si (unePosition != 1)
+    Alors
+        Tant que (compteur < (unePosition-1) et ptr->suivant != null)
+        Faire
+        Debut
+            compteur <- compteur + 1
+            ptr <- ptr->suivant
+        FinTantque
+        Si ( ptr->suivant != null)
+        Alors
+            ptr2 <- ptr->suivant
+            ptr->suivant <- ptr2->suivant
+            free(ptr2)
+        FinSi
+    Sinon
+        uneListe.tete <- ptr->suivant
+        free(ptr)
+    FinSi
+    retourner uneListe
+Fin
+```
+
+Ou alors
+
+```
+Fonction Supprimer (D/R uneListe: Liste, D unePosition: Entier)
+Var
+    ptr: Pointeur sur Cellule c'est uneListe.tete;
+    ptrPrec: Pointeur sur Cellule;
+    cpt: Entier c'est 1;
+Debut
+    Si (unePosition = 1)
+    Alors
+        uneListe.tete <- ptr->suivant;
+        free(ptr);
+    Sinon
+        Tant que (compteur < unePosition et ptr->suivant != null)
+        Faire
+        Debut
+            ptrPrec <- ptr;
+            ptr <- ptr->suivant;
+            compteur <- compteur + 1;
+        FinTantque
+        Si (cpt=unePosition)
+        Alors
+            ptrPrec->suivant <- ptr->suivant;
+            free(ptr);
+        Sinon
+            Ecrire(La posiion n'existe pas)
+        FinSi
+    FinSi
     retourner uneListe
 Fin
 ```
@@ -268,23 +308,37 @@ Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
     ptr2: Pointeur sur Cellule
     ptr3: Pointeur sur Cellule
-    compteur: Entier c'est 0
+    compteur: Entier c'est 1
 Debut
-    Tant que (compteur != (unePosition-2) )
-    Faire
-    Debut
-        compteur <- compteur + 1
-        ptr <- ptr->suivant
-    FinTantque
-    new(ptr2)
-    ptr.suivant <-
-    ptr3 <- ptr->suivant
-    free(ptr)
-    ptr2.suivant <- *ptr3
-    retourner uneListe
+    Si(ptr != null)
+    Alors
+        Si(unePosition = 1)
+        Alors
+            new(ptr2)
+            ptr2->suivant <- uneListe.tete
+            uneListe.tete -> ptr2
+        Sinon
+            Tant que (compteur < (unePosition-1) et ptr->suivant != null)
+            Faire
+            Debut
+                compteur <- compteur + 1
+                ptr <- ptr->suivant
+            FinTantque
+            Si(compteur = unePosition)
+            Alors
+                ptr3 <- ptr->suivant
+                ptr3 <- ptr->suivant
+                ptr->suivant <- ptr2
+                new(ptr2)
+                ptr2->info <- 1
+                ptr2->suivant <- ptr3
+            Sinon
+                Ecrire(La position n'existe pas)
+            FinSi
+        retourner uneListe
+    Sinon
+        Ecrire(La liste n'existe pas)
+    FinSi
 Fin
 ```
 
-
-
--->
