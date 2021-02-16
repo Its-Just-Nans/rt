@@ -137,5 +137,8 @@ En régime alternatif, on a :
 
 ![Equation](https://latex.codecogs.com/svg.latex?p\(t\)=u\(t\)*i\(t\))
 
+
+---
+
 ## Les composants électriques
 
