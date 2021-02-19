@@ -234,7 +234,7 @@ Fin
 
 > Fonction Supprimer (D/R uneListe: Liste, D unePosition: Entier)
 
-```
+```yaml
 Fonction Supprimer (D/R uneListe: Liste, D unePosition: Entier)
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
@@ -265,7 +265,7 @@ Fin
 
 Ou alors
 
-```
+```yaml
 Fonction Supprimer (D/R uneListe: Liste, D unePosition: Entier)
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete;
@@ -300,9 +300,10 @@ Fin
 ---
 
 ### Ajouter: ajouter un élément donné à une position spécifique
+
 > Fonction Ajouter (D/R uneListe: Liste, D unePosition: Entier, D unElement: Entier )
 
-```
+```yaml
 Fonction Ajouter (D/R uneListe: Liste, D unePosition: Entier, D unElement: Entier )
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
@@ -348,7 +349,7 @@ Fin
 
 Ou Alors :
 
-```
+```yaml
 Fonction Ajouter (D/R uneListe: Liste, D unePosition: Entier, D unElement: Entier )
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete;
@@ -386,5 +387,51 @@ Debut
 Fin
 ```
 
+---
 
+## Files
 
+> Fonction AjouterFile (D/R uneListe: Liste, D unElement: Entier)
+
+```yaml
+Fonction AjouterFile (D/R uneFile: File, D unElement: Entier)
+Var
+    ptr: Pointeur sur Cellule c'est uneFile.queue;
+Debut
+    new(ptr);
+    ptr->info <- unElement;
+    ptr->suivant <- null;
+    Si(uneFile.tete = null)
+    Alors
+        uneFile.tete <- ptr;
+        uneFile.queue <- ptr;
+    Sinon
+        (uneFile.queue)->suivant <- ptr;
+        uneFile.queue <- ptr;
+    FinSi
+    retourner uneFile
+Fin
+```
+
+> Fonction SupprimerFile (D/R uneFile: Liste)
+
+```yaml
+Fonction SupprimerFile (D/R uneFile: Liste)
+Var
+    ptr: Pointeur sur Cellule;
+Debut
+    Si(uneFile.tete != null)
+    Alors
+        ptr <- uneFile.tete;
+        uneFile.tete <- (ptr->suivant);
+        free(ptr);
+        Si(uneFile.tete=null) //cas où la file devient vide
+        Alors
+            uneFile.queue <- null;
+        FinSi
+    Sinon
+        Erreur("Erreur : File Vide")
+    FinSi
+    retourner uneFile
+Fin
+```
