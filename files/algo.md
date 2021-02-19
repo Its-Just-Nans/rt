@@ -316,6 +316,7 @@ Debut
         Alors
             new(ptr2)
             ptr2->suivant <- uneListe.tete
+            ptr2->info <- unElement
             uneListe.tete -> ptr2
         Sinon
             Tant que (compteur < (unePosition-1) et ptr->suivant != null)
@@ -324,21 +325,66 @@ Debut
                 compteur <- compteur + 1
                 ptr <- ptr->suivant
             FinTantque
-            Si(compteur = unePosition)
+            Si(compteur = (unePosition-1))
             Alors
                 ptr3 <- ptr->suivant
-                ptr3 <- ptr->suivant
-                ptr->suivant <- ptr2
                 new(ptr2)
-                ptr2->info <- 1
+                ptr->suivant <- ptr2
+                ptr2->info <- unElement
                 ptr2->suivant <- ptr3
             Sinon
-                Ecrire(La position n'existe pas)
+                new(ptr2)
+                ptr->suivant <- ptr2
+                ptr2->info <- unElement
             FinSi
-        retourner uneListe
     Sinon
-        Ecrire(La liste n'existe pas)
+        new(ptr2)
+        uneListe.tete -> ptr2
+        ptr2->info <- unElement
+    FinSi
+    retourner uneListe
+Fin
+```
+
+Ou Alors :
+
+```
+Fonction Ajouter (D/R uneListe: Liste, D unePosition: Entier, D unElement: Entier )
+Var
+    ptr: Pointeur sur Cellule c'est uneListe.tete;
+    ptrNouv: Pointeur sur Cellule;
+    ptrPrec: Pointeur sur Cellule;
+    compteur: Entier c'est 1;
+Debut
+    new(ptrNouv)
+    ptrNouv->info <- unElement;
+    prtNouv->suivant <- null;
+    Si (ptr = null)
+    Alors
+        uneListe->tete <- ptrNouv;
+    Sinon
+        Si (unePosition = 1)
+        Alors
+            ptrNouv->suivant <- uneListe->tete;
+            uneListe->tete <- ptrNouv;
+        Sinon
+            Tant que (cpt < unePosition et ptr != null)
+            Faire
+                ptrPrec <_ptr;
+                ptr <- ptr->suivant;
+                cpt++;
+            FinTantQue
+            Si ( cpt=unePosition )
+            Alors
+                ptrPrec->suivant <- ptrNouv;
+                ptrNouv->suivant <- ptr;
+            Sinon
+                ptr->suivant <- ptrNouv;
+            FinSi
+        FinSi
     FinSi
 Fin
 ```
+
+
 
