@@ -38,9 +38,9 @@ Avec ce principe, je peux charger les fichiers sans recharger la page à chaque 
 
 Le site marche donc avec des fichiers [MarkDown](https://fr.wikipedia.org/wiki/Markdown) convertit à la volée par la libraire [Showdown](https://github.com/showdownjs/showdown).
 
-Le site possède aussi des pages webs contenant du JavaScript. Les scripts sont évalués avec la fonction `eval()` (méthode très artisanale et techniquement peut sécurisé mais amusante).
+Le site possède aussi des pages webs contenant du JavaScript. Les scripts sont évalués avec la fonction `eval()` (méthode très artisanale et techniquement peu sécurisée mais amusante).
 
-Le site utilise aussi l' [API GitHub](https://docs.github.com/en/rest) pour, par exemple, l'onglet `Raw Files` ou encore l'onglet `Search`. J'aurais techniquement du utiliser cette `API` pour l'affichage du menu, mais comme l'API possède des Limits Rate, je préfère que le menu soit en dur.
+Le site utilise aussi l' [API GitHub](https://docs.github.com/en/rest) pour, par exemple, l'onglet `Raw Files` ou encore l'onglet `Search`. J'aurais techniquement dû utiliser cette `API` pour l'affichage du menu, mais comme l'API possède des Limits Rate, je préfère que le menu soit en dur.
 
 Certains fichiers MarkDown utilisent des formules créées automatiquement par ce site [https://latex.codecogs.com](https://latex.codecogs.com)
 
