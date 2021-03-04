@@ -3,7 +3,7 @@ Created by Its-Just-Nans - https://github.com/Its-Just-Nans
 Copyright Its-Just-Nans
 --->
 
-# Algorithmie
+# Algorithmie avancée
 
 ## Sources
 
@@ -77,15 +77,15 @@ Fin
 ### Palindrome
 
 ```yaml
-Fonction Palindrome (D uneCh: chaine)
+Fonction Palindrome (D uneChaine: chaine)
 Var
-    longeurMot: Entier c'est Longeur(uneCh)
+    longeurMot: Entier c'est Longeur(uneChaine)
 Debut
     Si longeurMot = 0 ou longeurMot = 1:
     Alors
         retourner VRAI;
     Sinon
-        Si uneChaine(0) != uneChaine(longeurMot-1):
+        Si uneChaine[0] != uneChaine[longeurMot-1]:
         Alors
             retourner FAUX;
         Sinon
