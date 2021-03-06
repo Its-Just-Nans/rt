@@ -1,7 +1,7 @@
-globalScope = {};
-let basePage;
-setResponsive();
-window.onresize = setResponsive;
+const NAME_OF_PROJECT = "rt";
+const DEFAULT_FILE = "search.html";
+const DEFAULT_HASH = "#search";
+const DOMAIN_NAME = "https://its-just-nans.github.io";
 
 function checkStyleOfNav(){
     let navBlock = document.getElementsByTagName('nav')[0];
@@ -25,38 +25,78 @@ function setResponsive(){
     }
 }
 
+setResponsive();
+window.onresize = setResponsive;
 
-displayNewPage();
+function getNavLinks(){
+    let links = [];
+    [...document.getElementById('nav-list').children].forEach( (element) => {
+        if(element.localName == 'li'){
+            links.push(element.childNodes[0].href);
+        }
+    });
+    return links;
+}
+
+const NAVIGATION_LINKS = getNavLinks();
+
+window.onhashchange = function(event) {
+    const newURL = event.newURL;
+    if(event.oldURL != newURL){
+        //to prevent useless request (when the user click on the link to the actual page)
+        //smollPopUp({title : "You're dumb", content : 'Why are you clicking the same page ?!'}, 'ko');
+        for(let oneLink of NAVIGATION_LINKS){
+            if(newURL == oneLink){
+                displayNewPage();
+                break;
+            }
+        }
+    }
+}
+
+function startNav(){
+    let actualHash = window.location.hash;
+    let newHash = "";
+    if(actualHash !== ""){
+        for(let oneLink of NAVIGATION_LINKS){
+            if(oneLink.endsWith(actualHash)){
+                newHash = `#${oneLink.split('#')[1]}`;
+                break;
+            }
+        }
+    }
+    if(newHash !== ""){
+        displayNewPage(newHash);
+    }else{
+        window.location.hash = DEFAULT_HASH;
+    }
+}
+
+
+startNav();
 
 function displayNewPage(link){
-    window.onhashchange = function() {};
     let basePage;
     //check if it's in local
-    if(window.location.origin === 'https://its-just-nans.github.io'){
-        basePage = window.location.origin + '/rt/files/';
+    if(window.location.origin === DOMAIN_NAME){
+        basePage = window.location.origin + `/${NAME_OF_PROJECT}/files/`;
     }else{
         basePage = window.location.origin + '/files/';
     }
     if(window.location.hash == "" && !link){
-        //if there is nothing, we load to the search page
-        basePage += 'search.html';
+        //if there is nothing, we load to the default file
+        basePage += DEFAULT_FILE;
     }else{
-        if(link != window.location.hash){
-            let linkToFile;
-            if(!link){
-                linkToFile = window.location.hash;
-            }else{
-                linkToFile = link;
-            }
-            if(linkToFile.startsWith('#readme-')){
-                basePage += linkToFile.replace('#readme-', '') + '.md';
-            }else{
-                basePage += linkToFile.replace('#', '') + '.html';
-            }
+        let linkToFile;
+        if(!link){
+            linkToFile = window.location.hash;
         }else{
-            //to prevent useless request (when the user click on the link to the actual page)
-            //smollPopUp({title : "You're dumb", content : 'Why are you clicking the same page ?!'}, 'ko');
-            basePage = '';
+            linkToFile = link;
+        }
+        if(linkToFile.startsWith('#readme-')){
+            basePage += linkToFile.replace('#readme-', '') + '.md';
+        }else{
+            basePage += linkToFile.replace('#', '') + '.html';
         }
     }
     if(basePage != ''){
@@ -85,9 +125,7 @@ function loadNewPage(url){
                     }, 100);
                 }
             }
-            setTimeout(function(){
-                render();
-            }, 100);
+            render();
         }else{
             document.getElementById('contenuMain').innerHTML = response;
             let allScripts = document.getElementById('contenuMain').getElementsByTagName('script');
@@ -118,20 +156,8 @@ function loadNewPage(url){
                 }
             }
         }
-        //we re-bind hash change (this allow us to loadpage when the user clicks on "back")
-        window.onhashchange = function() {
-            displayNewPage();
-        }
     }).catch(function (error){
-        console.log('log: ', error);
-    });
-}
-
-const nav =  document.getElementsByTagName('nav');
-const allLinks = nav[0].getElementsByTagName('a');
-for(let element of allLinks){
-    element.addEventListener('click', function () {
-        let link = this.getAttribute('href');
-        displayNewPage(link);
+        console.log('PAGE-LOADER :');
+        console.log(error);
     });
 }
