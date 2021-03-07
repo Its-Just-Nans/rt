@@ -58,13 +58,6 @@ Comme vu précédemment, **le courant d’un ampère correspond au transport d'u
 |:-----------------------------------------------------------------:|
 |              ![Equation](./data/elec/F_intensite.svg)             |
 
-> #### Le sens du courant
->
-> Attention : le sens conventionnel du courant électrique est celui de porteurs de charge positive. Dans la majeure partie des cas, les porteurs de charge sont les électrons dont la charge est négative, le sens conventionnel du courant est donc opposé au sens de déplacement des électrons (réel).
->
->
-> Le courant conventionnel (écoulement de particules exclusivement positives) simplifie les concepts et les calculs, mais masque le fait que dans quelques conducteurs (électrolytes, semi-conducteurs, et plasma) les deux types de charges électriques se déplacent dans des directions opposées, ou que dans les métaux, les charges négatives sont quasi exclusivement responsables de la circulation du courant.
-
 ### ● La tension `U` ou `V`, en Volt (V)
 
 La notion de [tension électrique](https://fr.wikipedia.org/wiki/Tension_%C3%A9lectrique) est souvent confondue avec celle de la « différence de [potentiel électrique](https://fr.wikipedia.org/wiki/Potentiel_%C3%A9lectrique) » (DDP) entre deux points d'un circuit électrique. Les deux notions sont équivalentes en régime stationnaire (indépendant du temps). Néanmoins, dans un cas général, en régime variable (par exemple : les courants alternatifs), la circulation du champ électrique n'étant plus conservative en raison du phénomène d'[induction électromagnétique](https://fr.wikipedia.org/wiki/Induction_%C3%A9lectromagn%C3%A9tique), la tension et la différence de potentiel ne sont alors plus synonymes. Dans ce cas général, la différence de potentiel perd sa signification physique et doit être remplacée par la notion de tension.
@@ -129,5 +122,11 @@ En régime alternatif, les signaux varient selon le temps, donc on a :
 |  ![Equation](./data/elec/F_puisance-alternatif.svg) |
 
 ---
+
+## Le sens du courant
+
+> Attention : le sens conventionnel du courant électrique est celui de porteurs de charge positive. Dans la majeure partie des cas, les porteurs de charge sont les électrons dont la charge est négative, le sens conventionnel du courant est donc opposé au sens de déplacement des électrons (réel).
+
+Le courant conventionnel (écoulement de particules exclusivement positives) simplifie les concepts et les calculs, mais masque le fait que dans quelques conducteurs (électrolytes, semi-conducteurs, et plasma) les deux types de charges électriques se déplacent dans des directions opposées, ou que dans les métaux, les charges négatives sont quasi exclusivement responsables de la circulation du courant.
 
 ## Les composants électriques
