@@ -1,210 +1,207 @@
 <style>
-	.result{
-		background-color: GhostWhite;
-		margin: 20px;
-		border: 1px dashed grey;
-	}
-	.result > a{
-		display: block;
-		padding: 20px;
-		overflow: hidden;
-	}
-	.result:hover {
-    border: 1px dashed grey;
-	}
+    .result {
+        background-color: GhostWhite;
+        margin: 20px;
+        border: 1px dashed grey;
+    }
+
+    .result > a {
+        display: block;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .result:hover {
+        border: 1px dashed grey;
+    }
 </style>
 <h2>Recherche de cours</h2>
 <label>Je cherche </label>
 <select id="typeOfSearch">
-	<option value="1">à mieux comprendre </option>
-	<option value="2">à en savoir plus sur </option>
-	<option value="3">à tout savoir sur</option>
+    <option value="1">à mieux comprendre</option>
+    <option value="2">à en savoir plus sur</option>
+    <option value="3">à tout savoir sur</option>
 </select>
 <label> le sujet suivant :</label>
-<input id="searchValue" type="text">
+<input id="searchValue" type="text" />
 <button type="button" id="search">Search</button>
 
 <div id="resultat"></div>
 
-
-
-
-
-
 <script>
-var datas;
-let linkToData;
-if(window.location.origin === 'https://its-just-nans.github.io'){
-	linkToData = './data/data.json';
-}else{
-	linkToData = 'https://its-just-nans.github.io/rt/data/data.json';
-}
-makeRequest('GET', linkToData).then(function(response){
-	datas = JSON.parse(response);
-}).catch(function (error){
-	//no data :(
-});
-document.getElementById('searchValue').addEventListener('keyup', function(event) {
-  if (event.keyCode === 13) {
-    document.getElementById('search').click()
-  }
-});
+    var datas;
+    let linkToData;
+    if (window.location.origin === "https://its-just-nans.github.io") {
+        linkToData = "./data/data.json";
+    } else {
+        linkToData = "https://its-just-nans.github.io/rt/data/data.json";
+    }
+    makeRequest("GET", linkToData)
+        .then(function (response) {
+            datas = JSON.parse(response);
+        })
+        .catch(function (error) {
+            //no data :(
+        });
+    document.getElementById("searchValue").addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            document.getElementById("search").click();
+        }
+    });
 
-function isInArray(array, word){
-	res = []
-	for(let item of array){
-		if(presquePareil(word, item)){
-			return true;
-		}
-	}
-	return false;
-}
+    function isInArray(array, word) {
+        res = [];
+        for (let item of array) {
+            if (presquePareil(word, item)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-document.getElementById('search').onclick = function(){
-	document.getElementById('resultat').innerHTML = "";
-	let query = document.getElementById('searchValue').value;
-	let wordOfQuery = query.toLowerCase().split(' ');
-	let result = [];
-	let resultLast = [];
-	
-	for(let oneWord of wordOfQuery){
-		for(let element of datas.q){
-			if(element.largeKeywords){
-				if(isInArray(element.largeKeywords, oneWord)){
-					let newQuery = [];
-					if(wordOfQuery.length > 1){
-						//we delete the word of the search (because normally it can't be in largeKewords AND in keywords)
-						newQuery = wordOfQuery.filter(item => item !== oneWord);
-					}else{
-						newQuery = wordOfQuery;
-					}
-					for(let smallKey of element.keywords){
-						for(let word of newQuery){
-							let index = datas.q.indexOf(element);
-							if(presquePareil(word, smallKey)){
-								
-								if(!result.includes(index)){
-									result.push(index);
-								}
-							}else{
-								if(!resultLast.includes(index)){
-									resultLast.push(index);
-								}
-							}
-						}
-					}
-				}else{
-					for(let smallKey of element.keywords){
-						for(let word of wordOfQuery){
-							let index = datas.q.indexOf(element);
-							if(presquePareil(word, smallKey)){
-								
-								if(!result.includes(index)){
-									result.push(index);
-								}
-							}else{
-								//do nothing
-							}
-						}
-					}
-				}
-			}else{
-				for(let smallKey of element.keywords){
-					for(let word of wordOfQuery){
-						let index = datas.q.indexOf(element);
-						if(presquePareil(word, smallKey)){
-							
-							if(!result.includes(index)){
-								result.push(index);
-							}
-						}else{
-							//do nothing
-						}
-					}
-				}
-			}
-		}
-	}
-	for(res of resultLast){
-		if(!result.includes(res)){
-			result.push(res);
-		}
-	}
-	console.log(result);
-	printResult(result);
-}
+    document.getElementById("search").onclick = function () {
+        document.getElementById("resultat").innerHTML = "";
+        let query = document.getElementById("searchValue").value;
+        let wordOfQuery = query.toLowerCase().split(" ");
+        let result = [];
+        let resultLast = [];
 
-function printResult(tableauResulat){
-	for(let element of tableauResulat){
-		let links;
-		if(document.getElementById('typeOfSearch').value == 3){
-			links = datas.q[element][1].concat(datas.q[element][2])
-		}else if(document.getElementById('typeOfSearch').value == 1){
-			links = datas.q[element][1];
-		}else if(document.getElementById('typeOfSearch').value == 2){
-			links = datas.q[element][2];
-		}
-		for(let link of links){
-			var cors;
-			if(cors === undefined){
-				cors = 'https://cors-anywhere.herokuapp.com/';
-			}
-			makeRequest('GET', cors + link).then( function (response){
-				let titre = response.match("<title>(.*?)</title>")
-				if(titre){
-					titre = titre[0]
-					titre = titre.replace('<title>', '').replace('</title>', '')
-					let lienRes = lien.getElementsByTagName('h3')[0];
-					lienRes.innerHTML += ' - <h5 style="display: inline;text-decoration:underline;">' + titre + '</h5>';
-				}
-			}).catch(function (error){
-				if(error['statusText'] == 'Too Many Requests'){
-					smollPopUp({title : 'Error C.O.R.S.', content : 'Too Many Request'}, 'ko');
-					console.log('erreur CORS ' + cors);
-					cors = 'https://cors-proxy.htmldriven.com/?url='
-				}
-			});
-			let lien = document.createElement('a');
-			lien.style.textDecoration = 'none';
-			lien.style.color = 'black';
-			let resultatHTML = document.createElement('div');
-			try{
-				const url = new URL(link);
-				lien.innerHTML = '<img width="16px" height="16px" style="margin-right: 10px;vertical-align: text-top;" src="' + url.origin + '/favicon.ico">';
-				lien.innerHTML += '<h3 style="display: inline;">' + url.hostname + '</h3>';
-				lien.innerHTML += '<p>' + link + '</p>';
-			}catch(e){
-				lien.innerHTML =  '<p>' + link + '</p>';
-			}
-			lien.href = link;
-			resultatHTML.className = 'result';
-			lien.target= "_blank";
-			resultatHTML.append(lien);
-			document.getElementById('resultat').append(resultatHTML);
-		}
-	}
-}
+        for (let oneWord of wordOfQuery) {
+            for (let element of datas.q) {
+                if (element.largeKeywords) {
+                    if (isInArray(element.largeKeywords, oneWord)) {
+                        let newQuery = [];
+                        if (wordOfQuery.length > 1) {
+                            //we delete the word of the search (because normally it can't be in largeKewords AND in keywords)
+                            newQuery = wordOfQuery.filter((item) => item !== oneWord);
+                        } else {
+                            newQuery = wordOfQuery;
+                        }
+                        for (let smallKey of element.keywords) {
+                            for (let word of newQuery) {
+                                let index = datas.q.indexOf(element);
+                                if (presquePareil(word, smallKey)) {
+                                    if (!result.includes(index)) {
+                                        result.push(index);
+                                    }
+                                } else {
+                                    if (!resultLast.includes(index)) {
+                                        resultLast.push(index);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        for (let smallKey of element.keywords) {
+                            for (let word of wordOfQuery) {
+                                let index = datas.q.indexOf(element);
+                                if (presquePareil(word, smallKey)) {
+                                    if (!result.includes(index)) {
+                                        result.push(index);
+                                    }
+                                } else {
+                                    //do nothing
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    for (let smallKey of element.keywords) {
+                        for (let word of wordOfQuery) {
+                            let index = datas.q.indexOf(element);
+                            if (presquePareil(word, smallKey)) {
+                                if (!result.includes(index)) {
+                                    result.push(index);
+                                }
+                            } else {
+                                //do nothing
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        for (res of resultLast) {
+            if (!result.includes(res)) {
+                result.push(res);
+            }
+        }
+        console.log(result);
+        printResult(result);
+    };
 
+    function printResult(tableauResulat) {
+        for (let element of tableauResulat) {
+            let links;
+            if (document.getElementById("typeOfSearch").value == 3) {
+                links = datas.q[element][1].concat(datas.q[element][2]);
+            } else if (document.getElementById("typeOfSearch").value == 1) {
+                links = datas.q[element][1];
+            } else if (document.getElementById("typeOfSearch").value == 2) {
+                links = datas.q[element][2];
+            }
+            for (let link of links) {
+                var cors;
+                if (cors === undefined) {
+                    cors = "https://cors-anywhere.herokuapp.com/";
+                }
+                makeRequest("GET", cors + link)
+                    .then(function (response) {
+                        let titre = response.match("<title>(.*?)</title>");
+                        if (titre) {
+                            titre = titre[0];
+                            titre = titre.replace("<title>", "").replace("</title>", "");
+                            let lienRes = lien.getElementsByTagName("h3")[0];
+                            lienRes.innerHTML += ' - <h5 style="display: inline;text-decoration:underline;">' + titre + "</h5>";
+                        }
+                    })
+                    .catch(function (error) {
+                        if (error["statusText"] == "Too Many Requests") {
+                            smollPopUp({ title: "Error C.O.R.S.", content: "Too Many Request" }, "ko");
+                            console.log("erreur CORS " + cors);
+                            cors = "https://cors-proxy.htmldriven.com/?url=";
+                        }
+                    });
+                let lien = document.createElement("a");
+                lien.style.textDecoration = "none";
+                lien.style.color = "black";
+                let resultatHTML = document.createElement("div");
+                try {
+                    const url = new URL(link);
+                    lien.innerHTML = '<img width="16px" height="16px" style="margin-right: 10px;vertical-align: text-top;" src="' + url.origin + '/favicon.ico">';
+                    lien.innerHTML += '<h3 style="display: inline;">' + url.hostname + "</h3>";
+                    lien.innerHTML += "<p>" + link + "</p>";
+                } catch (e) {
+                    lien.innerHTML = "<p>" + link + "</p>";
+                }
+                lien.href = link;
+                resultatHTML.className = "result";
+                lien.target = "_blank";
+                resultatHTML.append(lien);
+                document.getElementById("resultat").append(resultatHTML);
+            }
+        }
+    }
 
-function presquePareil(wordInQuery, wordInData){
-	wordInQuery = removeAccent(wordInQuery);
-	wordInData = removeAccent(wordInData);
-	if(wordInQuery == wordInData){
-		return true;
-	}else{
-		if(wordInQuery.slice(-1) == 's'){
-			if(wordInQuery.substring(0, wordInQuery.length - 1) == wordInData){
-				return true;
-			}else{
-				return false;
-			}
-		}else if(wordInData.slice(-1) == 's'){
-			if(wordInQuery == wordInData.substring(0, wordInData.length - 1)){
-				return true;
-			}else{
-				return false;
-			}
-		}
-	}
-}
+    function presquePareil(wordInQuery, wordInData) {
+        wordInQuery = removeAccent(wordInQuery);
+        wordInData = removeAccent(wordInData);
+        if (wordInQuery == wordInData) {
+            return true;
+        } else {
+            if (wordInQuery.slice(-1) == "s") {
+                if (wordInQuery.substring(0, wordInQuery.length - 1) == wordInData) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else if (wordInData.slice(-1) == "s") {
+                if (wordInQuery == wordInData.substring(0, wordInData.length - 1)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    }
 </script>
