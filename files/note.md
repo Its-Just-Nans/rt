@@ -14,10 +14,10 @@ Check this : [golb](https://its-just-nans.github.io/golb)
 ## SSH
 
 Voici une petite commande pour ne pas se faire SSH en TP (et ne pas se faire fermer ses programmes avec `kill -9 PIDDUPRGM` :grin:)
+
 ```sh
 while true; do pkill -f "sshd: rt";done
 ```
-
 
 ---
 
@@ -35,4 +35,3 @@ C'est une question de vocabulaire :
 - Une fonction possède des __paramètres__
 
 Reference : [StackOverflow](https://stackoverflow.com/questions/156767/whats-the-difference-between-an-argument-and-a-parameter#:~:text=A%20parameter%20is%20a%20variable%20in%20a%20method%20definition.%20When%20a%20method%20is%20called,%20the%20arguments%20are%20the%20data%20you%20pass%20into%20the%20method's%20parameters)
-

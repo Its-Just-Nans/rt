@@ -9,7 +9,6 @@ Copyright Its-Just-Nans
 
 Le programme marche sur TI-83+ et sûrement d'autres versions. Ce programme a été créé par moi, pour résoudre aisément des exercices (où il fallait calculer la longueur maximale d'une fibre). :grin:
 
-
 ## Accès aux fichiers
 
 Le programme est disponible ici :

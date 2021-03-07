@@ -5,7 +5,7 @@ Copyright Its-Just-Nans
 
 # Électricité
 
-##### Ceci est une tentative de cours d'électricité :)
+Ceci est une tentative de cours d'électricité :)
 
 ## Sources
 
@@ -17,13 +17,14 @@ Copyright Its-Just-Nans
 
 - [Wikipedia](https://fr.wikipedia.org/wiki/Portail:%C3%89lectricit%C3%A9_et_%C3%A9lectronique)
 
-
 ---
+
 ## Liens utiles
 
 [Grandes dates de l'électricité](https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/les-grandes-dates-de-l-electricite)
 
 ---
+
 ## L'électricité, c'est quoi ?
 
 L'électricité est l'effet du déplacement de particules chargées à l'intérieur d'un matériau conducteur, sous l'effet d'une différence de potentiel aux extrémités de celui-ci ([Wikipedia](https://fr.wikipedia.org/wiki/%C3%89lectricit%C3%A9))
@@ -38,12 +39,9 @@ Le [coulomb](https://fr.wikipedia.org/wiki/Coulomb) est l’unité de charge él
 
 Son nom vient de celui du physicien français Charles de Coulomb.
 
-
 **Un coulomb c’est la quantité d’électricité traversant une section d’un conducteur parcouru par un courant d’intensité de 1 ampère pendant 1 seconde** (1C = 1A x 1s). Cette quantité est équivalente à `6,241 509 629 152 65x10^(18) e`, avec `e` la [charge élémentaire](https://fr.wikipedia.org/wiki/Charge_%C3%A9l%C3%A9mentaire).
 
-
 ### ● Le courant électrique ou intensité `I`, en Ampère (A)
-
 
 Un [courant électrique](https://fr.wikipedia.org/wiki/Courant_%C3%A9lectrique) est un déplacement d’ensemble de porteurs de charge électrique, généralement des électrons, au sein d’un matériau conducteur.
 
@@ -60,14 +58,12 @@ Comme vu précédemment, **le courant d’un ampère correspond au transport d'u
 |:-----------------------------------------------------------------:|
 |              ![Equation](./data/elec/F_intensite.svg)             |
 
-
 > #### Le sens du courant
-> 
+>
 > Attention : le sens conventionnel du courant électrique est celui de porteurs de charge positive. Dans la majeure partie des cas, les porteurs de charge sont les électrons dont la charge est négative, le sens conventionnel du courant est donc opposé au sens de déplacement des électrons (réel).
-> 
-> 
+>
+>
 > Le courant conventionnel (écoulement de particules exclusivement positives) simplifie les concepts et les calculs, mais masque le fait que dans quelques conducteurs (électrolytes, semi-conducteurs, et plasma) les deux types de charges électriques se déplacent dans des directions opposées, ou que dans les métaux, les charges négatives sont quasi exclusivement responsables de la circulation du courant.
-> 
 
 ### ● La tension `U` ou `V`, en Volt (V)
 
@@ -85,16 +81,13 @@ Le nom `Volt` a été donné en hommage à Alessandro Volta, inventeur italien d
 |:----------------------------------------------------------:|
 |            ![Equation](./data/elec/F_tension.svg)          |
 
-
 ### ● La résistance `R`, en Ohm (Ω)
 
 C’est la propriété d’un matériau à s’opposer au passage d’un courant électrique. La différence de potentiel ou tension U (en volts) aux bornes d’une résistance `R` (en `ohms`) est proportionnelle à l’intensité du courant électrique `I` (en `ampères`) qui la traverse.
 
-
 |                    Loi d'Ohm pour trouver la résistance R        |
 |:----------------------------------------------------------------:|
 |             ![Equation](./data/elec/F_resistance.svg)            |
-
 
 La résistance est responsable d’une dissipation d’énergie sous forme de chaleur. Cette propriété porte le nom d’effet Joule. Cette production de chaleur est parfois un effet souhaité (résistances de chauffage), parfois un effet néfaste (pertes Joule).
 
@@ -120,7 +113,6 @@ La puissance peut être calculé avec plusieurs formules.
 
 En régime continu, on a :
 
-
 |                Formule Base                |                     Or                   |                        Donc                |
 |:------------------------------------------:|:----------------------------------------:|:------------------------------------------:|
 | ![Equation](./data/elec/F_puissance-1.svg) | ![Equation](./data/elec/F_intensite.svg) | ![Equation](./data/elec/F_puissance-2.svg) |
@@ -130,16 +122,12 @@ On a aussi :
 |:------------------------------------------:|:-------------------------------------:|:------------------------------------------:|
 | ![Equation](./data/elec/F_puissance-1.svg) |![Equation](./data/elec/F_tension.svg) | ![Equation](./data/elec/F_puissance-3.svg) |
 
-
 En régime alternatif, les signaux varient selon le temps, donc on a :
 
 |           Puissance en régime alternatif            |
 |:---------------------------------------------------:|
 |  ![Equation](./data/elec/F_puisance-alternatif.svg) |
 
-
-
 ---
 
 ## Les composants électriques
-

@@ -5,7 +5,7 @@ Copyright Its-Just-Nans
 
 # About
 
-### Informations
+## Informations
 
 This website have been created by @Its-Just-Nans for `R&T` students.
 
@@ -19,10 +19,9 @@ Unfortunately, I work on this website on my free time so maybe I will not have t
 
 Partage des connaissances, aide à la compréhension, garder en mémoire ce qu'on a appris etc, etc ....
 
-
 ---
 
-### Erreurs sur le site
+## Erreurs sur le site
 
 je suis totalement conscient d'avoir sûrement fait des erreurs de Français, d'Anglais ou techniques. Vous pouvez d'ailleurs les corriger en créant des [Pull Requests](https://github.com/Its-Just-Nans/rt/pulls).
 
@@ -30,7 +29,7 @@ Vous pouvez également créer du contenu et faire des [Pull Requests](https://gi
 
 ---
 
-### Comment marche le site ?
+## Comment marche le site ?
 
 La navigation du site fonctionne avec l'attribut `window.location.hash` (l'attribut `ancre` ou `anchor` ou `#`). En effet, en modifiant le hash de la page cela ne recharge pas le contenu.
 
@@ -46,12 +45,13 @@ Certains fichiers MarkDown utilisent des formules créées automatiquement par c
 
 ---
 
-### Pourquoi le site est parfois en Français et parfois en Anglais ?
+## Pourquoi le site est parfois en Français et parfois en Anglais ?
 
 Car je ne suis pas bilingue
 
---- 
-### Informations
+---
+
+## Share
 
 Share the website :
 

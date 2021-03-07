@@ -1,5 +1,5 @@
 # rt
- 
+
 The website for `R&T` students !
 
 `https://its-just-nans.github.io/rt`

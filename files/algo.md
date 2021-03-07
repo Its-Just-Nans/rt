@@ -11,9 +11,10 @@ Copyright Its-Just-Nans
 
 ## Algorithmes
 
-### Initialisation d’une liste 
+### Initialisation d’une liste
 
 > Fonction Init (D/R uneListe: Liste)
+
 ```yaml
 Fonction Init(R uneListe: Liste)
 Var
@@ -52,7 +53,6 @@ Fin
 
 ---
 
-
 ### Liste Vide: tester si la liste est vide
 
 > Fonction ListeVide (D uneListe: Liste, R ?vide: Booleen)
@@ -69,8 +69,8 @@ Debut
     retourner unResultat;
 Fin
 ```
----
 
+---
 
 ### Longueur d’une liste
 
@@ -110,13 +110,14 @@ Debut
     retourner uneLongueur;
 Fin
 ```
+
 > Légende :
+>
 > - Dans ce cas la, on utilise pas `cpt`
 > - C'est plus rapide car on parcours moins la liste :
+>
 >> - Car on vérifie `ptr->suivant` et pas `ptr`
 >> - on commence donc à `1`
-
-
 
 ---
 
@@ -177,8 +178,7 @@ Debut
 Fin
 ```
 
---- 
-
+---
 
 ### Appartient: rechercher un élément spécifique dans une liste et s'il existe, retourner Vrai
 
@@ -205,7 +205,7 @@ Debut
 Fin
 ```
 
-Ou alors 
+Ou alors
 
 ```yaml
 Fonction Appartient (D uneListe: Liste, D unElement: Entier, R unResultat: Booleen)
@@ -226,9 +226,6 @@ Debut
     retourner unResultat
 Fin
 ```
-
-
-
 
 ### Supprimer: supprimer un élément se trouvant à une position spécifique
 
@@ -295,7 +292,6 @@ Debut
     retourner uneListe
 Fin
 ```
-
 
 ---
 

@@ -11,6 +11,31 @@ Copyright Its-Just-Nans
 
 ## Algorithmes
 
+### Fibonacci
+
+```yaml
+Fonction Fibo (D unChiffre: Entier)
+Var
+
+Debut
+    Si unChiffre >= 0:
+    Alors
+        Si unChiffre = 0:
+        Alors
+            retourner 0
+        Sinon
+            Si unChiffre = 1:
+            Alors
+                retourner 1
+            Sinon
+            retourner fibo(unChiffre-1) + fibo(unChiffre-2)
+        FinSi
+    Sinon
+        ecrire "Erreur négatif"
+    FinSi
+Fin
+```
+
 ### Puissance
 
 ```yaml
@@ -50,13 +75,9 @@ Debut
 Fin
 ```
 
-
-
-
 ---
 
 ### Nombre de chiffres
-
 
 ```yaml
 Fonction NbChiffres (D unChiffre: Entier)
