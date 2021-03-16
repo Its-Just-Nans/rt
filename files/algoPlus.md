@@ -11,6 +11,8 @@ Copyright Its-Just-Nans
 
 ## Algorithmes
 
+> [Explication de la récursivité](https://youtu.be/rf60MejMz3E)
+
 ### Fibonacci
 
 ```yaml
