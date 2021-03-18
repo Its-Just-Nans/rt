@@ -108,12 +108,76 @@ Debut
     Alors
         retourner VRAI;
     Sinon
-        Si uneChaine[0] != uneChaine[longeurMot-1]:
+        Si Extraire(uneChaine,0,1) != Extraire(uneChaine,longeurMot-1 ,1):
         Alors
             retourner FAUX;
         Sinon
-            Palindrome( Extraire(uneChaine,1 ,longeurMot-1) );
+            Palindrome( Extraire(uneChaine,1 ,longeurMot-2) );
         FinSi
     FinSi
+Fin
+```
+
+### Afficher une liste
+
+```yaml
+Proc Afficher (D UnPtrSurElem: ptr sur elem)
+Var
+    
+Debut
+    Si UnPtrSurElem.LePtrSurSuiv != NULL:
+        printf UnPtrSurElem.LInfo;
+        Afficher(UnPtrSurElem.LePtrSurSuiv);
+    FinSi
+Fin
+```
+
+### Compter les éléments dans une liste
+
+```yaml
+Proc CompteElemDsListe (D UnPtrSurElem: ptr sur elem)
+Var
+    
+Debut
+    Si UnPtrSurElem.LePtrSurSuiv != NULL:
+    Alors
+        retourner CompteElemDsListe(UnPtrSurElem.LePtrSurSuiv) + 1;
+    Sinon
+        retourner 1;
+    FinSi
+Fin
+```
+
+### Compter le nombre d'occurence d'un même élément
+
+```yaml
+Proc CompteUnElem (D UnPtrSurElem: ptr sur elem, element: entier)
+Var
+    
+Debut
+    Si UnPtrSurElem.Linfo = element:
+    Alors
+        Si  UnPtrSurElem.LePtrSurSuiv != NULL:
+        Alors
+            retourner CompteUnElem(UnPtrSurElem.LePtrSurSuiv) + 1;
+        Sinon
+            retourner 1;
+        FinSi
+    Sinon
+        retourner 0;
+    FinSi
+Fin
+```
+
+### Tour de Hanoï
+
+```yaml
+Proc Deplacer(N, tDebut: tour debut, tFin: tour fin, tImt: tour intermediaire):
+Var
+
+Debut
+    Deplacer(N-1, tDebut, tImt):
+    Deplacer(1, tDebut, tFin):
+    Deplacer(N-1, tImt, tFin):
 Fin
 ```
