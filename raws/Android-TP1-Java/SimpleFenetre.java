@@ -2,37 +2,41 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class SimpleFenetre extends JFrame{
+public class SimpleFenetre extends JFrame {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField input;
 	private JLabel output;
 
-	public SimpleFenetre(){
+	public SimpleFenetre() {
 		super();
 		setTitle("Ma première fenêtre");
-		setSize(600,600);
+		setSize(600, 600);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		super.setLayout(new GridLayout(4,1));
-		//add components
+		super.setLayout(new GridLayout(4, 1));
+		// add components
 		input = new JTextField();
 		super.add(input);
-		
+
 		JLabel label = new JLabel("JAVA CELSIUS CONVERTER");
 		super.add(label);
 		JButton button = new JButton("Try");
 		super.add(button);
-		
+
 		output = new JLabel();
 		super.add(output);
-		
+
 		button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {
 				String chaine = input.getText();
 				double temp;
-				if(!chaine.isEmpty()){
+				if (!chaine.isEmpty()) {
 					temp = Double.parseDouble(chaine);
-				}else{
+				} else {
 					input.setText("0");
 					temp = 0;
 				}
@@ -42,11 +46,11 @@ public class SimpleFenetre extends JFrame{
 				double retourTemp = tempFara.getTemperature();
 				String retour = Double.toString(retourTemp);
 				output.setText(retour);
-            }
-        });
+			}
+		});
 	}
-	
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
 		SimpleFenetre fenetre = new SimpleFenetre();
 		fenetre.setVisible(true);
 	}

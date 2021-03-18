@@ -143,11 +143,11 @@ Proc CompteElemDsListe (D UnPtrSurElem: ptr sur elem)
 Var
     
 Debut
-    Si UnPtrSurElem.LePtrSurSuiv != NULL:
+    Si UnPtrSurElem = NULL:
     Alors
-        retourner CompteElemDsListe(UnPtrSurElem.LePtrSurSuiv) + 1;
+        retourner 0;
     Sinon
-        retourner 1;
+        retourner CompteElemDsListe(UnPtrSurElem.LePtrSurSuiv) + 1;
     FinSi
 Fin
 ```
@@ -160,7 +160,7 @@ Fin
 Proc CompteUnElem (D UnPtrSurElem: ptr sur elem, element: entier)
 Var
     
-Debut
+Debut        
     Si UnPtrSurElem.Linfo = element:
     Alors
         Si  UnPtrSurElem.LePtrSurSuiv != NULL:

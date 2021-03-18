@@ -7,17 +7,17 @@ public class TestTemperature {
 		System.out.println("Test en cours");
 		Celsius c;
 		Fahrenheit f;
-        // On crée une biblio
-        c = new Celsius();
+		// On crée une biblio
+		c = new Celsius();
 		f = new Fahrenheit();
-		
+
 		c.affiche();
 		f.affiche();
 
 		f.setTemperature(17);
 		f.affiche();
-		
+
 		c.setTemperature(17);
 		c.affiche();
-    }
+	}
 }
