@@ -7,7 +7,7 @@ Copyright Its-Just-Nans
 
 ## Sources
 
-- Cours de **Mme. Boudaoud**
+- [Cours de Mme. BOUDAOUD](http://users.polytech.unice.fr/~karima/teaching/courses/IUT/Trad2/M4207/)
 
 ## Algorithmes
 

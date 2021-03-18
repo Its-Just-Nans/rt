@@ -69,7 +69,7 @@
             if (typeof path !== "undefined") {
                 baseLink = path;
             } else {
-                baseLink = `https://api.github.com/repos/${githubName}/${repoName}/contents/files/`;
+                baseLink = `https://api.github.com/repos/${githubName}/${repoName}/contents/raws/`;
             }
             document.getElementById("dataTableTitle").innerHTML = `Exploring ${repoName} of ${githubName}`;
             var dataTable = document.getElementById("dataTable");
