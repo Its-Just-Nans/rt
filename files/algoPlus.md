@@ -118,6 +118,8 @@ Debut
 Fin
 ```
 
+---
+
 ### Afficher une liste
 
 ```yaml
@@ -131,6 +133,8 @@ Debut
     FinSi
 Fin
 ```
+
+---
 
 ### Compter les éléments dans une liste
 
@@ -147,6 +151,8 @@ Debut
     FinSi
 Fin
 ```
+
+---
 
 ### Compter le nombre d'occurence d'un même élément
 
@@ -168,6 +174,8 @@ Debut
     FinSi
 Fin
 ```
+
+---
 
 ### Tour de Hanoï
 
