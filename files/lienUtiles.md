@@ -7,20 +7,21 @@ Copyright Its-Just-Nans
 
 ## Unice
 
-[Accès direct à intracursus](https://intracursus2.unice.fr/ic/dlogin/cas.php)
-
-[Accès direct aux cours](https://portail-lms.unice.fr/)
-
-[Accès direct à "Mon dossier web"](https://mondossierweb.unice.fr/)
-
-[Accès direct GPU](https://iut-gpu.unice.fr/)
-
-[Plateforme de poursuite d'études](http://isis.unice.fr/RTgpe/index.php)
+- [ENT](https://ent.unice.fr)
+- [Accès direct à intracursus](https://intracursus2.unice.fr/ic/dlogin/cas.php)
+- [Accès direct aux cours](https://portail-lms.unice.fr/)
+- [Accès direct à "Mon dossier web"](https://mondossierweb.unice.fr/)
+- [Accès direct GPU](https://iut-gpu.unice.fr/)
+- [Plateforme de poursuite d'études](http://isis.unice.fr/RTgpe/index.php)
 
 ## Cours
 
-[Cours de Madame BOUDAOUD](http://users.polytech.unice.fr/~karima/teaching/courses/courses.html)
+- [Cours de Madame BOUDAOUD](http://users.polytech.unice.fr/~karima/teaching/courses/courses.html)
+- [Tous les cours de Madame BOUDAOUD](http://users.polytech.unice.fr/~karima/teaching/courses/)
+- [Cours de M.URVOY-KELLER](https://www.i3s.unice.fr/~urvoy/teaching/)
 
-[Tous les cours de Madame BOUDAOUD](http://users.polytech.unice.fr/~karima/teaching/courses/)
+# Autres
 
-[Cours de M.URVOY-KELLER](https://www.i3s.unice.fr/~urvoy/teaching/)
+- [Envibus](https://www.envibus.fr/)
+
+<small>Cheat code : carte du A = voyage infini sur la ligne A pour 5 euros</small>
