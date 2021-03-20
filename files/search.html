@@ -157,7 +157,7 @@
                     })
                     .catch(function (error) {
                         if (error["statusText"] == "Too Many Requests") {
-                            smollPopUp({ title: "Error C.O.R.S.", content: "Too Many Request" }, "ko");
+                            smollPopUp({ title: "Error C.O.R.S.", content: "Too Many Request" }, { type: "ko" });
                             console.log("erreur CORS " + cors);
                             cors = "https://cors-proxy.htmldriven.com/?url=";
                         }
