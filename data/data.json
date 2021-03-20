@@ -72,8 +72,9 @@
 				
 			},
 			{
-				"keywords": ["modulation", "numeriques"],
-				"1": ["http://escrig.perso.enseeiht.fr/Cours_TS113_2012_2013.pdf", "https://damienvivet.pagesperso-orange.fr/teaching_more.html#modulation", "http://deptinfo.cnam.fr/Enseignement/Memoires/LUSTEAU.Franck/Pages/Les_modulations_de_base.htm", "https://damienvivet.pagesperso-orange.fr/cours/ibats_mod/A5Ibats_MAN_5.pdf", "http://radioamateurs89.free.fr/Techniques/Modulation/modulation.htm", "http://efreidoc.fr/L3/Communications%20numeriques/Cours/"],
+				"largeKeywords": ["modulation", "numeriques"],
+				"keywords": ["codage", "canal", "QAM"],
+				"1": ["http://escrig.perso.enseeiht.fr/Cours_TS113_2012_2013.pdf", "https://damienvivet.pagesperso-orange.fr/teaching_more.html#modulation", "http://deptinfo.cnam.fr/Enseignement/Memoires/LUSTEAU.Franck/", "https://damienvivet.pagesperso-orange.fr/cours/ibats_mod/A5Ibats_MAN_5.pdf", "http://radioamateurs89.free.fr/Techniques/Modulation/modulation.htm", "http://efreidoc.fr/L3/Communications%20numeriques/Cours/"],
 				"2": []
 			},
 			{
@@ -109,12 +110,6 @@
 				
 			},
 			{
-				"keywords": ["curieux"],
-				"1": ["https://couleur-science.eu/"],
-				"2": []
-				
-			},
-			{
 				"keywords": ["outils"],
 				"1": ["https://lehollandaisvolant.net/tout/tools/"],
 				"2": []
@@ -133,8 +128,8 @@
 				
 			},
 			{
-				"keywords": ["cours"],
-				"1": ["http://rt.bethune.free.fr/iut-gtr2/Cours/"],
+				"keywords": ["cours", "curieux"],
+				"1": ["http://rt.bethune.free.fr/iut-gtr2/Cours/", "http://projet.eu.org/pedago/", "http://www-igm.univ-mlv.fr/~dr/expose.php", "https://couleur-science.eu/"],
 				"2": []
 				
 			},
@@ -195,6 +190,24 @@
 				"largeKeywords": ["animations"],
 				"keywords": ["ondes"],
 				"1": ["https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Ondes/ondes_stationnaires/melde.php"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["reseaux"],
+				"keywords": ["telnet"],
+				"1": ["https://www.technologuepro.com/reseaux/Pratique-des-protocoles/Interrogation-d-un-serveur-web-avec-telnet.html"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["reseaux"],
+				"keywords": ["telnet"],
+				"1": ["https://www.technologuepro.com/reseaux/Pratique-des-protocoles/Interrogation-d-un-serveur-web-avec-telnet.html"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["mail"],
+				"keywords": ["smtp", "pop", "imap", "pop3"],
+				"1": ["http://www-igm.univ-mlv.fr/~dr/XPOSE2004/abouvet/"],
 				"2": []
 			},
 			{
