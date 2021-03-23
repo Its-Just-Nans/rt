@@ -8,7 +8,7 @@ Copyright Its-Just-Nans
 ## Sources
 
 - Cours, TPs et TDs de **Mme.THEYS**
-- Cours, TPs et TDs de **M.PAYAN**
+- Cours, TPs et TDs de [**M.PAYAN**](https://www.i3s.unice.fr/~fpayan/)
 - [Site Web de M.Mazet](http://miv.u-strasbg.fr/mazet/mazet-fr.html)
 - [Animations sur le site de M.Mazet](http://miv.u-strasbg.fr/mazet/animations/)
 
