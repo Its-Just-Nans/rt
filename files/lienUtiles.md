@@ -22,6 +22,5 @@ Copyright Its-Just-Nans
 
 # Autres
 
-- [Envibus](https://www.envibus.fr/)
-
-<small>Cheat code : carte du A = voyage infini sur la ligne A pour 5 euros</small>
+- [Site des projets tuteurés](https://sites.google.com/site/projettutrtsophia/)
+- [Envibus](https://www.envibus.fr/)<small> - Cheat code : carte du A = voyage infini sur la ligne A pour 5 euros</small>
