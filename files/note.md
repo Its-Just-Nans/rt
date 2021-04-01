@@ -7,7 +7,7 @@ Copyright Its-Just-Nans
 
 ## Blog
 
-Check this : [golb](https://its-just-nans.github.io/golb)
+- Check this : [golb](https://its-just-nans.github.io/golb)
 
 ---
 
@@ -29,7 +29,7 @@ while true; do pkill -f "sshd: rt";done
 
 ## Site d'animation
 
-[Animations physiques](https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/menu/menu_gene.php)
+- [Animations physiques](https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/menu/menu_gene.php)
 
 ---
 
