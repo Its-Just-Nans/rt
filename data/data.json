@@ -135,7 +135,7 @@
 			},
 			{
 				"keywords": ["python"],
-				"1": ["https://trinket.io/python3"],
+				"1": ["https://trinket.io/python3", "http://perso.numericable.fr/jules.svartz/prepa/pdf/poly_python.pdf"],
 				"2": []
 			},
 			{
@@ -208,6 +208,12 @@
 				"largeKeywords": ["mail"],
 				"keywords": ["smtp", "pop", "imap", "pop3"],
 				"1": ["http://www-igm.univ-mlv.fr/~dr/XPOSE2004/abouvet/"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["langage", "dev"],
+				"keywords": ["info", "caml"],
+				"1": ["https://svartzjules.pagesperso-orange.fr/prepa/pdf/poly_caml.pdf"],
 				"2": []
 			},
 			{

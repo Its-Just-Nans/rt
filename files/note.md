@@ -11,6 +11,12 @@ Check this : [golb](https://its-just-nans.github.io/golb)
 
 ---
 
+## Informatique
+
+- [Cours d'informatique en tout genre](https://info-llg.fr/)
+
+---
+
 ## SSH
 
 Voici une petite commande pour ne pas se faire SSH en TP (et ne pas se faire fermer ses programmes avec `kill -9 PIDDUPRGM` :grin:)
