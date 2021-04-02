@@ -5,6 +5,6 @@ Copyright Its-Just-Nans
 
 # Python
 
-# Cours
+## Cours
 
 - [Cours de Python par Jules Svartz (professeur d'Informatique CPGE Masséna)](http://perso.numericable.fr/jules.svartz/prepa/pdf/poly_python.pdf)

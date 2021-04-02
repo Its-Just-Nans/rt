@@ -9,7 +9,7 @@ Copyright Its-Just-Nans
 
 This website have been created by @Its-Just-Nans for `R&T` students.
 
-If you found a bug on the website or want to improve it, you can do some [Pull Request](https://github.com/Its-Just-Nans/rt/pulls) or create [Issues](https://github.com/Its-Just-Nans/rt/issues).
+If you found a bug on the website, you can create [Issues](https://github.com/Its-Just-Nans/rt/issues).
 
 Unfortunately, I work on this website on my free time so maybe I will not have the time to correct bugs or accept pull request (sorry :confused:)
 
@@ -37,7 +37,7 @@ Avec ce principe, je peux charger les fichiers sans recharger la page à chaque 
 
 Le site marche donc avec des fichiers [MarkDown](https://fr.wikipedia.org/wiki/Markdown) convertit à la volée par la libraire [Showdown](https://github.com/showdownjs/showdown).
 
-Le site possède aussi des pages webs contenant du JavaScript. Les scripts sont évalués avec la fonction `eval()` (méthode très artisanale et techniquement peu sécurisée mais amusante).
+Le site possède aussi des pages webs contenant du JavaScript. Les scripts sont évalués ~~avec la fonction `eval()`~~ en les ajoutant à la page (méthode très artisanale et techniquement peu sécurisée mais amusante).
 
 Le site utilise aussi l' [API GitHub](https://docs.github.com/en/rest) pour, par exemple, l'onglet `Raw Files` ou encore l'onglet `Search`. J'aurais techniquement dû utiliser cette `API` pour l'affichage du menu, mais comme l'API possède des Limits Rate, je préfère que le menu soit en dur.
 
