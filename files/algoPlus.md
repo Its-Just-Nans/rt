@@ -189,3 +189,74 @@ Debut
     Deplacer(N-1, tImt, tFin):
 Fin
 ```
+
+---
+
+## Arbres et récursivité
+
+```yaml
+Proc Rechercher(D/R unArbre: Pointeur sur Noeud, D uneCle: Entier):
+Var
+
+Debut
+    Si (uneCle = unArbre.cle ou unArbre = NULL)
+    Alors
+        retourner unArbre;
+    Sinon
+        Si(unArbre.cle < uneCle)
+        Alors
+            Rechercher(unArbre.gauche, uneCle)
+        Sinon
+            Rechercher(unArbre.droite, uneCle)
+        FinSi
+    FinSi
+Fin
+```
+
+```yaml
+Proc Nombre(PtrNoeud: Pointeur sur Noeud, nombreNoeud: Entier):
+Var
+    nombreNoeud: Entier c'est 0;
+Debut
+    Si (PtrNoeud == NULL)
+    Alors
+        retourner 0;
+    Sinon
+        Si(PtrNoeud.gauche = NULL et PtrNoeud.droite = NULL)
+        Alors
+            retourner 1;
+        Sinon
+            retourner 1 + Nombre(PtrNoeud.droite) + Nombre(PtrNoeud.gauche);
+        FinSi
+    FinSi
+Fin
+```
+
+```yaml
+Proc Infixe(PtrNoeud: Pointeur sur Noeud, nombreActuel: Entier):
+Var
+
+Debut
+    Si (PtrNoeud == NULL)
+    Alors
+        Si (PtrNoeud.gauche == NULL)
+        Alors
+            Si(PtrNoeud.gauche->info > nombreActuel )
+            Alors
+                Infixe(PtrNoeud.gauche, nombreActuel)
+            Sinon
+                Infixe(PtrNoeud.droite, nombreActuel)
+            FinSi
+        Sinon
+            Si(PtrNoeud.droite == NULL)
+            Alors
+                Infixe()
+            Sinon
+
+            FinSi
+        FinSi
+    Sinon
+        Ecrire("Arbre vide")
+    FinSi
+Fin
+```

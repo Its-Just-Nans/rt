@@ -30,27 +30,35 @@
 
 <script>
     var datas;
-    let linkToData;
-    if (window.location.origin === "https://its-just-nans.github.io") {
-        linkToData = "./data/data.json";
-    } else {
-        linkToData = "https://its-just-nans.github.io/rt/data/data.json";
-    }
-    makeRequest("GET", linkToData)
-        .then(function (response) {
-            datas = JSON.parse(response);
-        })
-        .catch(function (error) {
-            //no data :(
-        });
-    document.getElementById("searchValue").addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            document.getElementById("search").click();
+    function init() {
+        let linkToData;
+        if (window.location.origin === "https://its-just-nans.github.io") {
+            linkToData = "./data/data.json";
+        } else {
+            linkToData = "https://its-just-nans.github.io/rt/data/data.json";
         }
-    });
+        makeRequest("GET", linkToData)
+            .then(function (response) {
+                datas = JSON.parse(response);
+            })
+            .catch(function (error) {
+                //no data :(
+            });
+        document.getElementById("search").addEventListener("click", search, false);
+        document.getElementById("searchValue").addEventListener(
+            "keyup",
+            function (event) {
+                if (event.keyCode === 13) {
+                    document.getElementById("search").click();
+                }
+            },
+            false
+        );
+    }
+
+    init();
 
     function isInArray(array, word) {
-        res = [];
         for (let item of array) {
             if (presquePareil(word, item)) {
                 return true;
@@ -59,7 +67,7 @@
         return false;
     }
 
-    document.getElementById("search").onclick = function () {
+    function search() {
         document.getElementById("resultat").innerHTML = "";
         let query = document.getElementById("searchValue").value;
         let wordOfQuery = query.toLowerCase().split(" ");
@@ -128,7 +136,7 @@
         }
         console.log(result);
         printResult(result);
-    };
+    }
 
     function printResult(tableauResulat) {
         for (let element of tableauResulat) {
