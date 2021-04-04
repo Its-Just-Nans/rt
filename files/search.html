@@ -141,26 +141,22 @@
                 links = datas.q[element][2];
             }
             for (let link of links) {
-                var cors;
-                if (cors === undefined) {
-                    cors = "https://cors-anywhere.herokuapp.com/";
-                }
-                makeRequest("GET", cors + link)
-                    .then(function (response) {
-                        let titre = response.match("<title>(.*?)</title>");
-                        if (titre) {
-                            titre = titre[0];
-                            titre = titre.replace("<title>", "").replace("</title>", "");
-                            let lienRes = lien.getElementsByTagName("h3")[0];
-                            lienRes.innerHTML += ' - <h5 style="display: inline;text-decoration:underline;">' + titre + "</h5>";
-                        }
+                fetch(link)
+                    .then(function (reponse) {
+                        reponse.text().then(function (text) {
+                            let titre = text.match("<title>.*</title>");
+                            if (titre) {
+                                titre = titre[0];
+                                titre = titre.replace("<title>", "").replace("</title>", "");
+                                let lienRes = lien.getElementsByTagName("h3")[0];
+                                lienRes.innerHTML += ' - <h5 style="display: inline;text-decoration:underline;">' + titre + "</h5>";
+                            }
+                        });
                     })
                     .catch(function (error) {
-                        if (error["statusText"] == "Too Many Requests") {
-                            smollPopUp({ title: "Error C.O.R.S.", msg: "Too Many Request" }, { type: "ko" });
-                            console.log("erreur CORS " + cors);
-                            cors = "https://cors-proxy.htmldriven.com/?url=";
-                        }
+                        smollPopUp({ title: "Failed to fecth", msg: "Can't access to the website, see console.log for the error" }, { type: "ko" });
+                        console.error("Erreur CORS " + link);
+                        console.error(error);
                     });
                 let lien = document.createElement("a");
                 lien.style.textDecoration = "none";

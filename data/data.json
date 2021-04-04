@@ -93,7 +93,7 @@
 			{
 				"largeKeywords": ["informatique", "langage"],
 				"keywords": ["language c", "c"],
-				"1": ["https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/f7c87d5a82ac4f2d85b2c3b75435b015/", "http://www.linux-france.org/prj/embedded/sdcc/sdcc_course.formatted_io.html", "https://www.ltam.lu/cours-c/prg-c_c.htm", "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/", "http://public.iutenligne.net/informatique/algorithme-et-programmation/priou/LangageC/1731_ecriture_et_lecture_en_accs_binaire__fwrite_fread.html", "http://arsene.perez-mas.pagesperso-orange.fr/langc/sommaire_langc.htm", "http://arsene.perez-mas.pagesperso-orange.fr/langc/memalloc/memalloc_malloc.htm", "http://arsene.perez-mas.pagesperso-orange.fr/langc/structures/annuaire3.htm#rappels", "https://c.developpez.com/cours/poly-c/", "https://sites.uclouvain.be/SystInfo/notes/Theorie/html/C/intro-C.html", "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/chapitre1.html", "https://pixees.fr/informatiquelycee/n_site/nsi_prem_langageC.html"],
+				"1": ["https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/f7c87d5a82ac4f2d85b2c3b75435b015/", "http://www.linux-france.org/prj/embedded/sdcc/sdcc_course.formatted_io.html", "https://www.ltam.lu/cours-c/prg-c_c.htm", "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/", "http://public.iutenligne.net/informatique/algorithme-et-programmation/priou/LangageC/1731_ecriture_et_lecture_en_accs_binaire__fwrite_fread.html", "http://arsene.perez-mas.pagesperso-orange.fr/langc/sommaire_langc.htm", "http://arsene.perez-mas.pagesperso-orange.fr/langc/memalloc/memalloc_malloc.htm", "http://arsene.perez-mas.pagesperso-orange.fr/langc/structures/annuaire3.htm#rappels", "https://c.developpez.com/cours/poly-c/", "https://sites.uclouvain.be/SystInfo/notes/Theorie/html/C/intro-C.html", "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/chapitre1.html", "https://pixees.fr/informatiquelycee/n_site/nsi_prem_langageC.html", "https://yard.onl/sitelycee/cours/c/_index.html?LesVariables.html"],
 				"2": ["https://codecast.france-ioi.org/v2/", "http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf"]
 				
 			},
@@ -129,8 +129,8 @@
 			},
 			{
 				"keywords": ["cours", "curieux"],
-				"1": ["http://rt.bethune.free.fr/iut-gtr2/Cours/", "http://projet.eu.org/pedago/", "http://www-igm.univ-mlv.fr/~dr/expose.php", "https://couleur-science.eu/", "https://lig-membres.imag.fr/donsez/cours/"],
-				"2": []
+				"1": ["http://rt.bethune.free.fr/iut-gtr2/Cours/", "http://projet.eu.org/pedago/", "http://www-igm.univ-mlv.fr/~dr/expose.php", "https://couleur-science.eu/", "https://lig-membres.imag.fr/donsez/cours/", "http://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/index.html", "https://tdinfo.phelma.grenoble-inp.fr/2Aproj/fiches/", "https://tdinfo.phelma.grenoble-inp.fr/"],
+				"2": ["http://www.sciences.univ-nantes.fr/sites/claude_saintblanquet/synophys/synodex.htm"]
 				
 			},
 			{
@@ -193,6 +193,12 @@
 				"2": []
 			},
 			{
+				"largeKeywords": ["animations"],
+				"keywords": ["sphere"],
+				"1": ["http://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Meca/Cinematique/coord_spheriques.html"],
+				"2": []
+			},
+			{
 				"largeKeywords": ["reseaux"],
 				"keywords": ["telnet"],
 				"1": ["https://www.technologuepro.com/reseaux/Pratique-des-protocoles/Interrogation-d-un-serveur-web-avec-telnet.html"],
@@ -214,6 +220,54 @@
 				"largeKeywords": ["langage", "dev"],
 				"keywords": ["info", "caml"],
 				"1": ["https://svartzjules.pagesperso-orange.fr/prepa/pdf/poly_caml.pdf"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["antennes", "electricité"],
+				"keywords": ["antenne", "transmission"],
+				"1": ["http://www.alexandre-boyer.fr/alex/enseignement/cours_antennes_outils_modeles_transmission_sept20.pdf", "http://www.alexandre-boyer.fr/alex/enseignement/cours_antennes_oct11_v4_5RT.pdf", "https://instru.lpem.espci.fr/sites/instru.lpem.espci.fr/IMG/pdf/poly_lignes_23.pdf"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["fibre"],
+				"keywords": ["wdm"],
+				"1": ["https://nanohub.org/resources/29457/watch?resid=29581&time=00:25:10"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["electricité"],
+				"keywords": ["cours"],
+				"1": ["http://users.polytech.unice.fr/~ferrero/TPelec4/"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["signal"],
+				"keywords": ["traitement", "images"],
+				"1": ["http://www.i6doc.com/resources/titles/28001100216320/extras/72833_adcp_gretsi_vol1nb_1004058.pdf"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["gamer"],
+				"keywords": ["vrai", "krunker", "ennui"],
+				"1": ["https://krunker.io/"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["markdown"],
+				"keywords": ["readme"],
+				"1": ["https://daringfireball.net/projects/markdown/"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["chrome"],
+				"keywords": ["urls"],
+				"1": ["chrome://chrome-urls/"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["node", "nodejs"],
+				"keywords": ["peur", "phobie", "package"],
+				"1": ["https://bundlephobia.com/"],
 				"2": []
 			},
 			{
