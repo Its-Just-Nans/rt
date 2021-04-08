@@ -260,3 +260,31 @@ Debut
     FinSi
 Fin
 ```
+
+```yaml
+Proc Ajouter(D/R unArbre: Pointeur sur Noeud, D uneCle: Entier):
+Var
+    trouver: boolean c'est Faux
+Debut
+    Si (Rechercher(uneArbre, uneCle) == Vrai)
+    Alors
+        Ecrire("deja présent")
+    Sinon
+        TantQue(trouver == faux)
+        Faire
+        Debut
+            Si(unArbre.cle > uneCle)
+            Alors
+                unArbre <- unArbre.droit
+            Sinon
+                unArbre <- unArbre.gauche
+            FinSi
+            Si (unArbre == NULL)
+            Alors
+                trouver = vrai
+            Fin Si
+        FinTantQue
+        #Ajouter le noeud à cet endroit
+    Fin Si
+Fin
+```
