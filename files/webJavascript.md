@@ -22,3 +22,7 @@ Copyright Its-Just-Nans
 5. Faites des mini-projets ou entraînez-vous sur [SoloLearn](https://www.sololearn.com/learning/1024)
 
 6. Découvrez des frameworks/librairies, par exemple : [Getting started with React](https://www.taniarascia.com/getting-started-with-react/)
+
+## JavaScript interactif
+
+Essayez [https://natto.dev/](https://natto.dev/) !
