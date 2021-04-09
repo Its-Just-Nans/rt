@@ -78,3 +78,9 @@ openssl HASH_FUNCTION NAME_OF_FILE_IN
 > Légende :
 >
 >- Vous pouvez avoir la liste des fonctions de hachage avec `openssl help` partie `Message Digest commands`
+
+---
+
+## Certificat TLS
+
+[https://aymericlagier.com/2021/04/07/les-certificats-tls/](https://aymericlagier.com/2021/04/07/les-certificats-tls/)

@@ -265,26 +265,96 @@ Fin
 Proc Ajouter(D/R unArbre: Pointeur sur Noeud, D uneCle: Entier):
 Var
     trouver: boolean c'est Faux
+    noeudPrecedent: c'est un pointeur sur  Noeud
+    noeudRacine: c'est un un pointeur sur Noeud
 Debut
-    Si (Rechercher(uneArbre, uneCle) == Vrai)
+    Si unArbre != NULL
     Alors
-        Ecrire("deja présent")
-    Sinon
-        TantQue(trouver == faux)
-        Faire
-        Debut
-            Si(unArbre.cle > uneCle)
+        noeudRacine<-unArbre
+        // save value
+        Si (Rechercher(uneArbre, uneCle) != NULL)
+        Alors
+            Ecrire("deja présent")
+        Sinon
+            // go to the correct place
+            TantQue(trouver == faux)
+            Faire
+                noeudPrecedent <- unArbre
+                Si(unArbre.cle < uneCle)
+                Alors
+                    unArbre <- unArbre.droite
+                Sinon
+                    unArbre <- unArbre.gauche
+                FinSi
+                Si (unArbre == NULL)
+                Alors
+                    trouver = vrai
+                Fin Si
+            FinTantQue
+            noeud <- new Noeud()
+            noeud.cle <- uneCle
+            Si(noeudPrecedent.cle > uneCle)
             Alors
-                unArbre <- unArbre.droit
+                noeudPrecedent->gauche <- noeud
             Sinon
-                unArbre <- unArbre.gauche
+                noeudPrecedent->droit <- noeud
             FinSi
-            Si (unArbre == NULL)
+        FinSi
+        unArbre <- noeudRacine
+    Sinon
+        # Ajouter le noeud à la racine
+        noeud <- new Noeud()
+        noeud.cle <- uneCle
+        unArbre <- noeud
+    FinSi
+Fin
+```
+
+```yaml
+Proc Supprimer(D/R unArbre: Pointeur sur Noeud, D unNoeud: Pointeur sur Noeud):
+Var
+    noeudPrecedent: c'est un pointeur sur  Noeud
+    noeudRacine: c'est un pointeur sur Noeud
+    resultat: c'est un pointeur sur Noeud
+    saveRightChild: c'est un pointeur sur Noeud
+    saveLeftChild: c'est un pointeur sur Noeud
+Debut
+    Si unArbre != NULL
+    Alors
+        noeudRacine<-unArbre
+        // save value
+        Rechercher(uneArbre, unNoeud.uneCle, resultat)
+        Si (resultat == NULL)
+        Alors
+            Ecrire("non présent")
+        Sinon
+            Si(resultat.droit != NULL et resultat.gauche != NULL)
             Alors
-                trouver = vrai
-            Fin Si
-        FinTantQue
-        #Ajouter le noeud à cet endroit
-    Fin Si
+                Si(resultat.parent.cle > resultat.uneCle)
+                Alors
+                    resultat.parent.gauche <- NULL
+                Sinon
+                    resultat.parent.droit <- NULL
+                Fin
+                free(resultat)
+                resultat <- NULL
+            Sinon
+                Si(resultat.droit == NULL)
+                Alors
+                    free(resultat.droit)
+                Sinon
+                    Si(resultat.gauche == NULL)
+                    Alors
+                        resultat.cle <- resultat.droit
+                        free(resultat.droit)
+                    FinSi
+                FinSI
+            FinSi
+            # to finish
+        FinSi
+        unArbre <- noeudRacine
+    Sinon
+        Ecrire("non présent")
+    FinSi
 Fin
 ```
