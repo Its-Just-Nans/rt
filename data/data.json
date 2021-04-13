@@ -94,7 +94,14 @@
 				"largeKeywords": ["informatique", "langage"],
 				"keywords": ["language c", "c"],
 				"1": ["https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/f7c87d5a82ac4f2d85b2c3b75435b015/", "http://www.linux-france.org/prj/embedded/sdcc/sdcc_course.formatted_io.html", "https://www.ltam.lu/cours-c/prg-c_c.htm", "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/", "http://public.iutenligne.net/informatique/algorithme-et-programmation/priou/LangageC/1731_ecriture_et_lecture_en_accs_binaire__fwrite_fread.html", "http://arsene.perez-mas.pagesperso-orange.fr/langc/sommaire_langc.htm", "http://arsene.perez-mas.pagesperso-orange.fr/langc/memalloc/memalloc_malloc.htm", "http://arsene.perez-mas.pagesperso-orange.fr/langc/structures/annuaire3.htm#rappels", "https://c.developpez.com/cours/poly-c/", "https://sites.uclouvain.be/SystInfo/notes/Theorie/html/C/intro-C.html", "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/chapitre1.html", "https://pixees.fr/informatiquelycee/n_site/nsi_prem_langageC.html", "https://yard.onl/sitelycee/cours/c/_index.html?LesVariables.html"],
-				"2": ["https://codecast.france-ioi.org/v2/", "http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf"]
+				"2": ["https://codecast.france-ioi.org/v2/", "http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf", "http://www.qnx.com/developers/docs/6.5.0/index.jsp?topic=%2Fcom.qnx.doc.dinkum_en_c99%2Fstdint.html"]
+				
+			},
+			{
+				"largeKeywords": ["informatique", "langage"],
+				"keywords": ["gcc"],
+				"1": ["https://gcc.gnu.org/onlinedocs/gcc/"],
+				"2": []
 				
 			},
 			{
@@ -268,6 +275,42 @@
 				"largeKeywords": ["node", "nodejs"],
 				"keywords": ["peur", "phobie", "package"],
 				"1": ["https://bundlephobia.com/"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["algo", "algorithmie"],
+				"keywords": ["arbres"],
+				"1": ["http://www.dil.univ-mrs.fr/~gcolas/algo-licence/slides/arbres.pdf"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["algo", "algorithmie"],
+				"keywords": ["sorting", "sort"],
+				"1": ["https://www.toptal.com/developers/sorting-algorithms"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["algo", "algorithmie"],
+				"keywords": ["structure"],
+				"1": ["http://www.dsalgo.com/2013/02/index.php.html"],
+				"2": []
+			},
+			{
+				"largeKeywords": ["HTTP"],
+				"keywords": ["HTCPCP"],
+				"1": [],
+				"2": ["https://fr.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol"]
+			},
+			{
+				"largeKeywords": ["HTTP"],
+				"keywords": ["Web"],
+				"1": [],
+				"2": ["https://medium.com/@guillaumeandre/progressive-web-app-pwa-fichier-web-app-manifest-7292db378af5"]
+			},
+			{
+				"largeKeywords": ["news", "actualités"],
+				"keywords": [],
+				"1": ["https://www.journalduhacker.net/", "https://news.ycombinator.com/news"],
 				"2": []
 			},
 			{
