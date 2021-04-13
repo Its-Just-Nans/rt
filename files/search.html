@@ -85,18 +85,25 @@
                         } else {
                             newQuery = wordOfQuery;
                         }
-                        for (let smallKey of element.keywords) {
-                            for (let word of newQuery) {
-                                let index = datas.q.indexOf(element);
-                                if (presquePareil(word, smallKey)) {
-                                    if (!result.includes(index)) {
-                                        result.push(index);
-                                    }
-                                } else {
-                                    if (!resultLast.includes(index)) {
-                                        resultLast.push(index);
+                        if (element.keywords.length > 0) {
+                            for (let smallKey of element.keywords) {
+                                for (let word of newQuery) {
+                                    let index = datas.q.indexOf(element);
+                                    if (presquePareil(word, smallKey)) {
+                                        if (!result.includes(index)) {
+                                            result.push(index);
+                                        }
+                                    } else {
+                                        if (!resultLast.includes(index)) {
+                                            resultLast.push(index);
+                                        }
                                     }
                                 }
+                            }
+                        } else {
+                            let index = datas.q.indexOf(element);
+                            if (!result.includes(index)) {
+                                result.push(index);
                             }
                         }
                     } else {
