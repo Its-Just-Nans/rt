@@ -1,0 +1,307 @@
+[
+    {
+        "keywords": "reseaux",
+        "display": "Réseaux",
+        "documents": [
+            {
+                "keywords": ["mpls"],
+                "links": ["https://wallu.pagesperso-orange.fr/pag-vpn.htm", "https://wallu.pagesperso-orange.fr/"]
+            },
+            {
+                "keywords": ["IP"],
+                "links": ["http://jelnet.free.fr/jlnt_indx.htm", "http://arsene.perez-mas.pagesperso-orange.fr/index.html"]
+            },
+            {
+                "keywords": ["telnet"],
+                "links": ["https://www.technologuepro.com/reseaux/Pratique-des-protocoles/Interrogation-d-un-serveur-web-avec-telnet.html"]
+            },
+            {
+                "keywords": ["tcp"],
+                "links": ["http://arsene.perez-mas.pagesperso-orange.fr/reseaux/tcpip/menu.htm", "https://web.maths.unsw.edu.au/~lafaye/CCM/internet/tcp.htm"]
+            },
+            {
+                "keywords": ["telnet"],
+                "links": ["https://www.technologuepro.com/reseaux/Pratique-des-protocoles/Interrogation-d-un-serveur-web-avec-telnet.html"]
+            },
+            {
+                "keywords": ["mail", "smtp", "pop", "imap", "pop3"],
+                "links": ["http://www-igm.univ-mlv.fr/~dr/XPOSE2004/abouvet/"]
+            },
+            {
+                "keywords": ["securite", "chiffrement", "encryption"],
+                "links": ["https://trolliet.info/blog/015-chiffrement/"]
+            },
+            {
+                "keywords": ["wdm", "fibre"],
+                "links": ["https://nanohub.org/resources/29457/watch?resid=29581&time=00:25:10"]
+            }
+        ]
+    },
+    {
+        "keywords": ["telecommunications", "telecom"],
+        "bigLinks": ["https://passiontelecom.fr/category/cours-telecom/", "http://easytp.cnam.fr/alexandre/index_fichiers/support/"],
+        "documents": [
+            {
+                "keywords": ["ondes"],
+                "links": ["https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Ondes/ondes_stationnaires/melde.php"]
+            },
+            {
+                "keywords": ["antenne", "transmission"],
+                "bigLinks": [
+                    "http://www.alexandre-boyer.fr/alex/enseignement/cours_antennes_outils_modeles_transmission_sept20.pdf",
+                    "http://www.alexandre-boyer.fr/alex/enseignement/cours_antennes_oct11_v4_5RT.pdf",
+                    "https://instru.lpem.espci.fr/sites/instru.lpem.espci.fr/IMG/pdf/poly_lignes_23.pdf"
+                ],
+                "documents": [
+                    {
+                        "keywords": ["sphere"],
+                        "links": ["http://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Meca/Cinematique/coord_spheriques.html"]
+                    }
+                ]
+            },
+            {
+                "largeKeywords": ["signal"],
+                "keywords": ["traitement", "images"],
+                "links": ["http://www.i6doc.com/resources/titles/28001100216320/extras/72833_adcp_gretsi_vol1nb_1004058.pdf"]
+            },
+            {
+                "keywords": ["transformation", "fourier", "huffman"],
+                "links": ["http://efreidoc.fr/L3/Coding%20%26%20Transformation/Cours/", "https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Elec/Fourier/fourier1.php"]
+            },
+            {
+                "keywords": ["codage", "canal", "QAM", "modulation", "numeriques"],
+                "links": [
+                    "http://escrig.perso.enseeiht.fr/Cours_TS113_2012_2013.pdf",
+                    "https://damienvivet.pagesperso-orange.fr/teaching_more.html#modulation",
+                    "http://deptinfo.cnam.fr/Enseignement/Memoires/LUSTEAU.Franck/",
+                    "https://damienvivet.pagesperso-orange.fr/cours/ibats_mod/A5Ibats_MAN_5.pdf",
+                    "http://radioamateurs89.free.fr/Techniques/Modulation/modulation.htm",
+                    "http://efreidoc.fr/L3/Communications%20numeriques/Cours/"
+                ]
+            }
+        ]
+    },
+    {
+        "keywords": "math",
+        "display": "Mathématiques",
+        "bigLinks": ["http://www.gipsa-lab.grenoble-inp.fr/~yo.fujiso/maths/slides-M123-2012b.pdf", "http://www.gipsa-lab.grenoble-inp.fr/~yo.fujiso/maths/poly-M123-2012b.pdf", "https://www.axesindustries.com/pdf/mathematiques.pdf"],
+        "documents": [
+            {
+                "keywords": ["nombres", "imaginaires", "réel"],
+                "links": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:nombres-complexes-point-de-vue-algebrique", "https://www.youtube.com/watch?v=T647CGsuOVU&list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF"]
+            },
+            {
+                "keywords": ["matrice"],
+                "links": ["https://fr.khanacademy.org/math/terminale-option-math-expertes/x8ee233d324ccfb2e:matrices"]
+            },
+            {
+                "keywords": ["suite"],
+                "links": ["https://fr.khanacademy.org/math/terminale-option-math-complementaires/xd9273d115c91e8d4:suites-numeriques"]
+            }
+        ]
+    },
+    {
+        "keywords": "linux",
+        "display": "Linux",
+        "documents": [
+            {
+                "keywords": ["bash", "shell"],
+                "links": ["https://www.taniarascia.com/how-to-create-and-use-bash-scripts/", "https://remisharrock.fr/sysbuild/#/VM", "https://tdinfo.phelma.grenoble-inp.fr/2Aproj/fiches/MementoCommandesShell.pdf"]
+            },
+            {
+                "keywords": ["gcc"],
+                "links": ["https://gcc.gnu.org/onlinedocs/gcc/"]
+            }
+        ]
+    },
+    {
+        "keywords": ["web", "internet"],
+        "display": "Web",
+        "documents": [
+            {
+                "keywords": ["html"],
+                "links": ["https://hitokun-s.github.io/old/demo/", "http://broussaille.free.fr/cours/index.htm", "https://fr.khanacademy.org/computing/computer-programming/html-css"]
+            },
+            {
+                "keywords": ["css"],
+                "links": ["https://codepen.io/fulcrumHouse/pen/BZJvOd", "https://codepen.io/khaled3afan/pen/XooKNN", "https://codepen.io/akm2/full/rHIsa/", "https://codepen.io/jlnljn/pen/vVWaKq", "https://codepen.io/himalayasingh/pen/EdQzJN"]
+            },
+            {
+                "keywords": ["readme", "markdown"],
+                "links": ["https://daringfireball.net/projects/markdown/"]
+            },
+            {
+                "keywords": ["manifest"],
+                "links": ["https://medium.com/@guillaumeandre/progressive-web-app-pwa-fichier-web-app-manifest-7292db378af5"]
+            },
+            {
+                "keywords": ["urls", "chrome"],
+                "links": ["chrome://chrome-urls/"]
+            },
+            {
+                "keywords": ["HTCPCP"],
+                "links": ["https://fr.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol"]
+            }
+        ]
+    },
+    {
+        "keywords": ["curieux"],
+        "display": "Curiosité",
+        "documents": [
+            {
+                "keywords": ["guides", "cours", "savoir"],
+                "links": ["https://www.taniarascia.com/guides"]
+            },
+            {
+                "keywords": ["format"],
+                "links": ["http://formats.kaitai.io/", "https://www.youtube.com/watch?v=SWsHwdSrPr4"]
+            },
+            {
+                "keywords": ["news", "actualités"],
+                "links": ["https://www.journalduhacker.net/", "https://news.ycombinator.com/news"]
+            },
+            {
+                "keywords": ["info"],
+                "links": [
+                    "http://rt.bethune.free.fr/iut-gtr2/Cours/",
+                    "http://projet.eu.org/pedago/",
+                    "http://www-igm.univ-mlv.fr/~dr/expose.php",
+                    "https://couleur-science.eu/",
+                    "https://lig-membres.imag.fr/donsez/cours/",
+                    "http://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/index.html",
+                    "https://tdinfo.phelma.grenoble-inp.fr/2Aproj/fiches/",
+                    "https://tdinfo.phelma.grenoble-inp.fr/",
+                    "http://www.sciences.univ-nantes.fr/sites/claude_saintblanquet/synophys/synodex.htm"
+                ]
+            },
+            {
+                "keywords": ["KISS", "principe"],
+                "links": ["https://fr.wikipedia.org/wiki/Principe_KISS"]
+            },
+            {
+                "keywords": ["citation"],
+                "links": ["https://nephi.unice.fr/Maxime/index.php"]
+            },
+            {
+                "keywords": ["version", "versioning"],
+                "links": ["https://semver.org/lang/fr/"]
+            },
+            {
+                "keywords": ["typing", "clavier"],
+                "links": ["https://www.typingclub.com/"]
+            },
+            {
+                "keywords": ["outils"],
+                "links": ["https://lehollandaisvolant.net/tout/tools/"]
+            },
+            {
+                "keywords": ["gamer", "krunker", "ennui"],
+                "links": ["https://krunker.io/"]
+            }
+        ]
+    },
+    {
+        "keywords": ["dev", "développement"],
+        "display": "Développement",
+        "documents": [
+            {
+                "keywords": ["language c", "c"],
+                "display": "Langage C",
+                "documents": [
+                    {
+                        "keywords": ["code", "savoir"],
+                        "links": [
+                            "https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/f7c87d5a82ac4f2d85b2c3b75435b015/",
+                            "http://www.linux-france.org/prj/embedded/sdcc/sdcc_course.formatted_io.html",
+                            "https://www.ltam.lu/cours-c/prg-c_c.htm",
+                            "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/",
+                            "http://public.iutenligne.net/informatique/algorithme-et-programmation/priou/LangageC/1731_ecriture_et_lecture_en_accs_binaire__fwrite_fread.html",
+                            "http://arsene.perez-mas.pagesperso-orange.fr/langc/sommaire_langc.htm",
+                            "http://arsene.perez-mas.pagesperso-orange.fr/langc/structures/annuaire3.htm#rappels",
+                            "https://c.developpez.com/cours/poly-c/",
+                            "https://sites.uclouvain.be/SystInfo/notes/Theorie/html/C/intro-C.html",
+                            "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/chapitre1.html",
+                            "https://pixees.fr/informatiquelycee/n_site/nsi_prem_langageC.html",
+                            "https://yard.onl/sitelycee/cours/c/_index.html?LesVariables.html"
+                        ]
+                    },
+                    {
+                        "keywords": ["pointeur"],
+                        "links": ["http://arsene.perez-mas.pagesperso-orange.fr/langc/pointeurs/pointeurs.htm"]
+                    },
+                    {
+                        "keywords": ["memoire"],
+                        "links": ["http://arsene.perez-mas.pagesperso-orange.fr/langc/memalloc/memalloc_malloc.htm"]
+                    },
+                    {
+                        "keywords": ["online"],
+                        "links": ["https://codecast.france-ioi.org/v2/"]
+                    },
+                    {
+                        "keywords": ["librairie"],
+                        "links": ["http://www.qnx.com/developers/docs/6.5.0/index.jsp?topic=%2Fcom.qnx.doc.dinkum_en_c99%2Fstdint.html"]
+                    },
+                    {
+                        "keywords": ["documentation"],
+                        "links": ["http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf"]
+                    }
+                ]
+            },
+            {
+                "keywords": ["node", "nodejs", "package"],
+                "links": ["https://bundlephobia.com/"]
+            },
+            {
+                "keywords": ["c", "plus", "plus plus"],
+                "links": ["https://www.creatis.insa-lyon.fr/~grenier/wp-content/uploads/teaching/Cpp/NoteCpp.pdf"]
+            },
+            {
+                "keywords": ["info", "caml"],
+                "links": ["https://svartzjules.pagesperso-orange.fr/prepa/pdf/poly_caml.pdf"]
+            },
+            {
+                "keywords": ["python"],
+                "links": ["https://trinket.io/python3", "http://perso.numericable.fr/jules.svartz/prepa/pdf/poly_python.pdf"]
+            },
+            {
+                "keywords": ["app", "application"],
+                "links": ["http://appinventor.mit.edu/"]
+            }
+        ]
+    },
+    {
+        "keywords": ["algo", "algorithmie"],
+        "display": "Algorithmie",
+        "documents": [
+            {
+                "keywords": ["arbres"],
+                "links": ["http://www.dil.univ-mrs.fr/~gcolas/algo-licence/slides/arbres.pdf"]
+            },
+            {
+                "keywords": ["sorting", "sort"],
+                "links": ["https://www.toptal.com/developers/sorting-algorithms"]
+            },
+            {
+                "keywords": ["structure"],
+                "links": ["http://www.dsalgo.com/2013/02/index.php.html"]
+            }
+        ]
+    },
+    {
+        "keywords": ["electricité"],
+        "documents": [
+            {
+                "keywords": ["cours"],
+                "links": ["http://users.polytech.unice.fr/~ferrero/TPelec4/"]
+            },
+            {
+                "keywords": ["circuit"],
+                "links": ["https://everycircuit.com/app"]
+            },
+            {
+                "keywords": ["physiques", "eclectricite"],
+                "links": ["https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/menu/menu_gene.php"]
+            }
+        ]
+    }
+]

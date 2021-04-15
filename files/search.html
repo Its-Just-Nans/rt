@@ -14,6 +14,17 @@
     .result:hover {
         border: 1px dashed grey;
     }
+    #resultat {
+        margin-bottom: 20px;
+    }
+    h4,
+    h5,
+    h6 {
+        margin: 5px 0px;
+    }
+    ul ul {
+        margin: 0 0 5px;
+    }
 </style>
 <h2>Recherche de cours</h2>
 <label>Je cherche </label>
@@ -27,7 +38,11 @@
 <button type="button" id="search">Search</button>
 
 <div id="resultat"></div>
-
+<hr />
+<div>
+    <h2>Visual Search</h2>
+    <div id="visualSearch"></div>
+</div>
 <script>
     var datas;
     function init() {
@@ -54,6 +69,7 @@
             },
             false
         );
+        displayVisualSearch();
     }
 
     init();
@@ -214,5 +230,50 @@
                 }
             }
         }
+    }
+
+    async function displayVisualSearch() {
+        let linkToData = `${window.location.origin}/data/visualData.json`;
+        const divVisual = document.getElementById("visualSearch");
+        const renderVisual = function (object, number, elementSup) {
+            if (object) {
+                const parentElement = elementSup;
+                if (object.display) {
+                    generateElement(parentElement, `h${number}`, { innerHTML: object.display });
+                } else {
+                    generateElement(parentElement, `h${number}`, { innerHTML: object.keywords.toString() });
+                }
+                if (object.bigLinks) {
+                    const parentList = generateElement(parentElement, "ul");
+                    for (let oneLinks of object.bigLinks) {
+                        const li = generateElement(parentList, "li");
+                        generateElement(li, "a", { innerHTML: oneLinks, href: oneLinks });
+                    }
+                }
+                if (object.documents) {
+                    const parentList = generateElement(parentElement, "ul");
+                    for (let oneDoc of object.documents) {
+                        const li = generateElement(parentList, "li");
+                        renderVisual(oneDoc, number + 1, li);
+                    }
+                } else {
+                    const parentList = generateElement(parentElement, "ul");
+                    for (let onelink of object.links) {
+                        const li = generateElement(parentList, "li");
+                        generateElement(li, "a", { innerHTML: onelink, href: onelink });
+                    }
+                }
+            }
+        };
+        makeRequest("GET", linkToData)
+            .then(function (response) {
+                var allCat = JSON.parse(response);
+                for (let oneCat of allCat) {
+                    renderVisual(oneCat, 3, document.getElementById("visualSearch"));
+                }
+            })
+            .catch(function (error) {
+                //no data :(
+            });
     }
 </script>
