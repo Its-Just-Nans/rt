@@ -3,13 +3,9 @@ Created by Its-Just-Nans - https://github.com/Its-Just-Nans
 Copyright Its-Just-Nans
 --->
 
-# Web
+# JavaScript
 
-## Protocole HTTP
-
-[Le protocole HTTP](https://lig-membres.imag.fr/donsez/cours/http.pdf)
-
-## JavaScript
+## Apprendre Javascript
 
 1. Lisez ça : [Une réintroduction à JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Une_r%C3%A9introduction_%C3%A0_JavaScript)
 
@@ -25,7 +21,7 @@ Copyright Its-Just-Nans
 
 ## JavaScript interactif
 
-Essayez [https://natto.dev/](https://natto.dev/) !
+- Essayez [https://natto.dev/](https://natto.dev/) !
 
 ## NodeJs
 
