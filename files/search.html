@@ -21,12 +21,18 @@
     h5,
     h6 {
         margin: 5px 0px;
+    }
+    h1,
+    h3,
+    h4,
+    h5,
+    h6 {
         word-break: break-all;
     }
     ul ul {
         margin: 0 0 5px;
     }
-    a{
+    a {
         word-break: break-all;
     }
 </style>
@@ -251,7 +257,7 @@
                     const parentList = generateElement(parentElement, "ul");
                     for (let oneLinks of object.bigLinks) {
                         const li = generateElement(parentList, "li");
-                        generateElement(li, "a", { innerHTML: oneLinks, href: oneLinks, "target": "_blank" });
+                        generateElement(li, "a", { innerHTML: oneLinks, href: oneLinks, target: "_blank" });
                     }
                 }
                 if (object.documents) {
@@ -264,7 +270,7 @@
                     const parentList = generateElement(parentElement, "ul");
                     for (let onelink of object.links) {
                         const li = generateElement(parentList, "li");
-                        generateElement(li, "a", { innerHTML: onelink, href: onelink, "target": "_blank" });
+                        generateElement(li, "a", { innerHTML: onelink, href: onelink, target: "_blank" });
                     }
                 }
             }
