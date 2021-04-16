@@ -2,14 +2,11 @@
     {
         "keywords": "reseaux",
         "display": "Réseaux",
+        "bigLinks": ["http://jelnet.free.fr/jlnt_indx.htm", "http://arsene.perez-mas.pagesperso-orange.fr/index.html"],
         "documents": [
             {
                 "keywords": ["mpls"],
                 "links": ["https://wallu.pagesperso-orange.fr/pag-vpn.htm", "https://wallu.pagesperso-orange.fr/"]
-            },
-            {
-                "keywords": ["IP"],
-                "links": ["http://jelnet.free.fr/jlnt_indx.htm", "http://arsene.perez-mas.pagesperso-orange.fr/index.html"]
             },
             {
                 "keywords": ["telnet"],
