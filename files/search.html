@@ -247,7 +247,7 @@
                     const parentList = generateElement(parentElement, "ul");
                     for (let oneLinks of object.bigLinks) {
                         const li = generateElement(parentList, "li");
-                        generateElement(li, "a", { innerHTML: oneLinks, href: oneLinks });
+                        generateElement(li, "a", { innerHTML: oneLinks, href: oneLinks, "target": "_blank" });
                     }
                 }
                 if (object.documents) {
@@ -260,7 +260,7 @@
                     const parentList = generateElement(parentElement, "ul");
                     for (let onelink of object.links) {
                         const li = generateElement(parentList, "li");
-                        generateElement(li, "a", { innerHTML: onelink, href: onelink });
+                        generateElement(li, "a", { innerHTML: onelink, href: onelink, "target": "_blank" });
                     }
                 }
             }
