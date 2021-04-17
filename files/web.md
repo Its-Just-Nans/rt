@@ -88,9 +88,9 @@ Si on regarde dans l'onglet `Network` des outils de développeurs (appuyer sur `
 
 ![requestAPI](./data/web/requestAPI.jpg)
 
-On voit que le script a fait une requête `GET` avec comme `URL` [https://api.github.com/repos/its-just-nans/rt/contents/raws/](https://api.github.com/repos/its-just-nans/rt/contents/raws/).
+On voit que le script a fait une requête `GET` avec comme `URL` "[https://api.github.com/repos/its-just-nans/rt/contents/raws/](https://api.github.com/repos/its-just-nans/rt/contents/raws/)".
 
-Cette `URL` nous renvoie vers une redirection (code `302`) avec une nouvelle adresse. Puis on a accès aux données : ici nous avons un document au format `JSON`, ici on a un tableau (représentaion avec des crochets `[]`) qui contient des [objets](https://developer.mozilla.org/fr/docs/Learn/JavaScript/Objects/JSON) (représentaion avec des accolades `{}`)
+Cette `URL` nous renvoie vers une redirection (code `302`) avec une nouvelle adresse. Le navigateur nous redirige donc vers cette adresse, et nous avons accès aux données. Ici nous avons un document au format `JSON`, ici on a un tableau (représentation avec des crochets `[]`) qui contient des [objets](https://developer.mozilla.org/fr/docs/Learn/JavaScript/Objects/JSON) (représentation avec des accolades `{}`)
 
 Dans ces données qu'on peut visualiser dans l'onglet `Preview` (déjà [parser](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)) ou `Response`, on retrouve les données qui sont afficher dans le tableau de la page "[Raws files](#raws)" :
 
