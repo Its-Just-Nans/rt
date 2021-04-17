@@ -2,11 +2,11 @@
     {
         "keywords": "reseaux",
         "display": "Réseaux",
-        "bigLinks": ["http://jelnet.free.fr/jlnt_indx.htm", "http://arsene.perez-mas.pagesperso-orange.fr/index.html"],
+        "bigLinks": ["http://jelnet.free.fr/jlnt_indx.htm", "http://arsene.perez-mas.pagesperso-orange.fr/index.html", "https://wallu.pagesperso-orange.fr/"],
         "documents": [
             {
                 "keywords": ["mpls"],
-                "links": ["https://wallu.pagesperso-orange.fr/pag-vpn.htm", "https://wallu.pagesperso-orange.fr/"]
+                "links": ["https://wallu.pagesperso-orange.fr/pag-vpn.htm"]
             },
             {
                 "keywords": ["telnet"],
@@ -185,7 +185,7 @@
             },
             {
                 "keywords": ["typing", "clavier"],
-                "links": ["https://www.typingclub.com/"]
+                "links": ["https://www.typingclub.com/", "https://www.typingclub.com/"]
             },
             {
                 "keywords": ["outils"],
@@ -204,24 +204,21 @@
             {
                 "keywords": ["language c", "c"],
                 "display": "Langage C",
+                "bigLinks": [
+                    "https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/f7c87d5a82ac4f2d85b2c3b75435b015/",
+                    "http://www.linux-france.org/prj/embedded/sdcc/sdcc_course.formatted_io.html",
+                    "https://www.ltam.lu/cours-c/prg-c_c.htm",
+                    "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/",
+                    "http://public.iutenligne.net/informatique/algorithme-et-programmation/priou/LangageC/1731_ecriture_et_lecture_en_accs_binaire__fwrite_fread.html",
+                    "http://arsene.perez-mas.pagesperso-orange.fr/langc/sommaire_langc.htm",
+                    "http://arsene.perez-mas.pagesperso-orange.fr/langc/structures/annuaire3.htm#rappels",
+                    "https://c.developpez.com/cours/poly-c/",
+                    "https://sites.uclouvain.be/SystInfo/notes/Theorie/html/C/intro-C.html",
+                    "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/chapitre1.html",
+                    "https://pixees.fr/informatiquelycee/n_site/nsi_prem_langageC.html",
+                    "https://yard.onl/sitelycee/cours/c/_index.html?LesVariables.html"
+                ],
                 "documents": [
-                    {
-                        "keywords": ["code", "savoir"],
-                        "links": [
-                            "https://www.fun-mooc.fr/courses/MinesTelecom/04019S02/session02/f7c87d5a82ac4f2d85b2c3b75435b015/",
-                            "http://www.linux-france.org/prj/embedded/sdcc/sdcc_course.formatted_io.html",
-                            "https://www.ltam.lu/cours-c/prg-c_c.htm",
-                            "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/",
-                            "http://public.iutenligne.net/informatique/algorithme-et-programmation/priou/LangageC/1731_ecriture_et_lecture_en_accs_binaire__fwrite_fread.html",
-                            "http://arsene.perez-mas.pagesperso-orange.fr/langc/sommaire_langc.htm",
-                            "http://arsene.perez-mas.pagesperso-orange.fr/langc/structures/annuaire3.htm#rappels",
-                            "https://c.developpez.com/cours/poly-c/",
-                            "https://sites.uclouvain.be/SystInfo/notes/Theorie/html/C/intro-C.html",
-                            "https://www.rocq.inria.fr/secret/Anne.Canteaut/COURS_C/chapitre1.html",
-                            "https://pixees.fr/informatiquelycee/n_site/nsi_prem_langageC.html",
-                            "https://yard.onl/sitelycee/cours/c/_index.html?LesVariables.html"
-                        ]
-                    },
                     {
                         "keywords": ["pointeur"],
                         "links": ["http://arsene.perez-mas.pagesperso-orange.fr/langc/pointeurs/pointeurs.htm"]
