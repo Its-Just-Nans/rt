@@ -19,7 +19,7 @@ Copyright Its-Just-Nans
 
 ## Mini-Cours - Les serveurs Web
 
-Aquila est donc un logiciel sous forme de site web. A l'opposé d'un logiciel normal (par exemple un editeur de texte), un serveur Web a besoin d'être démarré et de rester tout le temps de l'utilisation allumé, et comme un site web est toujours disponible, le logiciel Aquila doit être allumé.
+A l'opposé d'un logiciel normal (par exemple un editeur de texte), un serveur web a besoin d'être démarré et de rester (pendant l'utilisation) allumé. Comme un site web est toujours disponible, le serveur web doit être tooujours allumé !
 
 - En production ce logiciel est donc mit sur un serveur web qu'on laissé éveillé.
 - En développement, on peut démarrer et l'éteindre quand on le souhaite.
