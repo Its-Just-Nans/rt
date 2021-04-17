@@ -51,6 +51,12 @@ Car je ne suis pas bilingue
 
 ---
 
+## Blog
+
+- Check this : [golb](https://its-just-nans.github.io/golb)
+
+---
+
 ## Share
 
 Share the website :

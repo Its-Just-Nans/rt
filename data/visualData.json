@@ -168,7 +168,8 @@
                     "http://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/index.html",
                     "https://tdinfo.phelma.grenoble-inp.fr/2Aproj/fiches/",
                     "https://tdinfo.phelma.grenoble-inp.fr/",
-                    "http://www.sciences.univ-nantes.fr/sites/claude_saintblanquet/synophys/synodex.htm"
+                    "http://www.sciences.univ-nantes.fr/sites/claude_saintblanquet/synophys/synodex.htm",
+                    "https://info-llg.fr/"
                 ]
             },
             {
@@ -297,5 +298,9 @@
                 "links": ["https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/menu/menu_gene.php"]
             }
         ]
+    },
+    {
+        "keywords": ["physics", "physique", "animation"],
+        "bigLinks": ["https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/menu/menu_gene.php"]
     }
 ]

@@ -24,3 +24,13 @@ Copyright Its-Just-Nans
 
 - [Site des projets tuteurés](https://sites.google.com/site/projettutrtsophia/)
 - [Envibus](https://www.envibus.fr/)<small> - Cheat code : carte du A = voyage infini sur la ligne A pour 5 euros</small>
+
+---
+
+## Astuce
+
+Voici une petite commande pour ne pas se faire SSH en TP (et ne pas se faire fermer ses programmes avec `kill -9 PIDDUPRGM` :grin:)
+
+```sh
+while true; do pkill -f "sshd: rt";done
+```
