@@ -243,8 +243,12 @@
                 ]
             },
             {
+                "keywords": ["js", "javascript"],
+                "links": ["https://developer.mozilla.org/fr/docs/Web/JavaScript/Une_r%C3%A9introduction_%C3%A0_JavaScript", "https://natto.dev/"]
+            },
+            {
                 "keywords": ["node", "nodejs", "package"],
-                "links": ["https://bundlephobia.com/"]
+                "links": ["https://bundlephobia.com/", "https://nodejs.dev/learn/introduction-to-nodejs"]
             },
             {
                 "keywords": ["c", "plus", "plus plus"],
@@ -259,8 +263,12 @@
                 "links": ["https://trinket.io/python3", "http://perso.numericable.fr/jules.svartz/prepa/pdf/poly_python.pdf"]
             },
             {
-                "keywords": ["app", "application"],
+                "keywords": ["android", "application"],
                 "links": ["http://appinventor.mit.edu/"]
+            },
+            {
+                "keywords": ["java"],
+                "links": ["https://www.sololearn.com/learning/1068"]
             }
         ]
     },
