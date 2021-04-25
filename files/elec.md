@@ -130,3 +130,9 @@ En régime alternatif, les signaux varient selon le temps, donc on a :
 Le courant conventionnel (écoulement de particules exclusivement positives) simplifie les concepts et les calculs, mais masque le fait que dans quelques conducteurs (électrolytes, semi-conducteurs, et plasma) les deux types de charges électriques se déplacent dans des directions opposées, ou que dans les métaux, les charges négatives sont quasi exclusivement responsables de la circulation du courant.
 
 ## Les composants électriques
+
+Soon...
+
+### Les condensateurs
+
+- [Video explicative](https://youtu.be/ucEiEic-kZ4)
