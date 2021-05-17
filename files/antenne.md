@@ -11,6 +11,8 @@ Copyright Its-Just-Nans
 - Cours de **M. Fortino**
 - [Animation Onde Stationnaire](https://sbizet.alwaysdata.net/sn/ros/swr_anim.html)
 - [Animation Onde Stationnaire](https://www.sciences.univ-nantes.fr/sites/genevieve_tulloue/Ondes/ondes_stationnaires/stationnaires.php)
+- [Abaque de Smith en ligne](https://smithchart.net/)
+- [Cours abaque de Smith](https://on5vl.org/abaque-de-smith-outil-mysterieux-outil-demystifie-2/)
 
 ## Antennes
 
