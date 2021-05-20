@@ -16,7 +16,7 @@ Copyright Its-Just-Nans
 > Fonction Init (D/R uneListe: Liste)
 
 ```yaml
-Fonction Init(R uneListe: Liste)
+Fonction Init(D/R uneListe: Liste)
 Var
     ptr : pointeur sur cellule;
 Debut
@@ -29,12 +29,12 @@ Fin
 Ou alors
 
 ```yaml
-Fonction Init(R uneListe: Liste)
+Fonction Init(D/R uneListe: Liste)
 Var
     ptr : pointeur sur cellule;
 Debut
     new(ptr)
-    ptr->suivant <- null;
+    ptr->suivant <- NULL;
     ptr->info <- -1;
     uneListe.tete <- ptr;
     retourner uneListe;
@@ -44,9 +44,9 @@ Fin
 Ou alors
 
 ```yaml
-Fonction Init(R uneListe: Liste)
+Fonction Init(D/R uneListe: Liste)
 Debut
-    uneListe.tete <- null;
+    uneListe.tete <- NULL;
     retourner uneListe;
 Fin
 ```
@@ -55,12 +55,12 @@ Fin
 
 ### Liste Vide: tester si la liste est vide
 
-> Fonction ListeVide (D uneListe: Liste, R ?vide: Booleen)
+> Fonction ListeVide (D uneListe: Liste, R vide: Booleen)
 
 ```yaml
 Fonction ListeVide(D uneListe: Liste, R unResultat: Boolean)
 Debut
-    Si (uneListe.tete=null)
+    Si (uneListe.tete = NULL)
     Alors
         unResultat <- vrai;
     Sinon
@@ -79,13 +79,13 @@ Fin
 ```yaml
 Fonction Longueur(D uneListe: Liste, R uneLongueur: Entier)
 Var
-    ptr: Pointeur sur Cellule c'est uneListe.tete;
-    cpt: Entier c'est 0;
+    ptr: Pointeur sur Cellule, c'est uneListe.tete;
+    cpt: Entier c'est 1;
 Debut
-    Tant que (ptr != null)
+    Tant que (ptr != NULL)
     Faire
     Debut
-        cpt++;
+        cpt <- cpt + 1;
         ptr <- ptr->suivant;
     FinTantque
     uneLongueur <- cpt;
@@ -101,7 +101,7 @@ Var
     ptr: Pointeur sur Cellule c'est uneListe.tete;
 Debut
     uneLongueur <- 1
-    Tant que (ptr->suivant != null)
+    Tant que (ptr->suivant != NULL)
     Faire
     Debut
         uneLongueur <- uneLongueur + 1;
@@ -131,13 +131,13 @@ Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
     compteur: Entier c'est 1
 Debut
-    Tant que (compteur < unePosition et ptr->suivant != null)
+    Tant que (compteur < unePosition et ptr->suivant != NULL)
     Faire
     Debut
         compteur <- compteur + 1;
         ptr <- ptr->suivant;
     FinTantque
-    Si (ptr->suivant = null)
+    Si (ptr->suivant = NULL)
     Alors
         Si (compteur = unePosition)
         Alors
@@ -162,19 +162,19 @@ Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
     compteur: Entier c'est 1
 Debut
-    Tant que (compteur < unePosition et ptr != null)
+    Tant que (compteur < unePosition et ptr != NULL)
     Faire
     Debut
         compteur <- compteur + 1;
         ptr <- ptr->suivant;
     FinTantque
-    Si (compteur = unePosition et ptr != null)
+    Si (compteur = unePosition et ptr != NULL)
     Alors
         unElement <- ptr->info;
     Sinon
         unElement <- -1;
     FinSi
-        retourner unElement;
+    retourner unElement;
 Fin
 ```
 
@@ -190,7 +190,7 @@ Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
 Debut
     unResultat = Faux;
-    Tant que (ptr->suivant != null)
+    Tant que (ptr->suivant != NULL)
     Faire
     Debut
         Si (ptr->info = unElement)
@@ -212,7 +212,7 @@ Fonction Appartient (D uneListe: Liste, D unElement: Entier, R unResultat: Boole
 Var
     ptr: Pointeur sur Cellule c'est uneListe.tete
 Debut
-    Tant que (ptr->info != UnElement et ptr->suivant != null)
+    Tant que (ptr->info != UnElement et ptr->suivant != NULL)
     Faire
     Debut
         ptr <- ptr->suivant;
@@ -240,17 +240,19 @@ Var
 Debut
     Si (unePosition != 1)
     Alors
-        Tant que (compteur < (unePosition-1) et ptr->suivant != null)
+        Tant que (compteur < (unePosition-1) et ptr->suivant != NULL)
         Faire
         Debut
             compteur <- compteur + 1
             ptr <- ptr->suivant
         FinTantque
-        Si ( ptr->suivant != null)
+        Si(compteur = (unePosition-1) et ptr->suivant != NULL)
         Alors
             ptr2 <- ptr->suivant
             ptr->suivant <- ptr2->suivant
             free(ptr2)
+        Sinon
+            Ecrire "Erreur pas de position"
         FinSi
     Sinon
         uneListe.tete <- ptr->suivant
@@ -274,7 +276,7 @@ Debut
         uneListe.tete <- ptr->suivant;
         free(ptr);
     Sinon
-        Tant que (compteur < unePosition et ptr->suivant != null)
+        Tant que (compteur < unePosition et ptr->suivant != NULL)
         Faire
         Debut
             ptrPrec <- ptr;
@@ -286,7 +288,7 @@ Debut
             ptrPrec->suivant <- ptr->suivant;
             free(ptr);
         Sinon
-            Ecrire(La posiion n'existe pas)
+            Ecrire("La position n'existe pas")
         FinSi
     FinSi
     retourner uneListe
@@ -307,7 +309,7 @@ Var
     ptr3: Pointeur sur Cellule
     compteur: Entier c'est 1
 Debut
-    Si(ptr != null)
+    Si(ptr != NULL)
     Alors
         Si(unePosition = 1)
         Alors
@@ -316,7 +318,7 @@ Debut
             ptr2->info <- unElement
             uneListe.tete -> ptr2
         Sinon
-            Tant que (compteur < (unePosition-1) et ptr->suivant != null)
+            Tant que (compteur < (unePosition-1) et ptr->suivant != NULL)
             Faire
             Debut
                 compteur <- compteur + 1
@@ -355,8 +357,8 @@ Var
 Debut
     new(ptrNouv)
     ptrNouv->info <- unElement;
-    prtNouv->suivant <- null;
-    Si (ptr = null)
+    prtNouv->suivant <- NULL;
+    Si (ptr = NULL)
     Alors
         uneListe->tete <- ptrNouv;
     Sinon
@@ -365,7 +367,7 @@ Debut
             ptrNouv->suivant <- uneListe->tete;
             uneListe->tete <- ptrNouv;
         Sinon
-            Tant que (cpt < unePosition et ptr != null)
+            Tant que (cpt < unePosition et ptr != NULL)
             Faire
                 ptrPrec <_ptr;
                 ptr <- ptr->suivant;
@@ -396,8 +398,8 @@ Var
 Debut
     new(ptr);
     ptr->info <- unElement;
-    ptr->suivant <- null;
-    Si(uneFile.tete = null)
+    ptr->suivant <- NULL;
+    Si(uneFile.tete = NULL)
     Alors
         uneFile.tete <- ptr;
         uneFile.queue <- ptr;
@@ -416,17 +418,17 @@ Fonction SupprimerFile (D/R uneFile: Liste)
 Var
     ptr: Pointeur sur Cellule;
 Debut
-    Si(uneFile.tete != null)
+    Si(uneFile.tete != NULL)
     Alors
         ptr <- uneFile.tete;
         uneFile.tete <- (ptr->suivant);
         free(ptr);
-        Si(uneFile.tete=null) //cas où la file devient vide
+        Si(uneFile.tete=NULL) //cas où la file devient vide
         Alors
-            uneFile.queue <- null;
+            uneFile.queue <- NULL;
         FinSi
     Sinon
-        Erreur("Erreur : File Vide")
+        Ecrire("Erreur : File Vide")
     FinSi
     retourner uneFile
 Fin
