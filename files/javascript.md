@@ -19,6 +19,10 @@ Copyright Its-Just-Nans
 
 6. Découvrez des frameworks/librairies, par exemple : [Getting started with React](https://www.taniarascia.com/getting-started-with-react/)
 
+## Essayez de répondre à ces questions
+
+[JavaScipts Questions by @lydiahallie](https://github.com/lydiahallie/javascript-questions#readme)
+
 ## JavaScript interactif
 
 - Essayez [https://natto.dev/](https://natto.dev/) !
