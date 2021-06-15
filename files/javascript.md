@@ -21,7 +21,7 @@ Copyright Its-Just-Nans
 
 ## Essayez de répondre à ces questions
 
-[JavaScipts Questions by @lydiahallie](https://github.com/lydiahallie/javascript-questions#readme)
+[JavaScipts Questions](https://github.com/lydiahallie/javascript-questions#readme) by @lydiahallie
 
 ## JavaScript interactif
 
