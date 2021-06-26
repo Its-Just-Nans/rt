@@ -9,3 +9,7 @@ Copyright Its-Just-Nans
 
 - [Cours de Python par Jules Svartz (professeur d'Informatique CPGE Masséna)](http://perso.numericable.fr/jules.svartz/prepa/pdf/poly_python.pdf)
 - [Cours très bien expliqués](https://github.com/ctzhou86/Coursera-Applied-Data-Science-Specialization/tree/master/Python%20for%20Data%20Science)
+
+## Apprendre facilement
+
+- [Cours SoloLearn](https://www.sololearn.com/learning/1073)
