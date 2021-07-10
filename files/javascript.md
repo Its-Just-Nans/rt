@@ -30,3 +30,7 @@ Copyright Its-Just-Nans
 ## NodeJs
 
 - [https://nodejs.dev/learn/introduction-to-nodejs](https://nodejs.dev/learn/introduction-to-nodejs)
+
+## Autres
+
+- [https://wesbos.com/javascript](https://wesbos.com/javascript)
