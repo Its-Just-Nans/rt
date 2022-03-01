@@ -1,0 +1,172 @@
+<div class="overflow">
+    <table>
+        <thead>
+            <tr>
+                <th>Valeurs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="values">
+                <td>
+                    <input type="number" value="0.04">
+                </td>
+                <td>
+                    <input type="number" value="0.1">
+                </td>
+                <td>
+                    <input type="number" value="0.1">
+                </td>
+                <td>
+                    <input type="number" value="0.3">
+                </td>
+                <td>
+                    <input type="number" value="0.3">
+                </td>
+                <td>
+                    <input type="number" value="0.16">
+                </td>
+            </tr>
+            <tr id="values2">
+                <td>
+                    <input type="number" value="5">
+                </td>
+                <td>
+                    <input type="number" value="5">
+                </td>
+                <td>
+                    <input type="number" value="5">
+                </td>
+                <td>
+                    <input type="number" value="2">
+                </td>
+                <td>
+                    <input type="number" value="1">
+                </td>
+                <td>
+                    <input type="number" value="3">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br />
+<button id="newVal">
+    Add new value
+</button>
+<br /><br /><br />
+<table>
+    <thead>
+        <tr>
+            <th>Entropie (H)</th>
+            <th>Longueur Moyenne (L)</th>
+            <th>Efficacité</th>
+            <th>Redondance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="entropieRes">
+                ...
+            </td>
+            <td id="longMoyRes">
+                ...
+            </td>
+            <td id="efficaceRes">
+                ...
+            </td>
+            <td id="redondanceRes">
+                ...
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button id="doAction">
+    Calculate
+</button>
+<script>
+    document.getElementById("newVal").onclick = () => {
+        const e = document.createElement("td");
+        const input = document.createElement("input");
+        input.type = "number";
+        e.append(input);
+        document.getElementById("values").append(e.cloneNode(true));
+        document.getElementById("values2").append(e);
+    };
+    document.getElementById("doAction").onclick = () => {
+        fullCalc()
+    };
+    const fullCalc = () => {
+        const values = [...document.getElementById("values").children].map((el) => {
+            const val = el.children[0].value || "0";
+            return parseFloat(val);
+        })
+        const values2 = [...document.getElementById("values2").children].map((el) => {
+            const val = el.children[0].value || "0";
+            return parseFloat(val);
+        })
+        const ent = calcEntropie(values);
+        const long = calcMoyenne(values, values2);
+        const eff = calcEfficace(ent, long);
+        document.getElementById("entropieRes").innerHTML = ent.toFixed(2);
+        document.getElementById("longMoyRes").innerHTML = long.toFixed(2);
+        document.getElementById("efficaceRes").innerHTML = eff.toFixed(2);
+        document.getElementById("redondanceRes").innerHTML = (100 - eff).toFixed(2);
+    }
+    const calcEntropie = (vals) => {
+        let res = 0;
+        vals.forEach(element => {
+            if (element != 0) {
+                res += element * Math.log2(element);
+            }
+        });
+        return -res;
+    }
+    const calcMoyenne = (values, values2) => {
+        const l = values.length;
+        let res = 0;
+        for (let i = 0; i < l; i++) {
+            res += values[i] * values2[i]
+        }
+        return res;
+    }
+    const calcEfficace = (entropie, long) => {
+        return (entropie / long) * 100;
+    }
+</script>
+
+<style>
+    #contenuMain input {
+        width: 8em;
+        border: none;
+    }
+
+    #contenuMain table {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    #contenuMain button {
+        padding: 5px;
+        border-radius: 0px;
+        border: 1px solid black;
+    }
+
+    #contenuMain th,
+    td {
+        border-left: 1px solid black;
+        border: 1px solid;
+    }
+
+    #contenuMain thead,
+    tr {
+        border-bottom: 1px solid black;
+    }
+
+    #contenuMain .overflow {
+        overflow-x: auto;
+    }
+
+    #contenuMain .overflow table {
+        margin: 0px;
+    }
+</style>
