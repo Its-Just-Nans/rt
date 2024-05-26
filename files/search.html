@@ -57,10 +57,11 @@
     var datas;
     function init() {
         let linkToData;
-        if (window.location.origin === "https://its-just-nans.github.io") {
+        const domain = "https://rt.n4n5.dev";
+        if (window.location.origin === domain) {
             linkToData = "./data/data.json";
         } else {
-            linkToData = "https://its-just-nans.github.io/rt/data/data.json";
+            linkToData = `${domain}/data/data.json`;
         }
         makeRequest("GET", linkToData)
             .then(function (response) {
